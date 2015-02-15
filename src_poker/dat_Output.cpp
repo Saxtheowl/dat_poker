@@ -406,12 +406,13 @@ void		dat_Output::clean_Cards_Shadow(int card_pos_x, int card_pos_y, int pos)
 
 void		dat_Output::update_Cards(Board *board, Player *player)
 {
-  if(player->get_Pos() == 0)
-    {
-      put_Cards(player->get_Pos_Map_X(), player->get_Pos_Map_Y(), board->get_Deck()[player->get_Index_Card(0)]->get_True_Nb(), board->get_Deck()[player->get_Index_Card(1)]->get_True_Nb(), player->get_Pos());
-      put_Card_Rank(player->get_Pos_Map_X(), player->get_Pos_Map_Y(), board->get_Deck()[player->get_Index_Card(0)]->get_Rank(), board->get_Deck()[player->get_Index_Card(1)]->get_Rank(), player->get_Pos());
-    }
-  else if(player->get_Alive() == true && (player->get_Stack() > 0 || player->get_Pushed() > 0))
+  //    if(player->get_Pos() == 0)
+  if(1 + 1 == 2)
+      {
+	put_Cards(player->get_Pos_Map_X(), player->get_Pos_Map_Y(), board->get_Deck()[player->get_Index_Card(0)]->get_True_Nb(), board->get_Deck()[player->get_Index_Card(1)]->get_True_Nb(), player->get_Pos());
+	put_Card_Rank(player->get_Pos_Map_X(), player->get_Pos_Map_Y(), board->get_Deck()[player->get_Index_Card(0)]->get_Rank(), board->get_Deck()[player->get_Index_Card(1)]->get_Rank(), player->get_Pos());
+      }
+    else if(player->get_Alive() == true && (player->get_Stack() > 0 || player->get_Pushed() > 0))
     put_Cards_Shadow(player->get_Pos_Map_X(), player->get_Pos_Map_Y(), player->get_Pos());
   else if(player->get_Alive() == false)
     clean_Cards_Shadow(player->get_Pos_Map_X(), player->get_Pos_Map_Y(), player->get_Pos());
