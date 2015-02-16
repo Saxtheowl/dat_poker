@@ -70,8 +70,6 @@ void		Board::init_nb_Player()
   while(i < this->start_nb_players)
     {
       if(i == 0)
-	//	this->competitor.push_back(new Human(HUMAN, start_stack));
-	//      this->competitor.push_back(new Bot(BOT, start_stack));      
 	this->competitor.push_back(new Player(HUMAN, start_stack));
       this->competitor.push_back(new Player(BOT, start_stack));
       competitor[i]->set_Pos(i);
@@ -631,6 +629,7 @@ bool				Board::next_Step()
       competitor[i]->set_Pushed(0);
       i++;
     }
+  i = 0;
 }
 
 int				Board::get_Step()
