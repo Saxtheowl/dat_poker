@@ -1,0 +1,690 @@
+    1  google-chrome 2>/dev/null &
+    2  cd work/cp_work_epi2/
+    3  ls
+    4  cd git_temp/
+    5  ls
+    6  rm -rf git_temp_t2/
+    7  ls
+    8  cd git_temp_t3/
+    9  git init
+   10  rm -rf .git/
+   11  git init
+   12  git add *
+   13  git commit -m "test"
+   14  ls
+   15  git push
+   16  git push school_project
+   17  git remote add school_project https://github.com/Saxtheowl/school_project.git
+   18  git push -u school_project master
+   19  cd ..
+   20  ls
+   21  cd git_temp_t3/
+   22  ls
+   23  rm *
+   24  rm -rf *
+   25  ls
+   26  ls -a
+   27  rm -rf .git/
+   28  ls
+   29  cd ..
+   30  mkdir intel4004
+   31  cd intel4004/
+   32  git clone https://github.com/CodeAbbey/intel4004-emu.git
+   33  ls
+   34  ls intel4004-emu/
+   35  python
+   36  cat intel4004-emu/main.py 
+   37  ne intel4004-emu/main.py 
+   38  python main.py examples/test.asm
+   39  ls
+   40  cd intel4004-emu/
+   41  python main.py examples/test.asm
+   42  google-chrome 2>/dev/null &
+   43  ne ~/.gitconfig 
+   44  cd ../..
+   45  ls
+   46  git clone https://github.com/Saxtheowl/TerminalIDE.git
+   47  ls
+   48  cd ..
+   49  mv git_temp git
+   50  cd git
+   51  ls
+   52  mkdr school_project
+   53  mkdir school_project
+   54  mv blackjack_t25/ school_project/
+   55  ls
+   56  cd school_project/
+   57  ls
+   58  cd ..
+   59  ls
+   60  ls git_temp_t3/
+   61  cd ..
+   62  ls
+   63  cd web/
+   64  ls
+   65  tree
+   66  ls 1
+   67  cd ..
+   68  ls
+   69  cd git
+   70  ls
+   71  cd git_temp_t3/
+   72  ls
+   73  cd ..
+   74  ls
+   75  find . | xargs grep "emmanuel"
+   76  ls
+   77  cd ..
+   78  ls
+   79  cd ~
+   80  ls
+   81  cd SRc
+   82  cd SRC
+   83  ls
+   84  ne emacs/.myemacs 
+   85  cd ..
+   86  find -name "git"
+   87  cat core 
+   88  ls
+   89  cat moul_malloc_stud 
+   90  ls
+   91  cat moul_malloc_stud 
+   92  ls
+   93  cd work/cp_work_epi_temp/
+   94  ls
+   95  cd ..
+   96  find . -name "minishell"
+   97  find . -name "xwiki"
+   98  find . -name "shell"
+   99  cd work/cp_work_epi2
+  100  ls
+  101  cd git/
+  102  ls
+  103  cd school_project/
+  104  ls
+  105  cd ..
+  106  tar -xzvf xwiki_temp.tar.gz 
+  107  ls
+  108  cd xwiki_temp/
+  109  ls
+  110  cd ..
+  111  cd blackjack
+  112  cd ..
+  113  cd xwiki_temp/
+  114  ls
+  115  find . | xargs grep "emmanuel"
+  116  cd ..
+  117  ls
+  118  ne a.c
+  119  ne b.c
+  120  cd test
+  121  ls
+  122  ne a.c
+  123  ne b.c
+  124  cd ..
+  125  ./a.out 
+  126  ./a.out a
+  127  ne a.out 
+  128  ls
+  129  cd git/
+  130  ls
+  131  find . | xargs grep "emmanuel"
+  132  cd bomberman/
+  133  find . | xargs grep "emmanuel"
+  134  ls
+  135  make
+  136  make re
+  137  make && ./bomber 
+  138  ls
+  139  ne Makefile 
+  140  cd ..
+  141  ls
+  142  cd bomberman/
+  143  ls
+  144  make clean
+  145  ne Makefile 
+  146  make
+  147  cd src_bomber/
+  148  ls
+  149  clean
+  150  ls
+  151  cd ..
+  152  make clean
+  153  cd src_bomber/
+  154  ls
+  155  rm a.out 
+  156  cd ..
+  157  ls
+  158  cd inc
+  159  cd inc_bomber/
+  160  ls
+  161  clean
+  162  ls
+  163  cd ..
+  164  ls
+  165  make fclean
+  166  clean
+  167  ls
+  168  make
+  169  make fclean
+  170  make clean
+  171  cd ..
+  172  ls
+  173  cp -r bomberman/ school_project/
+  174  cd git_temp_t3/
+  175  ls
+  176  cd ..
+  177  rm -r git_temp_t3/
+  178  ls
+  179  cd school_project/
+  180  ls
+  181  mv blackjack_t25/ blackjack_t25/
+  182  mv blackjack_t25/ blackjack
+  183  ls
+  184  cd blackjack/
+  185  ls
+  186  clean
+  187  ls
+  188  rm \#buffer# 
+  189  ls
+  190  make
+  191  make clean
+  192  clean
+  193  cd sources/
+  194  clean
+  195  ls
+  196  ne ask.c 
+  197  ne blackjack.c 
+  198  ne calc_card.c 
+  199  ne core.c 
+  200  ne dealer.c 
+  201  ne init.c 
+  202  ne mk_cards.c 
+  203  ne moar_card.c 
+  204  ne print2.c 
+  205  ne print.c 
+  206  ne random.c 
+  207  ne read_entry.c 
+  208  ne result.c 
+  209  ne special.c 
+  210  ne split.c 
+  211  ne state.c 
+  212  cd ..
+  213  ls
+  214  make
+  215  ne old_func/
+  216  make clean
+  217  cd old_func/
+  218  ls
+  219  ne is_even.c 
+  220  ne my_getnbr.c 
+  221  ne my_putchar.c 
+  222  ne my_putnbr.c 
+  223  clean
+  224  ls
+  225  ne my_putstr.c 
+  226  ne my_strcat.c 
+  227  ne my_strcmp.c 
+  228  ne my_strcpy.c 
+  229  ne my_strdup.c 
+  230  ne my_strlen.c 
+  231  clean
+  232  ls
+  233  cd ..
+  234  ls
+  235  ne main.c 
+  236  ne Makefile 
+  237  clean
+  238  ls
+  239  rm buffer
+  240  ne my.h 
+  241  ne my_list.h 
+  242  ls
+  243  clean
+  244  cd sources/
+  245  ls
+  246  clean
+  247  cd ..
+  248  ls
+  249  make re
+  250  make && ./blackjack 
+  251  ls
+  252  make fclean
+  253  make clean
+  254  ls
+  255  cd ..
+  256  ls
+  257  find . | xargs grep "emmanuel"
+  258  ne blackjack/old_func/xfunc.c 
+  259  ne blackjack/old_func/put_zero.c 
+  260  find . | xargs grep "emmanuel"
+  261  cd blackjack/
+  262  cd old_func/
+  263  ls
+  264  clean
+  265  cd ../..
+  266  find . | xargs grep "emmanuel"
+  267  cd ..
+  268  ls
+  269  cd ..
+  270  ls
+  271  cd 42sh/42sh_gosset_e_t3/
+  272  ls
+  273  make && ./42sh 
+  274  ls
+  275  make clean
+  276  make fclean
+  277  clean
+  278  ls
+  279  tree
+  280  make && ./42sh
+  281  ls
+  282  make && ./42sh
+  283  ls
+  284  make clean
+  285  make fclean
+  286  ls
+  287  cd ..
+  288  ls
+  289  cp 42sh_gosset_e_t3/ ../git/school_project/.
+  290  cp -r 42sh_gosset_e_t3/ ../git/school_project/.
+  291  cd  ../git/school_project/.
+  292  ls
+  293  mv 42sh_gosset_e_t3/ minishell
+  294  ls
+  295  cd minishell/
+  296  ls
+  297  ne main.c 
+  298  ne Makefile 
+  299  ne my_list.h 
+  300  ne no_delete.c 
+  301  ne builtin_func/my_cd
+  302  ne builtin_func/my_cd.c
+  303  ne builtin_func/my_echo.c
+  304  ne env_func/exec_env_func.c 
+  305  ne env_func/make_env.c
+  306  ne env_func/my_setenv.c
+  307  ne env_func/my_unsetenv.c
+  308  ne env_func/trans_list_to_dbtab.c 
+  309  ls
+  310  ne old_func/list_func.c
+  311  ne old_func/my_putstr.c
+  312  ne old_func/str_to_wordtab.c
+  313  ne old_func/xfunc.c
+  314  ne sources/exec_bin.c
+  315  ne sources/my_exit.c
+  316  ne sources/print_not_found.c 
+  317  ne sources/read_entry.c 
+  318  ne sources/run_shell.c
+  319  ne sources/test_empty_cmds.c 
+  320  clean *
+  321  ls
+  322  clean */*
+  323  ls
+  324  find . | xargs grep "emmanuel"
+  325  ls
+  326  cd builtin_func/
+  327  clean
+  328  cd ..
+  329  ls
+  330  cd env_func/
+  331  clean
+  332  cd ..
+  333  cd old_func/
+  334  clean
+  335  cd ..
+  336  cd sources/
+  337  clean
+  338  cd ..
+  339  find . | xargs grep "emmanuel"
+  340  ne my.h 
+  341  make
+  342  make && ./42sh 
+  343  ls
+  344  make clean
+  345  make fclean
+  346  ls
+  347  clean
+  348  ls
+  349  tree
+  350  cd ..
+  351  ls
+  352  ls -a
+  353  ls
+  354  tree
+  355  tree > buffer && ne buffer
+  356  ls
+  357  git config
+  358  git config --global
+  359  git config -global
+  360  git --global
+  361  git --version
+  362  git -C
+  363  git --C
+  364  git show branche
+  365  git show branch
+  366  git branch
+  367  git status
+  368  git init
+  369  git add .
+  370  git commit -m "test"
+  371  git push
+  372  git push .
+  373  ls
+  374  ne buffer
+  375  rm buffer
+  376  git add *
+  377  git add .
+  378  ls
+  379  git commit
+  380  git pull origin
+  381  git pull master
+  382  git remote
+  383  git branch
+  384  git remote maste
+  385  git remote master
+  386  git remote add origin https://github.com/Saxtheowl/school_project
+  387  git push origin
+  388  cd ..
+  389  cp -r school_project/ school_project_t2
+  390  cd school_project
+  391  git pull origin
+  392  ls
+  393  git pull origin master
+  394  ls
+  395  git pull
+  396  git pull origin master
+  397  git add .
+  398  git add -a .
+  399  git add -A .
+  400  git pull
+  401  git pull origin master
+  402  git commit
+  403  git add .
+  404  git commit -m "ok"
+  405  git pull origin master
+  406  ls
+  407  git push origin master
+  408  git commit -m "end"
+  409  git rm *
+  410  git rm -r *
+  411  ls
+  412  git fetch
+  413  ls
+  414  git pull origin master
+  415  ls
+  416  git clone https://github.com/Saxtheowl/school_project
+  417  ls
+  418  rm -r school_project/
+  419  rm -rf school_project/
+  420  ls
+  421  git clone https://github.com/Saxtheowl/school_project/*
+  422  git clone https://github.com/Saxtheowl/school_project/
+  423  cp -r school_project/* .
+  424  ls
+  425  rm school_project/
+  426  rm -rschool_project/
+  427  rm -r school_project/
+  428  rm -rf school_project/
+  429  ls
+  430  git commit -m "end"
+  431  git push origin master
+  432  ls
+  433  git add .
+  434  git push origin master
+  435  git add .
+  436  git push origin master
+  437  git push -f origin master
+  438  history
+  439  history | less
+  440  git add -a
+  441  git add -A
+  442  git push origin master
+  443  git commit -m "ok"
+  444  git push -m "ok"
+  445  git push origin master
+  446  l
+  447  ls
+  448  cd ..
+  449  ls
+  450  cp -r ~/work/cp_work_epi2/dat_poker/proj_t43/ .
+  451  ls
+  452  cp -r school_project_git ~/work.
+  453  cp -r school_project ~/work/school_project_git
+  454  ls
+  455  rm -r bomberman/
+  456  rm -r school_project_t2/
+  457  rm -rf school_project_t2/
+  458  ls
+  459  mv proj_t43/ dat_poker
+  460  ls
+  461  cd dat_poker/
+  462  ls
+  463  make clean
+  464  make fclean
+  465  git init
+  466  history
+  467  history > buffer && ne buffer
+  468  git init
+  469  git add README.md
+  470  echo "# dat_poker" > README.md
+  471  ne README.md 
+  472  echo "# dat_poker" >> README.md
+  473  ne README.md 
+  474  rm README.md 
+  475  echo "# dat_poker" >> README.md
+  476  ls
+  477  rm a
+  478  rm a.out
+  479  ls
+  480  rm buffer
+  481  ls
+  482  git commit -m "first commit"
+  483  git remote add origin origin https://github.com/Saxtheowl/dat_poker.git
+  484  git remote add origin https://github.com/Saxtheowl/dat_poker.git
+  485  git push -u origin master
+  486  git add README.md 
+  487  git commit -m "test"
+  488  git remote add origin https://github.com/Saxtheowl/dat_poker.git
+  489  git push -u origin master
+  490  git add .
+  491  git push -u origin master
+  492  git commit -A -m "ok2"
+  493  git commit -Am "ok" . 
+  494  git commit -A . -m "ok2"
+  495  git commit -A .
+  496  history
+  497  git commit -m "ok2"
+  498  git push -A
+  499  git push origin master
+  500  ll
+  501  make && ./po
+  502  make && ./poker 
+  503  ls
+  504  cd ..
+  505  ls
+  506  cp -r dat_poker/ dat_poker_t2
+  507  cd dat_poker_t2/
+  508  ls
+  509  cd ..
+  510  cd dat_poker_t2/
+  511  ls
+  512  git init
+  513  ls
+  514  ne src_poker/GameMain.cpp
+  515  make && ./poker 
+  516  ne src_poker/Board.cpp
+  517  ne src_poker/dat_Output.cpp
+  518  make && ./poker 
+  519  ne src_poker/dat_Output.cpp
+  520  make && ./poker 
+  521  ne src_poker/bot_Ai.cpp
+  522  make
+  523  ne src_poker/bot_Ai.cpp
+  524  make
+  525  ne src_poker/bot_Ai.cpp
+  526  make
+  527  make && ./poker 
+  528  ne src_poker/bot_Ai.cpp
+  529  make && ./poker 
+  530  ne src_poker/bot_Ai.cpp
+  531  make && ./poker 
+  532  ne src_poker/Board.cpp
+  533  make && ./poker 
+  534  ne src_poker/Board.cpp
+  535  make && ./poker 
+  536  ne src_poker/Board.cpp
+  537  ne src_poker/bot_Ai.cpp
+  538  make && ./poker 
+  539  ne src_poker/bot_Ai.cpp
+  540  make && ./poker 
+  541  ne src_poker/bot_Ai.cpp
+  542  make && ./poker 
+  543  make re
+  544  ne src_poker/Board.cpp inc_poker/Board.hh
+  545  make
+  546  ne src_poker/bot_Ai.cpp
+  547  make
+  548  ne src_poker/bot_Ai.cpp
+  549  make
+  550  make && ./poker 
+  551  ne src_poker/bot_Ai.cpp
+  552  make
+  553  make re
+  554  make && ./poker 
+  555  ne src_poker/bot_Ai.cpp
+  556  make && ./poker 
+  557  ne src_poker/bot_Ai.cpp
+  558  make && ./poker 
+  559  cd ..
+  560  cp -r dat_poker_t2/ dat_poker_t3
+  561  cd dat_poker_t3
+  562  ls
+  563  ne src_poker/Board.cpp
+  564  ne src_poker/GameMain.cpp src_poker/Board.cpp
+  565  make
+  566  make && ./poker 
+  567  ne src_poker/bot_Ai.cpp
+  568  make && ./poker 
+  569  ne src_poker/bot_Ai.cpp
+  570  make && ./poker 
+  571  ne src_poker/Human.cpp
+  572  ne src_poker/Human.cpp src_poker/dat_Output.cpp
+  573  make && ./poker 
+  574  ne src_poker/Human.cpp src_poker/bot_Ai.cpp
+  575  ne src_poker/Human.cpp src_poker/Board.cpp
+  576  make && ./poker 
+  577  ne src_poker/Human.cpp src_poker/Board.cpp
+  578  make
+  579  ne src_poker/Human.cpp src_poker/Board.cpp
+  580  make
+  581  make && ./poker 
+  582  make
+  583  6
+  584  make && ./poker 
+  585  ne src_poker/Human.cpp src_poker/Board.cpp
+  586  make
+  587  make re
+  588  ne src_poker/Board.cpp inc_poker/Board.hh
+  589  make
+  590  make && ./poker 
+  591  ne src_poker/bot_Ai.cpp
+  592  make
+  593  ne src_poker/bot_Ai.cpp
+  594  make && ./poker 
+  595  ne src_poker/bot_Ai.cpp
+  596  make && ./poker 
+  597  ne src_poker/bot_Ai.cpp
+  598  ne src_poker/bot_Ai.cpp src_poker/Board.cpp
+  599  ne src_poker/bot_Ai.cpp
+  600  make && ./poker 
+  601  cd ..
+  602  cp -r dat_poker_t3 dat_poker_t4
+  603  cd dat_poker
+  604  ls
+  605  ls -a
+  606  rm *
+  607  rm -rf *
+  608  ls
+  609  ls -a
+  610  cp -r ../dat_poker/* .
+  611  cp -r ../dat_poker_t3/ .
+  612  ls
+  613  rm -rf dat_poker_t3/
+  614  cp -r ../dat_poker_t3/* .
+  615  ls
+  616  git add *
+  617  git commit -m "ok"
+  618  git push
+  619  ls
+  620  rm -rf *
+  621  ls
+  622  git clone .git/
+  623  git clone https://github.com/Saxtheowl/dat_poker
+  624  ls
+  625  rm -rf dat_poker/
+  626  git clone https://github.com/Saxtheowl/dat_poker/* .
+  627  git clone https://github.com/Saxtheowl/dat_poker . && cp -rf dat_poker/* .
+  628  git clone https://github.com/Saxtheowl/dat_poker && cp -rf dat_poker/* .
+  629  ls
+  630  git clone https://github.com/Saxtheowl/dat_poker && cp -rf dat_poker/* . && rm -rf dat_poker
+  631  git clone https://github.com/Saxtheowl/dat_poker && cp -rf dat_poker/* .
+  632  rm -rf dat_poker/
+  633  git clone https://github.com/Saxtheowl/dat_poker && cp -rf dat_poker/* . && rm -rf dat_poker
+  634  ls
+  635  make && ./poker 
+  636  ne src_poker/Board.cpp
+  637  git commit -m "ok"
+  638  make clean
+  639  make fclean
+  640  git commit -m "ok"
+  641  ne src_poker/Board.cpp
+  642  git commit -m "ok"
+  643  git push
+  644  git status
+  645  git rm *.o
+  646  git push
+  647  git add src_poker/Board.cpp 
+  648  git push
+  649  git status
+  650  git reset HEAD
+  651  ls
+  652  git status
+  653  git commit -a
+  654  git commit -a -m "ok"
+  655  git push
+  656  make && ./po
+  657  make && ./poker
+  658  tty
+  659  ne /dev/pts/1
+  660  cat /dev/pts/1
+  661  ll
+  662  man uname
+  663  uname
+  664  uname -a
+  665  ls
+  666  ne src_poker/Board.cpp
+  667  make && ./poker 
+  668  ls
+  669  make && ./poker 
+  670  ne src_poker/bot_Ai.cpp
+  671  make
+  672  ne src_poker/bot_Ai.cpp
+  673  make
+  674  ne src_poker/bot_Ai.cpp
+  675  make
+  676  ne src_poker/bot_Ai.cpp
+  677  make
+  678  make && ./poker 
+  679  ne src_poker/bot_Ai.cpp
+  680  make && ./poker 
+  681  ne src_poker/dat_Output.cpp
+  682  ne src_poker/Board.cpp
+  683  ls
+  684  ne src_poker/Board.cpp
+  685  make clean
+  686  make fclean
+  687  git commit -m "ok"
+  688  git push
+  689  history
+  690  history > buffer && ne buffer
