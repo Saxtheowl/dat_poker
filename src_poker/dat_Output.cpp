@@ -355,6 +355,12 @@ void		dat_Output::put_Pot(int	pot)
 
 void		dat_Output::clean_Pot()
 {
+  map[6][43] = ' ';
+  map[6][44] = ' ';
+  map[6][45] = ' ';
+  map[6][46] = ' ';
+  map[6][47] = ' ';
+
 }
 
 // 100000

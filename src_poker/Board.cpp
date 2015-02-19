@@ -403,6 +403,7 @@ bool		Board::new_Round()
   idx_card = 0;
   set_Blind(10);
   this->biggest_raise = get_Blind();
+  reset_Round();
   if(flag_first_round == true)
     {
       //      competitor[4]->set_Stack(competitor[4]->get_Stack() - 50);
@@ -498,41 +499,6 @@ void				Board::put_Headsup_Blind()
   competitor[i]->set_Pushed(competitor[i]->get_Pushed() + blind / 2);
   competitor[i]->set_Stack(competitor[i]->get_Stack() - blind / 2);
 }
-/*
-bool				Board::run_Round()
-{
-  int				i;
-  int				f;
-  //  int				raise;
-  int				has_played;
-
-  //  refresh_Alive();
-  //  refresh_Standin();
-  f = 0;
-  has_played = 0;
-  i = current_player;
-  while(has_played < (this->standin_players))
-    {
-      if(competitor[i]->get_Pushed() > 0)
-	this->biggest_raise = competitor[i]->get_Pushed();
-      if(competitor[i]->get_Pushed() <= this->biggest_raise && competitor[i]->get_Played() == true)
-	{
-	  std::cout << "biggest raise = " << this->biggest_raise << std::endl;
-	  has_played++;
-	}
-      else
-	{
-	  this->biggest_raise = competitor[i]->get_Pushed();
-	  has_played = 0;
-	}
-      i = get_Next_Standin(i);
-      f++;
-      if(f == this->standin_players && has_played < this->standin_players)
-	return(false);
-    }
-  return(true);
-}
-*/
 
 bool				Board::run_Round() // ugly
 {
@@ -555,7 +521,7 @@ bool				Board::run_Round() // ugly
 	{
 	  for(int g = 0; g < 6; g++)
 	    competitor[g]->set_Played(false);
-	  //	  this->biggest_raise = competitor[i]->get_Pushed();
+	  this->biggest_raise = competitor[i]->get_Pushed(); // useless ?
 	  competitor[i]->set_Played(true);
 	  has_played = 0;
 	}
@@ -623,6 +589,8 @@ bool				Board::next_Step()
   i = 0;
   step++;
   std::cout << " next step OK " << std::endl;
+  set_Biggest_Raise(0);
+  current_player = get_Next_Alive(button_pos);
   while(i < 6)// && competitor[i]->get_Standin() == true)
     {
       competitor[i]->set_Played(false);
@@ -652,4 +620,13 @@ void				Board::dat_Refresh()
   refresh_Alive();
   refresh_Standin();
   refresh_Pot();
+}
+
+void				Board::reset_Round()
+{
+  for(int i = 0; i < 6; i++)
+    {
+      if(competitor[i]->get_Stack() > 0)
+	competitor[i]->set_Standin(true);
+    }
 }

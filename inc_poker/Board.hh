@@ -68,6 +68,7 @@ public:
   void		set_Biggest_Raise(int raise);
   int		get_Biggest_Raise();
   void		dat_Refresh();
+  void		reset_Round();
 private:
   std::vector <Player*> competitor;
   std::vector <Card*> deck;
