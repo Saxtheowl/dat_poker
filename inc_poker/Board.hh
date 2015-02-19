@@ -65,6 +65,9 @@ public:
   void		fulfill_Board();
   std::vector <int> get_Board_Cards();
   int		get_Step();
+  void		set_Biggest_Raise(int raise);
+  int		get_Biggest_Raise();
+  void		dat_Refresh();
 private:
   std::vector <Player*> competitor;
   std::vector <Card*> deck;
@@ -90,6 +93,7 @@ private:
   int		current_player;
   int		button_pos;
   int		step;
+  int		biggest_raise;
 };
 
 #endif

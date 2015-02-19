@@ -99,7 +99,8 @@ void		GameMain::launch_Game()
 	}
       elapsed++;
       //      dat_output->second_Update(board);
-      board->refresh_Pot();
+      //      board->refresh_Pot();
+      board->dat_Refresh();
       dat_output->print_All(board, 1);
       std::cin >> key;
     }
