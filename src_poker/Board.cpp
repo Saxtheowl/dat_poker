@@ -296,10 +296,11 @@ void		Board::refresh_Alive()
     }
   //  alive_players--;
 }
-/*
+
 void		Board::refresh_Standin()
 {
   int		i;
+  int		last;
 
   i = 0;
   this->standin_players = 0;
@@ -308,33 +309,16 @@ void		Board::refresh_Standin()
       if(competitor[i]->get_Standin() == true)
 	{
 	  this->standin_players++;
-	  //	  competitor[i]->set_Alive(true);
+	  last = i;
 	}
-            else
-	{
-	  //	  alive_players--;
-	  competitor[i]->set_Alive(false);
-	  }
       i++;
     }
-  //  alive_players--;
-}
-*/
-
-void		Board::refresh_Standin()
-{
-  int		i;
-
-  i = 0;
-  this->standin_players = 0;
-  while(i < 6)
+  if(this->standin_players == 1)
     {
-      if(competitor[i]->get_Standin() == true)
-	{
-	  this->standin_players++;
-	}
-      i++;
+      competitor[last]->set_Stack(competitor[i]->get_Stack() + this->pot);
+      this->pot = 0;
     }
+    
 }
 
 
@@ -356,6 +340,7 @@ void		Board::refresh_Pot()
       this->pot = this->pot + competitor[i]->get_Pushed();
       i++;
     }
+  pot = pot + old_pot;
 }
 
 int		Board::get_Pot()
@@ -556,12 +541,14 @@ int				Board::start_Round(int elapsed)//std::vector <bot_Ai*> bot_ai)
       else
 	return(1);
     }
-  else
+  else if(step < 3)
   {
     this->old_pot = pot;
     //    step = 1;
     next_Step();
   }
+  else
+    Resolve();
   /*  refresh_Alive();
   refresh_Standin();
   refresh_Pot();  */
@@ -589,6 +576,7 @@ bool				Board::next_Step()
   i = 0;
   step++;
   std::cout << " next step OK " << std::endl;
+  old_pot = pot;
   set_Biggest_Raise(0);
   current_player = get_Next_Alive(button_pos);
   while(i < 6)// && competitor[i]->get_Standin() == true)
@@ -629,4 +617,11 @@ void				Board::reset_Round()
       if(competitor[i]->get_Stack() > 0)
 	competitor[i]->set_Standin(true);
     }
+  this->old_pot = 0;
+}
+
+void				Board::Resolve()
+{
+  std::cout << " resolve start " << std::endl;
+  this->standin_players = 0;
 }
