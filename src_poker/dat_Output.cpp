@@ -16,15 +16,15 @@ void		dat_Output::print_All(Board *board, int flag)
 
   x = 0;
   y = 0;
-  if(flag == 1)
+  if (flag == 1)
     {
       first_Update(board);
       second_Update(board);
       update_Card_Board(board);
     }
-  while(x < this->x_board)
+  while (x < this->x_board)
     {
-      while(y < this->y_board)
+      while (y < this->y_board)
 	{
 	  std::cout << this->map[x][y];
 	  y++;
@@ -105,14 +105,14 @@ void		dat_Output::fill_Corner()
   int		i;
 
   i = 0;
-  while(i < this->y_board)
+  while (i < this->y_board)
     {
       map[0][i] = 'X';
       map[25][i] = 'X';
       i++;
     }
   i = 0;
-  while(i < this->x_board)
+  while (i < this->x_board)
     {
       map[i][0] = 'X';
       map[i][94] = 'X';
@@ -135,20 +135,20 @@ char		dat_Output::get_Rank_Symbol(int card_value)
   char		c;
   
   c = 0;
-  if(card_value < 12)
+  if (card_value < 12)
     c = 'a';
-  else  if(card_value < 25)
+  else  if (card_value < 25)
     c = 'b';
-  else  if(card_value < 38)
+  else  if (card_value < 38)
     c = 'c';
-  else  if(card_value < 52)
+  else  if (card_value < 52)
     c = 'd';
-  return(c);
+  return (c);
 }
 
 void		dat_Output::put_Card_Rank(int card_pos_x, int card_pos_y, char first_card_rank, char second_card_rank, int pos)
 {
-  if(pos < 3)
+  if (pos < 3)
     {
       map[card_pos_x + 1][card_pos_y + 2] = first_card_rank;
       map[card_pos_x + 1][card_pos_y + 8] = second_card_rank;
@@ -166,82 +166,77 @@ void		dat_Output::put_Cards(int card_pos_x, int card_pos_y, int first_card_value
 {
   char		c;
 
-  //  std::cout << "player " << pos << " slot 0 " << first_card_value << std::endl;
-  //  std::cout << "player " << pos << " slot 1 " << second_card_value << std::endl;
-  //  if(pos == 0)
-  //    {
-      if(pos < 3)
+  if (pos < 3)
+    {
+      if (first_card_value >= 9)
 	{
-	  if(first_card_value >= 9)
-	    {
-	      c = (first_card_value - 9) + '0';
-	      map[card_pos_x + 1][card_pos_y] = '1';
-	      map[card_pos_x + 1][card_pos_y + 1] = c;
-	      c = (first_card_value - 9) + '0';
-	    }
-	  else
-	    {
-	      c = (first_card_value + 1) + '0';
-	      map[card_pos_x + 1][card_pos_y] = '0';
-	      map[card_pos_x + 1][card_pos_y + 1] = c;
-	    }
-	  if(second_card_value >= 9)
-	    {
-	      c = (second_card_value - 9) + '0';
-	      map[card_pos_x + 1][card_pos_y + 6] = '1';
-	      map[card_pos_x + 1][card_pos_y + 7] = c;
-	      c = (second_card_value - 9) + '0';
-	    }
-	  else
-	    {
-	      c = (second_card_value + 1) + '0';
-	      map[card_pos_x + 1][card_pos_y + 6] = '0';
-	      map[card_pos_x + 1][card_pos_y + 7] = c;
-	    }
+	  c = (first_card_value - 9) + '0';
+	  map[card_pos_x + 1][card_pos_y] = '1';
+	  map[card_pos_x + 1][card_pos_y + 1] = c;
+	  c = (first_card_value - 9) + '0';
 	}
-      else 
+      else
 	{
-	  if(first_card_value >= 9)
-	    {
-	      c = (first_card_value - 9) + '0';
-	      map[card_pos_x + 1][card_pos_y] = '1';
-	      map[card_pos_x + 1][card_pos_y + 1] = c;
-	      c = (first_card_value - 9) + '0';
-	    }
-	  else
-	    {
-	      c = (first_card_value + 1) + '0';
-	      map[card_pos_x + 1][card_pos_y] = '0';
-	      map[card_pos_x + 1][card_pos_y + 1] = c;
-	    }
-	  if(second_card_value >= 9)
-	    {
-	      c = (second_card_value - 9) + '0';
-	      map[card_pos_x + 1][card_pos_y - 6] = '1';
-	      map[card_pos_x + 1][card_pos_y - 5] = c;
-	      c = (second_card_value - 9) + '0';
-	    }
-	  else
-	    {
-	      c = (second_card_value + 1) + '0';
-	      map[card_pos_x + 1][card_pos_y - 6] = '0';
-	      map[card_pos_x + 1][card_pos_y - 5] = c;
-	    }
+	  c = (first_card_value + 1) + '0';
+	  map[card_pos_x + 1][card_pos_y] = '0';
+	  map[card_pos_x + 1][card_pos_y + 1] = c;
 	}
-      //    }
+      if (second_card_value >= 9)
+	{
+	  c = (second_card_value - 9) + '0';
+	  map[card_pos_x + 1][card_pos_y + 6] = '1';
+	  map[card_pos_x + 1][card_pos_y + 7] = c;
+	  c = (second_card_value - 9) + '0';
+	}
+      else
+	{
+	  c = (second_card_value + 1) + '0';
+	  map[card_pos_x + 1][card_pos_y + 6] = '0';
+	  map[card_pos_x + 1][card_pos_y + 7] = c;
+	}
+    }
+  else 
+    {
+      if (first_card_value >= 9)
+	{
+	  c = (first_card_value - 9) + '0';
+	  map[card_pos_x + 1][card_pos_y] = '1';
+	  map[card_pos_x + 1][card_pos_y + 1] = c;
+	  c = (first_card_value - 9) + '0';
+	}
+      else
+	{
+	  c = (first_card_value + 1) + '0';
+	  map[card_pos_x + 1][card_pos_y] = '0';
+	  map[card_pos_x + 1][card_pos_y + 1] = c;
+	}
+      if (second_card_value >= 9)
+	{
+	  c = (second_card_value - 9) + '0';
+	  map[card_pos_x + 1][card_pos_y - 6] = '1';
+	  map[card_pos_x + 1][card_pos_y - 5] = c;
+	  c = (second_card_value - 9) + '0';
+	}
+      else
+	{
+	  c = (second_card_value + 1) + '0';
+	  map[card_pos_x + 1][card_pos_y - 6] = '0';
+	  map[card_pos_x + 1][card_pos_y - 5] = c;
+	}
+    }
 }
 
 void		dat_Output::put_Button(bool ok, int pos_p_x, int pos_p_y, int pos)
 {
-  if(pos < 3)
+  if (pos < 3)
     {
-      if(ok == true)
+      if (ok == true)
 	map[pos_p_x][pos_p_y + 3] = 'B';
       else
 	map[pos_p_x][pos_p_y + 3] = ' ';
     }
   else
-    if(ok == true)
+    if (ok == true)
       map[pos_p_x][pos_p_y - 1] = 'B';
     else
       map[pos_p_x][pos_p_y - 1] = ' ';
@@ -255,7 +250,7 @@ int		dat_Output::clean_Chips(int pos_p_x, int pos_p_y, int pos, int flag)
   int		j;
   
   j = 0;
-  if(pos < 3 && flag == 0)
+  if (pos < 3 && flag == 0)
     {
       i = -1;
       y = 2;
@@ -265,17 +260,17 @@ int		dat_Output::clean_Chips(int pos_p_x, int pos_p_y, int pos, int flag)
       i = -3;
       y = 2;
     }
-  if(pos < 3 && flag == 1)
+  if (pos < 3 && flag == 1)
     {
       y = 1;
       i = 11;
     }
-  else if(flag == 1)
+  else if (flag == 1)
     {
       y = 1;
       i = -16;
     }
-  while(j < 8)
+  while (j < 8)
     {
       map[pos_p_x + y][pos_p_y + i + j] = ' ';
       j++;
@@ -293,7 +288,7 @@ void		dat_Output::put_Chips(int chips, int pos_p_x, int pos_p_y, int pos, int fl
   //  std::cout << "chips = " << chips << std::endl;
   power = 1;
   save_nb = chips;
-  if(pos < 3 && flag == 0)
+  if (pos < 3 && flag == 0)
     {
       i = -1;
       y = 2;
@@ -303,22 +298,22 @@ void		dat_Output::put_Chips(int chips, int pos_p_x, int pos_p_y, int pos, int fl
       i = -3;
       y = 2;
     }
-  if(pos < 3 && flag == 1)
+  if (pos < 3 && flag == 1)
     {
       y = 1;
       i = 11;
     }
-  else if(flag == 1)
+  else if (flag == 1)
     {
       y = 1;
       i = -16;
     }
-  while(chips >= 10)
+  while (chips >= 10)
     {
       power = power * 10;
       chips = chips / 10;
     }
-  while(power > 0)
+  while (power > 0)
     {
       c = save_nb / power;
       save_nb = save_nb % power;
@@ -338,12 +333,12 @@ void		dat_Output::put_Pot(int	pot)
   i = 0;
   save_nb = pot;
   power = 1;
-  while(pot >= 10)
+  while (pot >= 10)
     {
       power = power * 10;
       pot = pot / 10;
     }
-  while(power > 0)
+  while (power > 0)
     {
       c = save_nb / power;
       save_nb = save_nb % power;
@@ -363,12 +358,9 @@ void		dat_Output::clean_Pot()
 
 }
 
-// 100000
-// 6
-
 void		dat_Output::put_Cards_Shadow(int card_pos_x, int card_pos_y, int pos)
 {
-  if(pos < 3)
+  if (pos < 3)
     {
       map[card_pos_x + 1][card_pos_y] = 'X';
       map[card_pos_x + 1][card_pos_y + 1] = 'X';
@@ -390,7 +382,7 @@ void		dat_Output::put_Cards_Shadow(int card_pos_x, int card_pos_y, int pos)
 
 void		dat_Output::clean_Cards_Shadow(int card_pos_x, int card_pos_y, int pos)
 {
-    if(pos < 3)
+    if (pos < 3)
     {
       map[card_pos_x + 1][card_pos_y] = ' ';
       map[card_pos_x + 1][card_pos_y + 1] = ' ';
@@ -413,24 +405,24 @@ void		dat_Output::clean_Cards_Shadow(int card_pos_x, int card_pos_y, int pos)
 void		dat_Output::update_Cards(Board *board, Player *player)
 {
   //    if(player->get_Pos() == 0)
-  if(1 + 1 == 2)
+  if (1 + 1 == 2)
       {
 	put_Cards(player->get_Pos_Map_X(), player->get_Pos_Map_Y(), board->get_Deck()[player->get_Index_Card(0)]->get_True_Nb(), board->get_Deck()[player->get_Index_Card(1)]->get_True_Nb(), player->get_Pos());
 	put_Card_Rank(player->get_Pos_Map_X(), player->get_Pos_Map_Y(), board->get_Deck()[player->get_Index_Card(0)]->get_Rank(), board->get_Deck()[player->get_Index_Card(1)]->get_Rank(), player->get_Pos());
       }
-    else if(player->get_Alive() == true && (player->get_Stack() > 0 || player->get_Pushed() > 0))
+    else if (player->get_Alive() == true && (player->get_Stack() > 0 || player->get_Pushed() > 0))
     put_Cards_Shadow(player->get_Pos_Map_X(), player->get_Pos_Map_Y(), player->get_Pos());
-  else if(player->get_Alive() == false)
+  else if (player->get_Alive() == false)
     clean_Cards_Shadow(player->get_Pos_Map_X(), player->get_Pos_Map_Y(), player->get_Pos());
-
+  
   put_Button(player->get_Button(), player->get_Pos_Map_X(), player->get_Pos_Map_Y(), player->get_Pos());
-
+  
   clean_Chips(player->get_Pos_Map_X(), player->get_Pos_Map_Y(), player->get_Pos(), 0);
-  if(player->get_Stack() > 0)
+  if (player->get_Stack() > 0)
     put_Chips(player->get_Stack(), player->get_Pos_Map_X(), player->get_Pos_Map_Y(), player->get_Pos(), 0);
-
+  
   clean_Chips(player->get_Pos_Map_X(), player->get_Pos_Map_Y(), player->get_Pos(), 1);
-  if(player->get_Pushed() > 0)
+  if (player->get_Pushed() > 0)
     put_Chips(player->get_Pushed(), player->get_Pos_Map_X(), player->get_Pos_Map_Y(), player->get_Pos(), 1);
   put_Pot(board->get_Pot());
   clean_Pot();
@@ -441,7 +433,7 @@ void		dat_Output::first_Update(Board *board)
   int		i;
 
   i = 0;
-  while(i < 6)
+  while (i < 6)
     {
       //      if(board->get_Competitors()[i]->get_Button() == true)
       //	std::cout << " player " << i << " has button " << std::endl;
@@ -463,9 +455,9 @@ void		dat_Output::second_Update(Board *board)
   int		i;
 
   i = 0;
-  while(i < 6)
+  while (i < 6)
     {
-      if(board->get_Competitors()[i]->get_Standin() == false)
+      if (board->get_Competitors()[i]->get_Standin() == false)
 	clean_Cards_Shadow(board->get_Competitors()[i]->get_Pos_Map_X(), board->get_Competitors()[i]->get_Pos_Map_Y(), board->get_Competitors()[i]->get_Pos());
       put_Pot(board->get_Pot());
       i++;
@@ -479,7 +471,7 @@ void		dat_Output::update_Card_Board(Board *board)
   //  std::cout << " ok 1 step = 1 " << std::endl;
   std::cout << " step =  " << board->get_Step() << std::endl;
   nb = 0;
-  if(board->get_Step() == 1)
+  if (board->get_Step() == 1)
     {
       print_Card_Board(34, board->get_Deck()[board->get_Board_Cards()[0]]->get_True_Nb());
       print_Rank_Card_Board(36, board->get_Deck()[board->get_Board_Cards()[0]]->get_Rank());
@@ -488,12 +480,12 @@ void		dat_Output::update_Card_Board(Board *board)
       print_Card_Board(46, board->get_Deck()[board->get_Board_Cards()[2]]->get_True_Nb());
       print_Rank_Card_Board(48, board->get_Deck()[board->get_Board_Cards()[2]]->get_Rank());
     }
-  else if(board->get_Step() == 2)
+  else if (board->get_Step() == 2)
     {
       print_Card_Board(52, board->get_Deck()[board->get_Board_Cards()[3]]->get_True_Nb());
       print_Rank_Card_Board(54, board->get_Deck()[board->get_Board_Cards()[3]]->get_Rank());
     }
-  else if(board->get_Step() == 3)
+  else if (board->get_Step() == 3)
     {
       print_Card_Board(58, board->get_Deck()[board->get_Board_Cards()[4]]->get_True_Nb());
       print_Rank_Card_Board(60, board->get_Deck()[board->get_Board_Cards()[4]]->get_Rank());
@@ -505,7 +497,7 @@ void		dat_Output::print_Card_Board(int card_pos_y, int card_value)
   char		c;
 
   std::cout << " ok 2 step = 1 " << std::endl;
-  if(card_value >= 9)
+  if (card_value >= 9)
     {
       c = (card_value - 9) + '0';
       map[14][card_pos_y] = '1';
@@ -533,9 +525,9 @@ void		dat_Output::clean_Card_Board(Board *board)
   j = 34;
   i = 0;
   f = 0;
-  while(i < 6)
+  while (i < 6)
     {
-      while(f < 3)
+      while (f < 3)
 	{
 	  map[14][34 + f + (i * 6)] = ' ';
 	  f++;

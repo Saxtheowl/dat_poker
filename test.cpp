@@ -16,11 +16,6 @@
 
 int		main()
 {
-  int		i = 11;
-  char		c;
-
-  i = i - 10;
-  c = i + '0';
-  std::cout << c << std::endl;
+  std::cout << KING << std::endl;
 }
 

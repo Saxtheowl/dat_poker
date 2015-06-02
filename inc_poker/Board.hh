@@ -24,7 +24,6 @@ public:
 
   void		init_nb_Player();
   void		init_position_map();
-  void		init_player_Stack();
   void		init_Mod();
   void		init_Board();
 
@@ -86,6 +85,7 @@ private:
 
   bool		flag_moved_button;
   bool		flag_first_round;
+  bool		end_round;
 
   int		blind;
   int		alive_players;

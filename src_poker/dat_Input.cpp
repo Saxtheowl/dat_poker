@@ -27,8 +27,8 @@ int		dat_Input::get_Input()
 
   std::cin >> str;
   to_ret = toInt(str);
-  if(to_ret > 0)
-    return(to_ret);
+  if (to_ret > 0)
+    return (to_ret);
   else
-    return(0);
+    return (0);
 }

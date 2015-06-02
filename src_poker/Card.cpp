@@ -24,32 +24,31 @@ void	Card::set_All(int nb)
     suit = DIAMOND;
   else
     suit = CLUB;
-  while(temp > 12)
+  while (temp > 12)
     temp = temp - 12;
   rank = temp;
 }
 
 int	Card::get_Nb()
 {
-  return(nb);
+  return (nb);
 }
 
 SUIT	Card::get_Suit()
 {
-  return(suit);
+  return (suit);
 }
 
 char	Card::get_Rank()
 {
-  if(this->nb < 12)
-    return('a');
-  else if(this->nb < 25)
-    return('b');
-  else if(this->nb < 38)
-    return('c');
-  else if(this->nb < 52)
-    return('d');
-  // ace 0 13 26 39
+  if (this->nb < 12)
+    return ('a');
+  else if (this->nb < 25)
+    return ('b');
+  else if (this->nb < 38)
+    return ('c');
+  else if (this->nb < 52)
+    return ('d');
 }
 
 void	Card::set_Is_Given()
@@ -59,7 +58,7 @@ void	Card::set_Is_Given()
 
 bool	Card::get_Is_Given()
 {
-  return(is_given);
+  return (is_given);
 }
 
 int	Card::get_True_Nb()
@@ -67,7 +66,7 @@ int	Card::get_True_Nb()
   int	temp;
   
   temp = this->nb;
-  while(temp > 12)
+  while (temp > 12)
     temp = temp - 13;
-  return(temp);
+  return (temp);
 }

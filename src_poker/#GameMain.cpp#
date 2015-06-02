@@ -92,7 +92,9 @@ void		GameMain::launch_Game()
 	{
 	  dat_output->print_Player_Choice(board);
 	  while (!human->play_Human(board, dat_input.get_Input()))
-	    dat_output->print_Player_Choice(board);
+	    {
+	      dat_output->print_Player_Choice(board);
+	    }
 	}
       else
 	{

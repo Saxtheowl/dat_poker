@@ -21,19 +21,19 @@ void	Player::set_Type_Pl(TYPE_PL type_pl)
 
 TYPE_PL Player::get_Type_Pl()
 {
-  return(this->type_pl);
+  return (this->type_pl);
 }
 
 void	Player::set_Stack(int stack)
 {
   this->stack = stack;
-  if(stack < 0)
+  if (stack < 0)
     this->stack = 0;
 }
 
 int	Player::get_Stack()
 {
-  return(this->stack);
+  return (this->stack);
 }
 
 void	Player::set_Pos(int nb)
@@ -54,12 +54,12 @@ void	Player::set_Pos_Map(int x, int y)
 
 int     Player::get_Pos_Map_X()
 {
-  return(pos_mapv[0]);
+  return (pos_mapv[0]);
 }
 
 int     Player::get_Pos_Map_Y()
 {
-  return(pos_mapv[1]);
+  return (pos_mapv[1]);
 }
 
 void	Player::set_Index_Card(int index, int nb)
@@ -69,7 +69,7 @@ void	Player::set_Index_Card(int index, int nb)
 
 int	Player::get_Index_Card(int nb)
 {
-  return(this->idx_p[nb]);
+  return (this->idx_p[nb]);
 }
 
 void	Player::set_Button(bool ok)
@@ -79,7 +79,7 @@ void	Player::set_Button(bool ok)
 
 bool	Player::get_Button()
 {
-  return(this->button);
+  return (this->button);
 }
 
 void	Player::set_Alive(bool ok)
@@ -89,22 +89,19 @@ void	Player::set_Alive(bool ok)
 
 bool	Player::get_Alive()
 {
-  return(this->alive);
+  return (this->alive);
 }
 
 void	Player::set_Pushed(int nb)
 {
-  /*  if(this->stack < nb)
-    nb = this->stack;
-    this->stack = this->stack - nb;*/
-  if(this->stack < nb)
+  if (this->stack < nb)
     nb = this->stack;
   this->pushed = nb;
 }
 
 int	Player::get_Pushed()
 {
-  return(this->pushed);
+  return (this->pushed);
 }
 
 void	Player::set_Standin(bool ok)
@@ -114,7 +111,7 @@ void	Player::set_Standin(bool ok)
 
 bool	Player::get_Standin()
 {
-  return(this->standin);
+  return (this->standin);
 }
 
 void	Player::set_Played(bool ok)
@@ -124,5 +121,5 @@ void	Player::set_Played(bool ok)
 
 bool	Player::get_Played()
 {
-  return(this->played);
+  return (this->played);
 }

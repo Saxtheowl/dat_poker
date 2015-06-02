@@ -292,7 +292,7 @@ void		Board::refresh_Standin()
       std::cout << " stack " << competitor[last]->get_Stack() << std::endl; 
       std::cout << " pot to get" << this->pot << std::endl; 
       this->pot = 0;
-    }    
+    }
 }
 
 void		Board::reload_Round(int i)
