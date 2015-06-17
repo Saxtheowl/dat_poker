@@ -526,6 +526,8 @@ void				Board::next_Step()
   std::cout << " next step OK " << std::endl;
   old_pot = pot;
   set_Biggest_Raise(0);
+  while(current_player != this->button_pos)
+    current_player = get_Next_Alive(button_pos);
   current_player = get_Next_Alive(button_pos);
   while (i < 6)// && competitor[i]->get_Standin() == true)
     {
