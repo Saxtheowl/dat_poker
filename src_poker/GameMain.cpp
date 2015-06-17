@@ -41,12 +41,15 @@ void		GameMain::init_Ai()
 
 void		GameMain::Menu()
 {
-  std::cout << "What mod u want ?\n" << "0 - NO LIMIT HOLDEM\n" << std::endl;
+  /*  std::cout << "What mod u want ?\n" << "0 - NO LIMIT HOLDEM\n" << std::endl;
   board->set_Mod(dat_input.get_Input());
   std::cout << "How many players u want ?\n" << "6 or 9\n" << std::endl;
   board->set_start_nb_Players(dat_input.get_Input());
   std::cout << "How many stack u want ?\n" << std::endl;
-  board->set_start_Stack(dat_input.get_Input());
+  board->set_start_Stack(dat_input.get_Input());*/
+  board->set_Mod(6);
+  board->set_start_nb_Players(6);
+  board->set_start_Stack(100);
   board->init_nb_Player();
   dat_output->init_Map();
   board->init_Mod();
@@ -85,9 +88,7 @@ void		GameMain::launch_Game()
   elapsed = 0;
   while (board->get_Standin_Players() > 1)
     {
-      std::cout << "standin player" << board->get_Standin_Players() << std::endl;
       who_play = board->start_Round(elapsed);
-      std::cout << " OKKKKK 2" << board->get_Standin_Players() << std::endl;
       if (who_play == 0)
 	{
 	  dat_output->print_Player_Choice();
@@ -96,11 +97,8 @@ void		GameMain::launch_Game()
 	}
       else
 	{
-	  std::cout << " OKKKKK 9" << board->get_Standin_Players() << std::endl;
-	  std::cout << " current player is " << (board->get_Current_Player() - 1) << std::endl;
 	  ai[board->get_Current_Player() - 1]->play_Bot(board);
 	}
-      std::cout << " OKKKKK 3" << board->get_Standin_Players() << std::endl;
       elapsed++;
       board->dat_Refresh();
       dat_output->print_All(board, 1);

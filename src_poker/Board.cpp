@@ -138,7 +138,6 @@ void		Board::shuffle_Deck()
       test++;
     }
   this->deck[52]->set_All('X'); // HAX
-  std::cout << "needed round:" << test << std::endl;
 }
 
 std::vector<Player*>		Board::get_Competitors()
@@ -238,7 +237,6 @@ int		Board::get_Next_Standin(int i)
     return (0);
   else
     {
-      std::cout << " get_next_standin ok " << std::endl;
       i = 0;
       while (i < 5)
 	{
@@ -290,8 +288,6 @@ void		Board::refresh_Standin()
     {
       end_round = true;
       competitor[last]->set_Stack(competitor[last]->get_Stack() + this->pot);
-      std::cout << " stack " << competitor[last]->get_Stack() << std::endl; 
-      std::cout << " pot to get" << this->pot << std::endl; 
       this->pot = 0;
     }    
 }
