@@ -1,286 +1,66 @@
-What mod u want ?
-0 - NO LIMIT HOLDEM
-
-How many players u want ?
-6 or 9
-
-How many stack u want ?
-
-needed round:5721
-first update start
-print start
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-X                                                                                             X
-X                                                                                             X
-X                                                                                             X
-X                                            BANK                                             X
-X                                                                                             X
-X                                                                                             X
-X     P6 B                                                                             P1     X
-X    [04a] [08b]                                                               [01d] [09d]    X
-X    6                                                                             6          X
-X                                                                                             X
-X                                                                                             X
-X                                                                                             X
-X     P5                                                                               P2     X
-X    [11a] [06b] 5               [   ] [   ] [   ] [   ] [   ]                 [05a] [06d]    X
-X    1                                                                             6          X
-X                                                                                             X
-X                                                                                             X
-X                                                                                             X
-X     P4                                                                               P3     X
-X    [01b] [12d] 6                                                             [13c] [11b]    X
-X                                                                                  6          X
-X                                                                                             X
-X                                                                                             X
-X                                                                                             X
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
- press key to start 
-standin player6
- OKKKKK 26
- OKKKKK 96
- current player is 2
- pos is 3
- OKKKKK 116
- OKKKKK 126
- first card = 8
- second card = 0
- OKKKKK 136
- OKKKKK 36
- step =  0
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-X                                                                                             X
-X                                                                                             X
-X                                                                                             X
-X                                            BANK                                             X
-X                                                                                             X
-X                                          11                                                 X
-X     P6 B                                                                             P1     X
-X    [04a] [08b]                                                               [   ] [   ]    X
-X    6                                                                             6          X
-X                                                                                             X
-X                                                                                             X
-X                                                                                             X
-X     P5                                                                               P2     X
-X    [11a] [06b] 5               [   ] [   ] [   ] [   ] [   ]                 [05a] [06d]    X
-X    1                                                                             6          X
-X                                                                                             X
-X                                                                                             X
-X                                                                                             X
-X     P4                                                                               P3     X
-X    [01b] [12d] 6                                                             [13c] [11b]    X
-X                                                                                  6          X
-X                                                                                             X
-X                                                                                             X
-X                                                                                             X
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-standin player5
- OKKKKK 25
- OKKKKK 95
- current player is 3
- pos is 4
- OKKKKK 115
- OKKKKK 125
- first card = 5
- second card = 4
- OKKKKK 135
- OKKKKK 35
- step =  0
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-X                                                                                             X
-X                                                                                             X
-X                                                                                             X
-X                                            BANK                                             X
-X                                                                                             X
-X                                          11                                                 X
-X     P6 B                                                                             P1     X
-X    [04a] [08b]                                                               [   ] [   ]    X
-X    6                                                                             6          X
-X                                                                                             X
-X                                                                                             X
-X                                                                                             X
-X     P5                                                                               P2     X
-X    [11a] [06b] 5               [   ] [   ] [   ] [   ] [   ]                 [   ] [   ]    X
-X    1                                                                             6          X
-X                                                                                             X
-X                                                                                             X
-X                                                                                             X
-X     P4                                                                               P3     X
-X    [01b] [12d] 6                                                             [13c] [11b]    X
-X                                                                                  6          X
-X                                                                                             X
-X                                                                                             X
-X                                                                                             X
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-standin player4
- OKKKKK 24
- OKKKKK 94
- current player is 4
- pos is 5
- OKKKKK 114
- OKKKKK 124
- first card = 10
- second card = 12
- OKKKKK 134
- OKKKKK 34
- step =  0
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-X                                                                                             X
-X                                                                                             X
-X                                                                                             X
-X                                            BANK                                             X
-X                                                                                             X
-X                                          11                                                 X
-X     P6 B                                                                             P1     X
-X    [04a] [08b]                                                               [   ] [   ]    X
-X    6                                                                             6          X
-X                                                                                             X
-X                                                                                             X
-X                                                                                             X
-X     P5                                                                               P2     X
-X    [11a] [06b] 5               [   ] [   ] [   ] [   ] [   ]                 [   ] [   ]    X
-X    1                                                                             6          X
-X                                                                                             X
-X                                                                                             X
-X                                                                                             X
-X     P4                                                                               P3     X
-X    [01b] [12d] 6                                                             [13c] [11b]    X
-X                                                                                             X
-X                                                                                             X
-X                                                                                             X
-X                                                                                             X
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-standin player4
- OKKKKK 24
- 1 - CALL
-
- 2 - RAISE
-
- 3 - FOLD
-
- error play human 
- 1 - CALL
-
- 2 - RAISE
-
- 3 - FOLD
-
- error play human 
- 1 - CALL
-
- 2 - RAISE
-
- 3 - FOLD
-
- error play human 
- 1 - CALL
-
- 2 - RAISE
-
- 3 - FOLD
-
- new stack human = 0
- OKKKKK 34
- step =  0
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-X                                                                                             X
-X                                                                                             X
-X                                                                                             X
-X                                            BANK                                             X
-X                                                                                             X
-X                                          17                                                 X
-X     P6 B                                                                             P1     X
-X    [04a] [08b] 6                                                             [   ] [   ]    X
-X                                                                                  6          X
-X                                                                                             X
-X                                                                                             X
-X                                                                                             X
-X     P5                                                                               P2     X
-X    [11a] [06b] 5               [   ] [   ] [   ] [   ] [   ]                 [   ] [   ]    X
-X    1                                                                             6          X
-X                                                                                             X
-X                                                                                             X
-X                                                                                             X
-X     P4                                                                               P3     X
-X    [01b] [12d] 6                                                             [13c] [11b]    X
-X                                                                                             X
-X                                                                                             X
-X                                                                                             X
-X                                                                                             X
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-standin player4
- OKKKKK 24
- OKKKKK 94
- current player is 0
- pos is 1
- OKKKKK 114
- OKKKKK 124
- first card = 10
- second card = 5
- OKKKKK 134
- OKKKKK 34
- step =  0
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-X                                                                                             X
-X                                                                                             X
-X                                                                                             X
-X                                            BANK                                             X
-X                                                                                             X
-X                                          17                                                 X
-X     P6 B                                                                             P1     X
-X    [04a] [08b] 6                                                             [   ] [   ]    X
-X                                                                                  6          X
-X                                                                                             X
-X                                                                                             X
-X                                                                                             X
-X     P5                                                                               P2     X
-X    [   ] [   ] 5               [   ] [   ] [   ] [   ] [   ]                 [   ] [   ]    X
-X    1                                                                             6          X
-X                                                                                             X
-X                                                                                             X
-X                                                                                             X
-X     P4                                                                               P3     X
-X    [01b] [12d] 6                                                             [13c] [11b]    X
-X                                                                                             X
-X                                                                                             X
-X                                                                                             X
-X                                                                                             X
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-standin player3
- OKKKKK 23
- OKKKKK 93
- current player is 1
- pos is 2
- OKKKKK 113
- OKKKKK 123
- first card = 0
- second card = 11
- OKKKKK 133
- OKKKKK 33
- step =  0
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-X                                                                                             X
-X                                                                                             X
-X                                                                                             X
-X                                            BANK                                             X
-X                                                                                             X
-X                                          17                                                 X
-X     P6 B                                                                             P1     X
-X    [04a] [08b] 6                                                             [   ] [   ]    X
-X                                                                                  6          X
-X                                                                                             X
-X                                                                                             X
-X                                                                                             X
-X     P5                                                                               P2     X
-X    [   ] [   ] 5               [   ] [   ] [   ] [   ] [   ]                 [   ] [   ]    X
-X    1                                                                             6          X
-X                                                                                             X
-X                                                                                             X
-X                                                                                             X
-X     P4                                                                               P3     X
-X    [   ] [   ] 6                                                             [13c] [11b]    X
-X                                                                                             X
-X                                                                                             X
-X                                                                                             X
-X                                                                                             X
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+    1  ls
+    2  cd work/cp_work_epi2/
+    3  ls
+    4  cd git/
+    5  ls
+    6  ll
+    7  cd dat_poker_git/
+    8  ls
+    9  cd ..
+   10  rm -rf dat_poker_git/
+   11  ls
+   12  cd dat_poker/
+   13  ls
+   14  make clean
+   15  ls
+   16  make fclean
+   17  rm a.out
+   18  ls
+   19  ne src_poker/
+   20  cd src_poker/
+   21  clean
+   22  ls
+   23  rm *#
+   24  ls
+   25  cd ..
+   26  make re
+   27  ne src_poker/Board.cpp 
+   28  ls
+   29  ne src_poker/Board.cpp 
+   30  make clean
+   31  make fclean
+   32  make
+   33  ne src_poker/Board.cpp 
+   34  ne src_poker/dat_Output.cpp 
+   35  make re
+   36  ne src_poker/dat_Output.cpp 
+   37  make
+   38  ne src_poker/dat_Output.cpp 
+   39  make
+   40  ne src_poker/dat_Output.cpp 
+   41  make
+   42  ne inc_poker/dat_Output.hh
+   43  make
+   44  make re
+   45  ne inc_poker/dat_Output.hh
+   46  ne src_poker/GameMain.cpp 
+   47  make
+   48  ne src_poker/dat_Output.cpp 
+   49  make
+   50  ne src_poker/dat_Output.cpp 
+   51  ne src_poker/GameMain.cpp 
+   52  ne inc_poker/dat_Output.hh
+   53  make re
+   54  ne src_poker/Card.cpp 
+   55  make re
+   56  ne src_poker/bot_Ai.cpp 
+   57  make
+   58  ne src_poker/bot_Ai.cpp 
+   59  make
+   60  ne src_poker/bot_Ai.cpp 
+   61  make
+   62  make re
+   63  ./poker 
+   64  ne src_poker/Board.cpp 
+   65  history
+   66  history > buffer && ne buffer

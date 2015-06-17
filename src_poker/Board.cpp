@@ -248,6 +248,7 @@ int		Board::get_Next_Standin(int i)
 	    i++;
 	} 
     }
+  return(0);
 }
 
 void		Board::refresh_Alive()
@@ -351,10 +352,8 @@ void		Board::burn_Card()
 bool		Board::new_Round()
 {
   int		i;
-  int		y;
   int		alive_bot;
   
-  y = 0;
   i = 0;
   alive_bot = 0;
   this->alive_players = 0;
@@ -504,6 +503,7 @@ int				Board::start_Round(int elapsed)//std::vector <bot_Ai*> bot_ai)
   }
   else
     Resolve();
+  return(0);
 }
 
 int				Board::get_Standin_Players()
@@ -521,7 +521,7 @@ int				Board::get_Button_Pos()
   return (this->button_pos);
 }
 
-bool				Board::next_Step()
+void				Board::next_Step()
 {
   int				i;
 

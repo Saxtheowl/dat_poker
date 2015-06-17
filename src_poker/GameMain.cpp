@@ -23,7 +23,7 @@ void		GameMain::Start()
 void		GameMain::Initialize()
 {
   board = new Board();
-  dat_output = new dat_Output(board);
+  dat_output = new dat_Output();
   human = new Human();
 }
 
@@ -48,7 +48,7 @@ void		GameMain::Menu()
   std::cout << "How many stack u want ?\n" << std::endl;
   board->set_start_Stack(dat_input.get_Input());
   board->init_nb_Player();
-  dat_output->init_Map(board);
+  dat_output->init_Map();
   board->init_Mod();
   init_Ai();
 }
@@ -66,7 +66,7 @@ void		GameMain::start_Game()
       std::cout << " press key to start " << std::endl;
       std::cin >> key;
       launch_Game();
-      dat_output->clean_Card_Board(board);
+      dat_output->clean_Card_Board();
       std::cout << " New round begin " << std::endl;
     }
 }
@@ -90,9 +90,9 @@ void		GameMain::launch_Game()
       std::cout << " OKKKKK 2" << board->get_Standin_Players() << std::endl;
       if (who_play == 0)
 	{
-	  dat_output->print_Player_Choice(board);
+	  dat_output->print_Player_Choice();
 	  while (!human->play_Human(board, dat_input.get_Input()))
-	    dat_output->print_Player_Choice(board);
+	    dat_output->print_Player_Choice();
 	}
       else
 	{

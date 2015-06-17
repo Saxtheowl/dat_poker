@@ -13,13 +13,13 @@ private:
   //  int		player_info_map[5][1];
 
 public:
-  dat_Output(Board *board);
+  dat_Output();
   ~dat_Output();
 
   void  fill_Corner();
   void  put_Static_Element();
 
-  void	init_Map(Board *board);
+  void	init_Map();
   void  print_All(Board *board, int flag);
 
   void	update_Cards(Board *board, Player *player);
@@ -32,18 +32,18 @@ public:
   void	put_Button(bool ok, int pos_p_x, int pos_p_y, int pos);
 
   void	put_Chips(int chips, int pos_p_x, int pos_p_y, int pos, int flag);
-  int	clean_Chips(int pos_p_x, int pos_p_y, int pos, int flag);
+  void	clean_Chips(int pos_p_x, int pos_p_y, int pos, int flag);
 
   void	put_Cards_Shadow(int card_pos_x, int card_pos_y, int pos);
   void	clean_Cards_Shadow(int card_pos_x, int card_pos_y, int pos);
   void	put_Pot(int pot);
   void	clean_Pot();
   void	second_Update(Board *board);
-  void	print_Player_Choice(Board *board);
+  void	print_Player_Choice();
   void	update_Card_Board(Board *board);
   void	print_Card_Board(int card_pos_y, int card_value);
   void	print_Rank_Card_Board(int card_pos_y, char rank);
-  void	clean_Card_Board(Board *board);
+  void	clean_Card_Board();
 };
 
 #endif

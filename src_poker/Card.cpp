@@ -49,6 +49,7 @@ char	Card::get_Rank()
     return ('c');
   else if (this->nb < 52)
     return ('d');
+  return(0);
 }
 
 void	Card::set_Is_Given()

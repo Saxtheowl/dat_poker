@@ -60,7 +60,7 @@ public:
   int		get_Button_Pos();
 
   bool		run_Round();
-  bool		next_Step();
+  void		next_Step();
   void		fulfill_Board();
   std::vector <int> get_Board_Cards();
   int		get_Step();

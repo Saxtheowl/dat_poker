@@ -1,8 +1,8 @@
 #include "dat_Output.hh"
 
-dat_Output::dat_Output(Board *board)
+dat_Output::dat_Output()
 {
-  init_Map(board);
+  init_Map();
 }
 
 dat_Output::~dat_Output()
@@ -121,7 +121,7 @@ void		dat_Output::fill_Corner()
   i = 0;
 }
 
-void		dat_Output::init_Map(Board *board)
+void		dat_Output::init_Map()
 {
   x_board = 26;
   y_board = 95;
@@ -243,7 +243,7 @@ void		dat_Output::put_Button(bool ok, int pos_p_x, int pos_p_y, int pos)
   
 }
 
-int		dat_Output::clean_Chips(int pos_p_x, int pos_p_y, int pos, int flag)
+void		dat_Output::clean_Chips(int pos_p_x, int pos_p_y, int pos, int flag)
 {
   int		i;
   int		y;
@@ -443,7 +443,7 @@ void		dat_Output::first_Update(Board *board)
     }
 }
 
-void		dat_Output::print_Player_Choice(Board *board)
+void		dat_Output::print_Player_Choice()
 {
   std::cout << " 1 - CALL\n" << std::endl;
   std::cout << " 2 - RAISE\n" << std::endl;
@@ -466,11 +466,9 @@ void		dat_Output::second_Update(Board *board)
 
 void		dat_Output::update_Card_Board(Board *board)
 {
-  int		nb;
 
   //  std::cout << " ok 1 step = 1 " << std::endl;
   std::cout << " step =  " << board->get_Step() << std::endl;
-  nb = 0;
   if (board->get_Step() == 1)
     {
       print_Card_Board(34, board->get_Deck()[board->get_Board_Cards()[0]]->get_True_Nb());
@@ -516,7 +514,7 @@ void		dat_Output::print_Rank_Card_Board(int card_pos_y, char rank)
   map[14][card_pos_y] = rank;
 }
 
-void		dat_Output::clean_Card_Board(Board *board)
+void		dat_Output::clean_Card_Board()
 {
   int		i;
   int		f;

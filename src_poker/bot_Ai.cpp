@@ -11,14 +11,9 @@ bot_Ai::~bot_Ai()
 
 void		bot_Ai::play_Bot(Board *board)
 {
-  int		i;
-  int		f;
   
   std::cout << " pos is " << pos << std::endl;
   std::cout << " OKKKKK 11" << board->get_Standin_Players() << std::endl;
-  f = 0;
-  i = 0;
-  i = board->get_Current_Player();
   std::cout << " OKKKKK 12" << board->get_Standin_Players() << std::endl;
   std::cout << " first card = " << board->get_Deck()[board->get_Competitors()[pos]->get_Index_Card(0)]->get_True_Nb() << std::endl;
   std::cout << " second card = " << board->get_Deck()[board->get_Competitors()[pos]->get_Index_Card(1)]->get_True_Nb() << std::endl;
