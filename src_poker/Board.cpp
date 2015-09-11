@@ -450,7 +450,6 @@ bool				Board::run_Round() // ugly
   int				f;
   int				has_played;
 
-
   f = 0;
   has_played = 0;
   i = current_player;
@@ -527,7 +526,10 @@ void				Board::next_Step()
   old_pot = pot;
   set_Biggest_Raise(0);
   while(current_player != this->button_pos)
-    current_player = get_Next_Alive(button_pos);
+    {
+      std::cout << " OK1 " << std::endl; 
+      current_player = get_Next_Alive(button_pos);
+    }
   current_player = get_Next_Alive(button_pos);
   while (i < 6)// && competitor[i]->get_Standin() == true)
     {
