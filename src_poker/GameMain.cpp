@@ -52,7 +52,6 @@ void		GameMain::Menu()
   board->set_start_nb_Players(6);
   board->set_start_Stack(100);
   board->init_nb_Player();
-
   dat_output->init_Map();
   board->init_Mod();
   init_Ai();
