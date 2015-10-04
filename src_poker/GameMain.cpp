@@ -20,6 +20,7 @@ void		GameMain::Start()
   Menu();
   start_Game();
 }
+
 void		GameMain::Initialize()
 {
   board = new Board();
@@ -91,7 +92,7 @@ void		GameMain::launch_Game()
       who_play = board->start_Round(elapsed);
       if (who_play == 0)
 	{
-	  dat_output->print_Player_Choice();
+	  dat_output->print_Player_Choice(); // something to fix
 	  while (!human->play_Human(board, dat_input.get_Input()))
 	    dat_output->print_Player_Choice();
 	}
