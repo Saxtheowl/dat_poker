@@ -12,31 +12,6 @@ Human::~Human()
 }
 
 int		Human::toInt(std::string str)
-<<<<<<< HEAD
-{
-  std::istringstream    buffer(str);
-  int   i;
-
-  buffer >> i;
-  return (i);
-}
-
-int		Human::get_Input()
-{
-  int		to_ret;
-  std::string	str;
-
-  std::cin >> str;
-  to_ret = toInt(str);
-  if (to_ret > 0)
-    return (to_ret);
-  else
-    return (0);
-}
-
-bool		Human::play_Human(Board *board, int action)
-=======
->>>>>>> 34044947cbfa9d39c8375be308e2477d2c44104d
 {
   std::istringstream    buffer(str);
   int   i;
@@ -84,7 +59,7 @@ bool		Human::play_Human(Board *board)
 	}
       board->get_Competitors()[0]->set_Stack(board->get_Competitors()[0]->get_Stack() - amount);
       board->set_Biggest_Raise(amount);
-	
+      board->get_Competitors()[0]->set_Pushed(amount);
       board->get_Competitors()[0]->set_Played(true);
       board->get_Competitors()[0]->set_Standin(true);
       return (true);
