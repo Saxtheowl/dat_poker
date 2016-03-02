@@ -3,7 +3,6 @@
 #include <sstream>
 #include "GameMain.hh"
 #include "bot_Ai.hh"
-#include "dat_Input.hh"
 #include "dat_Output.hh"
 
 GameMain::GameMain()
@@ -95,7 +94,7 @@ void		GameMain::launch_Game()
 	  if(board->get_Step() > 0)
 	    dat_output->print_All(board, 1);
 	  dat_output->print_Player_Choice(); // something to fix
-	  while (!human->play_Human(board, dat_input.get_Input()))
+	  while (!human->play_Human(board))
 	    {
 	      dat_output->print_Player_Choice();
 	    }

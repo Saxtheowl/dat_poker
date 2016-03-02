@@ -10,7 +10,6 @@ SRCS		=	$(DIR)main.cpp \
 			$(DIR)GameMain.cpp \
 			$(DIR)Board.cpp \
 			$(DIR)Player.cpp \
-			$(DIR)dat_Input.cpp \
 			$(DIR)dat_Output.cpp \
 			$(DIR)Card.cpp \
 			$(DIR)Human.cpp \
