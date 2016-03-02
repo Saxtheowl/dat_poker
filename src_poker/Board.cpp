@@ -229,7 +229,10 @@ int		Board::get_Next_Standin(int i)
   while (i < 5)
     {
       if (competitor[i + 1]->get_Standin() == true)
-	return (i + 1);
+	{
+	  std::cout << " get next standin i = " << i << std::endl;
+	  return (i + 1);
+	}
       else
 	i++;
     }
@@ -452,6 +455,7 @@ bool				Board::run_Round() // ugly
 
   f = 0;
   has_played = 0;
+  std::cout << " current_player run round = " << current_player << std::endl; 
   i = current_player;
   while (has_played < (this->standin_players))
     {
@@ -470,7 +474,8 @@ bool				Board::run_Round() // ugly
       if (f == this->standin_players && has_played < this->standin_players)
 	return (false);
     }
-  return (true);
+  next_Step();
+  return (false);
 }
 
 int				Board::start_Round(int elapsed)//std::vector <bot_Ai*> bot_ai)
@@ -482,23 +487,26 @@ int				Board::start_Round(int elapsed)//std::vector <bot_Ai*> bot_ai)
       current_player = button_pos;
       current_player = get_Next_Alive(current_player);
       current_player = get_Next_Alive(current_player);
+      std::cout << " OK4 " << std::endl;
     }
   if (run_Round() == false)
     {
+      std::cout << " OK3 " << std::endl;
       current_player = get_Next_Standin(current_player);
+      std::cout << " current_player start round = " << current_player << std::endl;
       if (current_player == 0 && competitor[0]->get_Standin() == true)
 	return (0);
       else
 	return (1);
     }
-  else if (step < 3)
+  /*  else if (step < 3)
   {
     this->old_pot = pot;
     next_Step();
-  }
-  else
-    Resolve();
-  return(0);
+    }*/
+ else
+   Resolve();
+return(0);
 }
 
 int				Board::get_Standin_Players()
@@ -525,12 +533,17 @@ void				Board::next_Step()
   std::cout << " next step OK " << std::endl;
   old_pot = pot;
   set_Biggest_Raise(0);
-  while(current_player != this->button_pos)
+  current_player = button_pos;
+  std::cout << " current_player next_step = " << current_player << std::endl;
+  /*  while(current_player != this->button_pos)
     {
       std::cout << " OK1 " << std::endl; 
       current_player = get_Next_Alive(button_pos);
-    }
-  current_player = get_Next_Alive(button_pos);
+      }*/
+  /*  std::cout << " button is " << button_pos << std::endl;
+  std::cout << " current player is " << current_player << std::endl;
+  current_player = get_Next_Standin(button_pos);
+  std::cout << " after fix current player is " << current_player << std::endl;*/
   while (i < 6)// && competitor[i]->get_Standin() == true)
     {
       competitor[i]->set_Played(false);

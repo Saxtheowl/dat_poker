@@ -26,7 +26,7 @@ public:
   void		play_Human();
 private:
   Board		*board;
-  dat_Input	dat_input;
+  dat_Input	dat_input; // ugly
   dat_Output	*dat_output;
   Human		*human;
 
