@@ -6,7 +6,6 @@
 #include <sstream>
 #include <vector>
 #include "Board.hh"
-#include "dat_Input.hh"
 #include "dat_Output.hh"
 #include "bot_Ai.hh"
 #include "Human.hh"
@@ -26,7 +25,6 @@ public:
   void		play_Human();
 private:
   Board		*board;
-  dat_Input	dat_input; // ugly
   dat_Output	*dat_output;
   Human		*human;
 
