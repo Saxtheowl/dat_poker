@@ -3,12 +3,15 @@
 #include "enum.hh"
 #include <stdlib.h>
 #include <iostream>
+#include <string.h>
+#include <stdio.h>
 
 Board::Board()
 {
   idx_card = 0;
   flag_first_round = true;
   end_round = false;
+  init_Hand_Evaluator_Twoplustwo();
 }
 
 Board::~Board()
@@ -474,7 +477,7 @@ bool				Board::run_Round() // ugly
       if (f == this->standin_players && has_played < this->standin_players)
 	return (false);
     }
-  next_Step();
+  next_Step(); // LOL WUT
   return (false);
 }
 
@@ -504,9 +507,9 @@ int				Board::start_Round(int elapsed)//std::vector <bot_Ai*> bot_ai)
     this->old_pot = pot;
     next_Step();
     }*/
- else
-   Resolve();
-return(0);
+  else
+    Resolve();
+  return(0);
 }
 
 int				Board::get_Standin_Players()
@@ -586,12 +589,66 @@ void				Board::reset_Round()
   end_round = false;
 }
 
+void				Board::init_Hand_Evaluator_Twoplustwo()
+{
+  std::cout << " OK start TWOPLUSTWO " << std::endl;
+  memset(HR, 0, sizeof(HR));
+  FILE * fin = fopen("handrank.dat", "rb");
+  // Load the HANDRANKS.DAT file data into the HR array
+  size_t bytesread = fread(HR, sizeof(HR), 1, fin);
+  fclose(fin);
+  std::cout << " OK END TWOPLUSTWO " << std::endl;
+}
+
+int				Board::get_Hand_Value(int *pCards)
+{
+  int p = HR[53 + *pCards++];
+
+  p = HR[p + *pCards++];
+  p = HR[p + *pCards++];
+  p = HR[p + *pCards++];
+  p = HR[p + *pCards++];
+  p = HR[p + *pCards++];
+  return HR[p + *pCards++];
+}
+
 void				Board::Resolve()
 {
+  int				Card[6];
+  int				i;
+
   std::cout << " resolve start " << std::endl;
+  i = 0;
+  Card[2] = board_card[0];
+  Card[3] = board_card[1];
+  Card[4] = board_card[2];
+  Card[5] = board_card[3];
+  Card[6] = board_card[4];
+  while(i < 6)
+    {
+      Card[0] = deck[competitor[i]->get_Index_Card(0)]->get_Nb();
+      Card[1] = deck[competitor[i]->get_Index_Card(1)]->get_Nb();
+      int handInfo = get_Hand_Value(Card);
+      int handCategory = handInfo >> 12;
+      int rankWithinCategory = handInfo & 0x00000FFF;
+      std::cout << " HAND INFO IS " << handInfo << std::endl;
+      std::cout << " HAND INFO IS " << handCategory << std::endl;
+      std::cout << " HAND INFO IS " << rankWithinCategory << std::endl;
+    }
   //  competitor[0]->set_Stack(competitor[0]->get_Stack() + this->pot);
   std::cout << " stack to up " << competitor[0]->get_Stack() << std::endl;
+  std::cout << " RESOLVE START " << std::endl;
   for (int i = 0; i < 5; i++)
     competitor[i]->set_Standin(false);      
   //  this->standin_players = 0;
 }
+
+/*
+void DoSomeWork()
+{
+  int myCards[] = { 2, 6, 12, 14, 23, 26, 29 };
+  int handInfo = GetHandValue(myCards);
+  int handCategory = handInfo >> 12;
+  int rankWithinCategory = handInfo & 0x00000FFF;
+}
+*/

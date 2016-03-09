@@ -69,6 +69,9 @@ public:
   void		dat_Refresh();
   void		reset_Round();
   void		Resolve();
+
+  void		init_Hand_Evaluator_Twoplustwo();
+  int		get_Hand_Value(int *pCards);
 private:
   std::vector <Player*> competitor;
   std::vector <Card*> deck;
@@ -96,6 +99,7 @@ private:
   int		button_pos;
   int		step;
   int		biggest_raise;
+  int		HR[32487834];
 };
 
 #endif
