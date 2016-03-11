@@ -475,9 +475,15 @@ bool				Board::run_Round() // ugly
       i = get_Next_Standin(i);
       f++;
       if (f == this->standin_players && has_played < this->standin_players)
-	return (false);
+	{
+	  if(step == 3)
+	    Resolve();
+	  return(false);
+	}
     }
-  next_Step(); // LOL WUT
+  if(step < 3)
+    next_Step();
+    Resolve();
   return (false);
 }
 
@@ -502,13 +508,9 @@ int				Board::start_Round(int elapsed)//std::vector <bot_Ai*> bot_ai)
       else
 	return (1);
     }
-  /*  else if (step < 3)
-  {
-    this->old_pot = pot;
-    next_Step();
-    }*/
   else
-    Resolve();
+    Resolve(); // useless ?
+  std::cout << " END OF THE WORLD " << std::endl;
   return(0);
 }
 
@@ -632,12 +634,12 @@ void				Board::Resolve()
       int handCategory = handInfo >> 12;
       int rankWithinCategory = handInfo & 0x00000FFF;
       std::cout << " HAND INFO IS " << handInfo << std::endl;
-      std::cout << " HAND INFO IS " << handCategory << std::endl;
-      std::cout << " HAND INFO IS " << rankWithinCategory << std::endl;
+      std::cout << " HAND CATEGORY IS " << handCategory << std::endl;
+      std::cout << " HAND RANK WITHIN CATEGORY IS " << rankWithinCategory << std::endl;
+      i++;
     }
   //  competitor[0]->set_Stack(competitor[0]->get_Stack() + this->pot);
   std::cout << " stack to up " << competitor[0]->get_Stack() << std::endl;
-  std::cout << " RESOLVE START " << std::endl;
   for (int i = 0; i < 5; i++)
     competitor[i]->set_Standin(false);      
   //  this->standin_players = 0;
