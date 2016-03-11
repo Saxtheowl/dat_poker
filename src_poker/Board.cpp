@@ -483,7 +483,7 @@ bool				Board::run_Round() // ugly
     }
   if(step < 3)
     next_Step();
-    Resolve();
+  //    Resolve();
   return (false);
 }
 
@@ -626,17 +626,21 @@ void				Board::Resolve()
   Card[4] = board_card[2];
   Card[5] = board_card[3];
   Card[6] = board_card[4];
-  while(i < 6)
+  while(i < standin_players)
     {
-      Card[0] = deck[competitor[i]->get_Index_Card(0)]->get_Nb();
-      Card[1] = deck[competitor[i]->get_Index_Card(1)]->get_Nb();
-      int handInfo = get_Hand_Value(Card);
-      int handCategory = handInfo >> 12;
-      int rankWithinCategory = handInfo & 0x00000FFF;
-      std::cout << " HAND INFO IS " << handInfo << std::endl;
-      std::cout << " HAND CATEGORY IS " << handCategory << std::endl;
-      std::cout << " HAND RANK WITHIN CATEGORY IS " << rankWithinCategory << std::endl;
-      i++;
+      if(competitor[i]->get_Standin() == true)
+	{
+	  Card[0] = deck[competitor[i]->get_Index_Card(0)]->get_Nb();
+	  Card[1] = deck[competitor[i]->get_Index_Card(1)]->get_Nb();
+	  int handInfo = get_Hand_Value(Card);
+	  int handCategory = handInfo >> 12;
+	  int rankWithinCategory = handInfo & 0x00000FFF;
+	  std::cout << "player is " << i << std::endl;
+	  std::cout << " HAND INFO IS " << handInfo << std::endl;
+	  std::cout << " HAND CATEGORY IS " << handCategory << std::endl;
+	  std::cout << " HAND RANK WITHIN CATEGORY IS " << rankWithinCategory << std::endl;
+	  i++;
+	}
     }
   //  competitor[0]->set_Stack(competitor[0]->get_Stack() + this->pot);
   std::cout << " stack to up " << competitor[0]->get_Stack() << std::endl;
