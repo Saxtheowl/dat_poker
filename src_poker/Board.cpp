@@ -626,7 +626,7 @@ void				Board::Resolve()
   Card[4] = board_card[2];
   Card[5] = board_card[3];
   Card[6] = board_card[4];
-  while(i < standin_players)
+  while(i < 6)
     {
       if(competitor[i]->get_Standin() == true)
 	{
@@ -641,6 +641,8 @@ void				Board::Resolve()
 	  std::cout << " HAND RANK WITHIN CATEGORY IS " << rankWithinCategory << std::endl;
 	  i++;
 	}
+      else
+	i++;
     }
   //  competitor[0]->set_Stack(competitor[0]->get_Stack() + this->pot);
   std::cout << " stack to up " << competitor[0]->get_Stack() << std::endl;
