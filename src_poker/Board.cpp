@@ -650,7 +650,7 @@ void				Board::Resolve()
     competitor[i]->set_Standin(false);      
   //  this->standin_players = 0;
 }
-
+//
 /*
 void DoSomeWork()
 {
