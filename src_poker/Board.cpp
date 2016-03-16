@@ -5,7 +5,7 @@
 #include <iostream>
 #include <string.h>
 #include <stdio.h>
-
+//
 Board::Board()
 {
   idx_card = 0;
