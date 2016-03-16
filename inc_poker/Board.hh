@@ -72,6 +72,7 @@ public:
 
   void		init_Hand_Evaluator_Twoplustwo();
   int		get_Hand_Value(int *pCards);
+  
 private:
   std::vector <Player*> competitor;
   std::vector <Card*> deck;

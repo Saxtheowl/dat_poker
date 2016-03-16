@@ -5,7 +5,7 @@
 #include <iostream>
 #include <string.h>
 #include <stdio.h>
-//
+
 Board::Board()
 {
   idx_card = 0;
@@ -475,15 +475,9 @@ bool				Board::run_Round() // ugly
       i = get_Next_Standin(i);
       f++;
       if (f == this->standin_players && has_played < this->standin_players)
-	{
-	  if(step == 3)
-	    Resolve();
-	  return(false);
-	}
+	return (false);
     }
-  if(step < 3)
-    next_Step();
-  //    Resolve();
+  next_Step();
   return (false);
 }
 
@@ -508,9 +502,13 @@ int				Board::start_Round(int elapsed)//std::vector <bot_Ai*> bot_ai)
       else
 	return (1);
     }
+  /*  else if (step < 3)
+  {
+    this->old_pot = pot;
+    next_Step();
+    }*/
   else
-    Resolve(); // useless ?
-  std::cout << " END OF THE WORLD " << std::endl;
+    Resolve();
   return(0);
 }
 
@@ -620,7 +618,7 @@ void				Board::Resolve()
   int				i;
 
   std::cout << " resolve start " << std::endl;
-  i = 0;
+  /*  i = 0;
   Card[2] = board_card[0];
   Card[3] = board_card[1];
   Card[4] = board_card[2];
@@ -643,20 +641,8 @@ void				Board::Resolve()
 	}
       else
 	i++;
-    }
-  //  competitor[0]->set_Stack(competitor[0]->get_Stack() + this->pot);
-  std::cout << " stack to up " << competitor[0]->get_Stack() << std::endl;
+	}*/
   for (int i = 0; i < 5; i++)
-    competitor[i]->set_Standin(false);      
+    competitor[i]->set_Standin(false);
   //  this->standin_players = 0;
 }
-//
-/*
-void DoSomeWork()
-{
-  int myCards[] = { 2, 6, 12, 14, 23, 26, 29 };
-  int handInfo = GetHandValue(myCards);
-  int handCategory = handInfo >> 12;
-  int rankWithinCategory = handInfo & 0x00000FFF;
-}
-*/
