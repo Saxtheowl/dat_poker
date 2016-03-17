@@ -475,9 +475,14 @@ bool				Board::run_Round() // ugly
       i = get_Next_Standin(i);
       f++;
       if (f == this->standin_players && has_played < this->standin_players)
-	return (false);
+	{
+	  if(step == 3)
+	    Resolve();
+	  return (false);
+	}
     }
-  next_Step();
+  if(step < 3)
+    next_Step();
   return (false);
 }
 
@@ -507,8 +512,8 @@ int				Board::start_Round(int elapsed)//std::vector <bot_Ai*> bot_ai)
     this->old_pot = pot;
     next_Step();
     }*/
-  else
-    Resolve();
+  //  else
+  //    Resolve();
   return(0);
 }
 
@@ -618,7 +623,7 @@ void				Board::Resolve()
   int				i;
 
   std::cout << " resolve start " << std::endl;
-  /*  i = 0;
+    i = 0;
   Card[2] = board_card[0];
   Card[3] = board_card[1];
   Card[4] = board_card[2];
@@ -641,8 +646,9 @@ void				Board::Resolve()
 	}
       else
 	i++;
-	}*/
+    }
   for (int i = 0; i < 5; i++)
     competitor[i]->set_Standin(false);
+  std::cout << " resolve end " << std::endl;
   //  this->standin_players = 0;
 }

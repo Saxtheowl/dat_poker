@@ -36,7 +36,7 @@ void		bot_Ai::play_Bot(Board *board)
       board->get_Competitors()[pos]->set_Standin(false);
       board->get_Competitors()[pos]->set_Played(true);
     }
-  if(board->get_Step() == 3) // FOLD A LA FIN LOL
+  if(board->get_Step() == 3 && board->get_Standin_Players() > 2) // FOLD A LA FIN LOL
     {
       std::cout << "OKK4" << std::endl;
       board->get_Competitors()[pos]->set_Standin(false);
