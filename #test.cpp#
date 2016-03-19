@@ -30,4 +30,5 @@ int				get_Hand_Value(int *pCards)
 
 int		main()
 {
+  int		Card[6];
 }

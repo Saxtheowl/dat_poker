@@ -477,7 +477,10 @@ bool				Board::run_Round() // ugly
       if (f == this->standin_players && has_played < this->standin_players)
 	{
 	  if(step == 3)
-	    Resolve();
+	    {
+	      Resolve();
+	      return(true);
+	    }
 	  return (false);
 	}
     }
@@ -623,12 +626,12 @@ void				Board::Resolve()
   int				i;
 
   std::cout << " resolve start " << std::endl;
-    i = 0;
-  Card[2] = board_card[0];
-  Card[3] = board_card[1];
-  Card[4] = board_card[2];
-  Card[5] = board_card[3];
-  Card[6] = board_card[4];
+  i = 0;
+  Card[2] = deck[board_card[0]]->get_Nb();
+  Card[3] = deck[board_card[1]]->get_Nb(); 
+  Card[4] = deck[board_card[2]]->get_Nb();
+  Card[5] = deck[board_card[3]]->get_Nb();
+  Card[6] = deck[board_card[4]]->get_Nb();
   while(i < 6)
     {
       if(competitor[i]->get_Standin() == true)
@@ -639,6 +642,13 @@ void				Board::Resolve()
 	  int handCategory = handInfo >> 12;
 	  int rankWithinCategory = handInfo & 0x00000FFF;
 	  std::cout << "player is " << i << std::endl;
+	  std::cout << " card 0 is " << Card[0] << std::endl;
+	  std::cout << " card 1 is " << Card[1] << std::endl;
+	  std::cout << " card 2 is " << Card[2] << std::endl;
+	  std::cout << " card 3 is " << Card[3] << std::endl;
+	  std::cout << " card 4 is " << Card[4] << std::endl;
+	  std::cout << " card 5 is " << Card[5] << std::endl;
+	  std::cout << " card 6 is " << Card[6] << std::endl;
 	  std::cout << " HAND INFO IS " << handInfo << std::endl;
 	  std::cout << " HAND CATEGORY IS " << handCategory << std::endl;
 	  std::cout << " HAND RANK WITHIN CATEGORY IS " << rankWithinCategory << std::endl;
@@ -647,7 +657,7 @@ void				Board::Resolve()
       else
 	i++;
     }
-  for (int i = 0; i < 5; i++)
+  for (int i = 1; i < 6; i++)
     competitor[i]->set_Standin(false);
   std::cout << " resolve end " << std::endl;
   //  this->standin_players = 0;
