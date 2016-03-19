@@ -30,4 +30,14 @@ int				get_Hand_Value(int *pCards)
 
 int		main()
 {
+  int		card[6];
+  
+  card[0] = 1;
+  card[1] = 2;
+  card[2] = 3;
+  card[3] = 4;
+  card[4] = 5;
+  card[5] = 6;
+  card[6] = 7;
+  printf("%s", get_Hand_Value(card));
 }

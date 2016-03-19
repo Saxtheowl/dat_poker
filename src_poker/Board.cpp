@@ -135,12 +135,12 @@ void		Board::shuffle_Deck()
 	while (temp > 12)
 	  temp = temp - 13;
 	this->deck[i]->set_All(rd);
+	std::cout << "rd = " << rd << " i =  " << i << std::endl;
 	i++;
-	//	std::cout << "rd = " << rd << " true value " << temp << std::endl;
       }
       test++;
     }
-  this->deck[52]->set_All('X'); // HAX
+  //  this->deck[52]->set_All('X'); // HAX
 }
 
 std::vector<Player*>		Board::get_Competitors()
