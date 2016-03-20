@@ -135,7 +135,7 @@ void		Board::shuffle_Deck()
 	while (temp > 12)
 	  temp = temp - 13;
 	this->deck[i]->set_All(rd);
-	std::cout << "rd = " << rd << " i =  " << i << std::endl;
+	//	std::cout << "rd = " << rd << " i =  " << i << std::endl;
 	i++;
       }
       test++;
@@ -648,11 +648,11 @@ void				Board::Resolve()
 
   std::cout << " resolve start " << std::endl;
   i = 0;
-  std::cout << deck[board_card[0]]->get_Nb() << std::endl;
+  /*  std::cout << deck[board_card[0]]->get_Nb() << std::endl;
   std::cout << deck[board_card[1]]->get_Nb() << std::endl;
   std::cout << deck[board_card[2]]->get_Nb() << std::endl;
   std::cout << deck[board_card[3]]->get_Nb() << std::endl;
-  std::cout << deck[board_card[4]]->get_Nb() << std::endl;
+  std::cout << deck[board_card[4]]->get_Nb() << std::endl;*/
   Card[2] = get_fixed_Card_Twoplustwo(deck[board_card[0]]->get_Nb());
   Card[3] = get_fixed_Card_Twoplustwo(deck[board_card[1]]->get_Nb());
   Card[4] = get_fixed_Card_Twoplustwo(deck[board_card[2]]->get_Nb());
@@ -662,8 +662,8 @@ void				Board::Resolve()
     {
       if(competitor[i]->get_Standin() == true)
 	{
-	  std::cout << deck[competitor[i]->get_Index_Card(0)]->get_Nb() << std::endl;
-	  std::cout << deck[competitor[i]->get_Index_Card(1)]->get_Nb() << std::endl;
+	  /*	  std::cout << deck[competitor[i]->get_Index_Card(0)]->get_Nb() << std::endl;
+		  std::cout << deck[competitor[i]->get_Index_Card(1)]->get_Nb() << std::endl;*/
 	  Card[0] = get_fixed_Card_Twoplustwo(deck[competitor[i]->get_Index_Card(0)]->get_Nb());
 	  Card[1] = get_fixed_Card_Twoplustwo(deck[competitor[i]->get_Index_Card(1)]->get_Nb());
 	  std::cout << " resolve OK  1 " << std::endl;
