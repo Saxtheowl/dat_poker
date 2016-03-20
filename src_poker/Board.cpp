@@ -622,8 +622,23 @@ int				Board::get_Hand_Value(int *pCards)
 
 int				Board::get_fixed_Card_Twoplustwo(int card)
 {
-  int	temp = 0;
-  
+
+  if(card > 0 && card < 13)
+    return((card * 4) - 3);
+  if(card > 13 && card < 26)
+    return(((card - 13) * 4) - 2);
+  if(card > 26 && card < 39)
+    return(((card - 26) * 4) - 1);
+  if(card > 39 && card < 52)
+    return(((card - 39) * 4));
+  if(card == 0) // fuck this
+    return(49);
+  if(card == 13)
+    return(50);
+  if(card == 26)
+    return(51);
+  if(card == 39)
+    return(52);
 }
 
 void				Board::Resolve()
@@ -633,22 +648,25 @@ void				Board::Resolve()
 
   std::cout << " resolve start " << std::endl;
   i = 0;
-  Card[2] = deck[board_card[0]]->get_Nb() + 1;
-  Card[3] = deck[board_card[1]]->get_Nb() + 1;
-  Card[4] = deck[board_card[2]]->get_Nb() + 1;
-  Card[5] = deck[board_card[3]]->get_Nb() + 1;
-  Card[6] = deck[board_card[4]]->get_Nb() + 1;
+  std::cout << deck[board_card[0]]->get_Nb() << std::endl;
+  std::cout << deck[board_card[1]]->get_Nb() << std::endl;
+  std::cout << deck[board_card[2]]->get_Nb() << std::endl;
+  std::cout << deck[board_card[3]]->get_Nb() << std::endl;
+  std::cout << deck[board_card[4]]->get_Nb() << std::endl;
+  Card[2] = get_fixed_Card_Twoplustwo(deck[board_card[0]]->get_Nb());
+  Card[3] = get_fixed_Card_Twoplustwo(deck[board_card[1]]->get_Nb());
+  Card[4] = get_fixed_Card_Twoplustwo(deck[board_card[2]]->get_Nb());
+  Card[5] = get_fixed_Card_Twoplustwo(deck[board_card[3]]->get_Nb());
+  Card[6] = get_fixed_Card_Twoplustwo(deck[board_card[4]]->get_Nb());
   while(i < 6)
     {
       if(competitor[i]->get_Standin() == true)
 	{
-	  Card[0] = deck[competitor[i]->get_Index_Card(0)]->get_Nb() + 1;
-	  Card[1] = deck[competitor[i]->get_Index_Card(1)]->get_Nb() + 1;
-	  //	  for(int i = 2; i < 7; i++)
-	  //	    Card[i]++;
-	  int handInfo = get_Hand_Value(Card);
-	  int handCategory = handInfo >> 12;
-	  int rankWithinCategory = handInfo & 0x00000FFF;
+	  std::cout << deck[competitor[i]->get_Index_Card(0)]->get_Nb() << std::endl;
+	  std::cout << deck[competitor[i]->get_Index_Card(1)]->get_Nb() << std::endl;
+	  Card[0] = get_fixed_Card_Twoplustwo(deck[competitor[i]->get_Index_Card(0)]->get_Nb());
+	  Card[1] = get_fixed_Card_Twoplustwo(deck[competitor[i]->get_Index_Card(1)]->get_Nb());
+	  std::cout << " resolve OK  1 " << std::endl;
 	  std::cout << "player is " << i << std::endl;
 	  std::cout << " card 0 is " << Card[0] << std::endl;
 	  std::cout << " card 1 is " << Card[1] << std::endl;
@@ -657,9 +675,15 @@ void				Board::Resolve()
 	  std::cout << " card 4 is " << Card[4] << std::endl;
 	  std::cout << " card 5 is " << Card[5] << std::endl;
 	  std::cout << " card 6 is " << Card[6] << std::endl;
+	  //	  for(int i = 2; i < 7; i++)
+	  //	    Card[i]++;
+	  int handInfo = get_Hand_Value(Card);
+	  int handCategory = handInfo >> 12;
+	  int rankWithinCategory = handInfo & 0x00000FFF;
 	  std::cout << " HAND INFO IS " << handInfo << std::endl;
 	  std::cout << " HAND CATEGORY IS " << handCategory << std::endl;
 	  std::cout << " HAND RANK WITHIN CATEGORY IS " << rankWithinCategory << std::endl;
+	  
 	  i++;
 	}
       else
