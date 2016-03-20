@@ -41,11 +41,11 @@ SUIT	Card::get_Suit()
 
 char	Card::get_Rank()
 {
-  if (this->nb < 12)
+  if (this->nb < 13)
     return ('a');
-  else if (this->nb < 25)
+  else if (this->nb < 26)
     return ('b');
-  else if (this->nb < 38)
+  else if (this->nb < 39)
     return ('c');
   else if (this->nb < 52)
     return ('d');
