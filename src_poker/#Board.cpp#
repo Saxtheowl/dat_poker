@@ -620,6 +620,11 @@ int				Board::get_Hand_Value(int *pCards)
   return HR[p + *pCards++];
 }
 
+int				Board::get_fixed_Card_Twoplustwo(int Card)
+{
+  
+}
+
 void				Board::Resolve()
 {
   int				Card[6];
@@ -628,7 +633,7 @@ void				Board::Resolve()
   std::cout << " resolve start " << std::endl;
   i = 0;
   Card[2] = deck[board_card[0]]->get_Nb() + 1;
-  Card[3] = deck[board_card[1]]->get_Nb() + 1; 
+  Card[3] = deck[board_card[1]]->get_Nb() + 1;
   Card[4] = deck[board_card[2]]->get_Nb() + 1;
   Card[5] = deck[board_card[3]]->get_Nb() + 1;
   Card[6] = deck[board_card[4]]->get_Nb() + 1;
