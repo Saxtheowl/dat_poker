@@ -620,8 +620,9 @@ int				Board::get_Hand_Value(int *pCards)
   return HR[p + *pCards++];
 }
 
-int				Board::get_fixed_Card_Twoplustwo(int Card)
+int				Board::get_fixed_Card_Twoplustwo(int card)
 {
+  int	temp = 0;
   
 }
 

@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <iostream>
 
 int HR[32487834];
 
@@ -36,10 +37,37 @@ void DoSomeWork()
   printf("%d\n", rankWithinCategory);
 }
 
+int		ogogo(int card)
+{
+  
+  if(card > 1 && card < 12)
+    return((card * 4) - 3);
+  if(card > 13 && card < 26)
+    return(((card - 13) * 4) - 2);
+  if(card > 26 && card < 39)
+    return(((card - 26) * 4) - 1);
+  if(card > 39 && card < 52)
+    return(((card - 39) * 4));
+  if(card == 0)
+    return(49);
+  if(card == 13)
+    return(50);
+  if(card == 26)
+    return(51);
+  if(card == 39)
+    return(52);
+  
+    
+}
+
 int		main()
 {
-  int		a;
 
-  InitTheEvaluator();
-  DoSomeWork();
+  for(int i = 0; i < 52; i++)
+    std::cout << ogogo(i) << std::endl;
+  //  InitTheEvaluator();
+  //  DoSomeWork();
+
+
+
 }
