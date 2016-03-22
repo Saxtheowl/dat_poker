@@ -102,6 +102,7 @@ private:
   int		step;
   int		biggest_raise;
   int		HR[32487834];
+  int		winner_twoplustwo;
 };
 
 #endif

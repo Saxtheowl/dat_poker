@@ -123,3 +123,13 @@ bool	Player::get_Played()
 {
   return (this->played);
 }
+
+void	Player::set_Hand_Showdown_Power_Twoplustwo(int nb)
+{
+  this->hand_showdown_power_twoplustwo = nb;
+}
+
+int	Player::get_Hand_Showdown_Power_Twoplustwo()
+{
+  return(this->hand_showdown_power_twoplustwo);
+}

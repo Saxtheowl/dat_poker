@@ -39,6 +39,10 @@ class		Player
 
   void		set_Played(bool ok);
   bool		get_Played();
+
+  void		set_Hand_Showdown_Power_Twoplustwo(int nb);
+  int		get_Hand_Showdown_Power_Twoplustwo();
+
 private:
   TYPE_PL type_pl;
   int	stack;
@@ -51,6 +55,7 @@ private:
   std::vector <int> pos_mapv;
   std::vector <int> idx_p;
 
+  int	hand_showdown_power_twoplustwo;
   bool	button;
   bool	alive;
   bool	standin;

@@ -649,6 +649,7 @@ void				Board::Resolve()
 {
   int				Card[6];
   int				i;
+  int				temp;
 
   std::cout << " resolve start " << std::endl;
   i = 0;
@@ -664,7 +665,7 @@ void				Board::Resolve()
   Card[6] = get_fixed_Card_Twoplustwo(deck[board_card[4]]->get_Nb());
   while(i < 6)
     {
-      if(competitor[i]->get_Standin() == true)
+      if(1)//            if(competitor[i]->get_Standin() == true)
 	{
 	  /*	  std::cout << deck[competitor[i]->get_Index_Card(0)]->get_Nb() << std::endl;
 		  std::cout << deck[competitor[i]->get_Index_Card(1)]->get_Nb() << std::endl;*/
@@ -684,6 +685,7 @@ void				Board::Resolve()
 	  int handInfo = get_Hand_Value(Card);
 	  int handCategory = handInfo >> 12;
 	  int rankWithinCategory = handInfo & 0x00000FFF;
+	  competitor[i]->set_Hand_Showdown_Power_Twoplustwo(handInfo);
 	  std::cout << " HAND INFO IS " << handInfo << std::endl;
 	  std::cout << " HAND CATEGORY IS " << handCategory << std::endl;
 	  std::cout << " HAND RANK WITHIN CATEGORY IS " << rankWithinCategory << std::endl;
@@ -691,6 +693,14 @@ void				Board::Resolve()
 	}
       else
 	i++;
+    }
+  for(int i = 0; i < 6; i++)
+    {
+      if(competitor[i]->get_Standin() == true && competitor[i]->get_Hand_Showdown_Power_Twoplustwo() > temp)
+	{
+	  temp = competitor[i]->get_Hand_Showdown_Power_Twoplustwo();
+	  winner_twoplustwo = i;
+	}
     }
   for (int i = 1; i < 6; i++)
     competitor[i]->set_Standin(false);
