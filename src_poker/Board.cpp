@@ -476,17 +476,21 @@ bool				Board::run_Round() // ugly
       f++;
       if (f == this->standin_players && has_played < this->standin_players)
 	{
-	  if(step == 3)
+	  /*	  if(step == 3)
 	    {
 	      Resolve();
 	      return(true);
-	    }
+	      }*/
 	  return (false);
 	}
     }
   if(step < 3)
     next_Step();
-  return (false);
+  else if(step == 3)
+    {
+      Resolve();
+      return (true);
+    }
 }
 
 int				Board::start_Round(int elapsed)//std::vector <bot_Ai*> bot_ai)
@@ -683,7 +687,6 @@ void				Board::Resolve()
 	  std::cout << " HAND INFO IS " << handInfo << std::endl;
 	  std::cout << " HAND CATEGORY IS " << handCategory << std::endl;
 	  std::cout << " HAND RANK WITHIN CATEGORY IS " << rankWithinCategory << std::endl;
-	  
 	  i++;
 	}
       else
