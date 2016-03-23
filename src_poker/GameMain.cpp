@@ -89,7 +89,7 @@ void		GameMain::launch_Game()
   while (board->get_Standin_Players() > 1)
     {
       who_play = board->start_Round(elapsed);
-      if (who_play == 0)
+      if (who_play == 0 && board->get_Competitors()[0]->get_Standin() == true)
 	{
 	  if(board->get_Step() > 0)
 	    dat_output->print_All(board, 1);

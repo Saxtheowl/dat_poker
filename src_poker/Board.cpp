@@ -702,8 +702,12 @@ void				Board::Resolve()
 	  winner_twoplustwo = i;
 	}
     }
-  for (int i = 1; i < 6; i++)
-    competitor[i]->set_Standin(false);
+  temp = 0;
+  for (int i = 0; i < 6; i++)
+    competitor[i]->set_Standin(false);  
+  competitor[winner_twoplustwo]->set_Stack(competitor[winner_twoplustwo]->get_Stack() + this->pot);
+  pot = 0;
+  std::cout << " winner is " << winner_twoplustwo << std::endl;
   std::cout << " resolve end " << std::endl;
   //  this->standin_players = 0;
 }
