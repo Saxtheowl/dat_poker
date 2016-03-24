@@ -51,6 +51,7 @@ int		Board::get_start_Stack()
 
 void		Board::init_Board() // cant deal 9 player by now
 {
+
 }
 
 void		Board::init_Mod()
@@ -283,7 +284,7 @@ void		Board::refresh_Standin()
   this->standin_players = 0;
   while (i < 6)
     {
-      if (competitor[i]->get_Standin() == true)
+      if (competitor[i]->get_Standin() == true )
 	{
 	  this->standin_players++;
 	  last = i;
@@ -701,10 +702,14 @@ void				Board::Resolve()
 	  temp = competitor[i]->get_Hand_Showdown_Power_Twoplustwo();
 	  winner_twoplustwo = i;
 	}
+      std::cout << competitor[i]->get_Hand_Showdown_Power_Twoplustwo();
     }
   temp = 0;
   for (int i = 0; i < 6; i++)
-    competitor[i]->set_Standin(false);  
+    {
+      competitor[i]->set_Standin(false);  
+      competitor[i]->set_Hand_Showdown_Power_Twoplustwo(0);
+    }
   competitor[winner_twoplustwo]->set_Stack(competitor[winner_twoplustwo]->get_Stack() + this->pot);
   pot = 0;
   std::cout << " winner is " << winner_twoplustwo << std::endl;

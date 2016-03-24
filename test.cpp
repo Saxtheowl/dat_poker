@@ -62,12 +62,8 @@ int		ogogo(int card)
 
 int		main()
 {
-
   for(int i = 0; i < 52; i++)
     std::cout << ogogo(i) << std::endl;
   //  InitTheEvaluator();
   //  DoSomeWork();
-
-
-
 }

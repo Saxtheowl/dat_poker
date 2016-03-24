@@ -414,7 +414,6 @@ void		dat_Output::update_Cards(Board *board, Player *player)
     put_Cards_Shadow(player->get_Pos_Map_X(), player->get_Pos_Map_Y(), player->get_Pos());
   else if (player->get_Alive() == false)
     clean_Cards_Shadow(player->get_Pos_Map_X(), player->get_Pos_Map_Y(), player->get_Pos());
-  
   put_Button(player->get_Button(), player->get_Pos_Map_X(), player->get_Pos_Map_Y(), player->get_Pos());
   
   clean_Chips(player->get_Pos_Map_X(), player->get_Pos_Map_Y(), player->get_Pos(), 0);
