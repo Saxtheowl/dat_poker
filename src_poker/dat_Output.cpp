@@ -22,6 +22,7 @@ void		dat_Output::print_All(Board *board, int flag)
       second_Update(board);
       update_Card_Board(board);
     }
+  //  std::cout << " print_all get pushed = " << board->get_Competitors()[0]->get_Pushed() << std::endl;
   while (x < this->x_board)
     {
       while (y < this->y_board)
@@ -534,4 +535,3 @@ void		dat_Output::clean_Card_Board()
       i++;
     }
 }
-

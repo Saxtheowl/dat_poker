@@ -61,7 +61,8 @@ bool		Human::play_Human(Board *board)
       board->set_Biggest_Raise(amount);
       board->get_Competitors()[0]->set_Pushed(amount);
       board->get_Competitors()[0]->set_Played(true);
-      board->get_Competitors()[0]->set_Standin(true);
+      //      board->get_Competitors()[0]->set_Standin(true);
+      std::cout << " amount Human " << amount << std::endl;
       return (true);
     }
   else if (action == 3)

@@ -101,6 +101,7 @@ void	Player::set_Pushed(int nb)
 
 int	Player::get_Pushed()
 {
+  //  std::cout << " pushed get pushed = " << this->pushed << std::endl;
   return (this->pushed);
 }
 

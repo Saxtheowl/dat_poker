@@ -459,7 +459,7 @@ bool				Board::run_Round() // ugly
 
   f = 0;
   has_played = 0;
-  std::cout << " current_player run round = " << current_player << std::endl; 
+  std::cout << " current_player run round = " << current_player << std::endl;
   i = current_player;
   while (has_played < (this->standin_players))
     {
@@ -672,15 +672,7 @@ void				Board::Resolve()
 		  std::cout << deck[competitor[i]->get_Index_Card(1)]->get_Nb() << std::endl;*/
 	  Card[0] = get_fixed_Card_Twoplustwo(deck[competitor[i]->get_Index_Card(0)]->get_Nb());
 	  Card[1] = get_fixed_Card_Twoplustwo(deck[competitor[i]->get_Index_Card(1)]->get_Nb());
-	  std::cout << " resolve OK  1 " << std::endl;
 	  std::cout << "player is " << i << std::endl;
-	  std::cout << " card 0 is " << Card[0] << std::endl;
-	  std::cout << " card 1 is " << Card[1] << std::endl;
-	  std::cout << " card 2 is " << Card[2] << std::endl;
-	  std::cout << " card 3 is " << Card[3] << std::endl;
-	  std::cout << " card 4 is " << Card[4] << std::endl;
-	  std::cout << " card 5 is " << Card[5] << std::endl;
-	  std::cout << " card 6 is " << Card[6] << std::endl;
 	  //	  for(int i = 2; i < 7; i++)
 	  //	    Card[i]++;
 	  int handInfo = get_Hand_Value(Card);
@@ -695,6 +687,7 @@ void				Board::Resolve()
       else
 	i++;
     }
+  temp = 0;
   for(int i = 0; i < 6; i++)
     {
       if(competitor[i]->get_Standin() == true && competitor[i]->get_Hand_Showdown_Power_Twoplustwo() > temp)
@@ -702,9 +695,8 @@ void				Board::Resolve()
 	  temp = competitor[i]->get_Hand_Showdown_Power_Twoplustwo();
 	  winner_twoplustwo = i;
 	}
-      std::cout << competitor[i]->get_Hand_Showdown_Power_Twoplustwo();
+      std::cout << " player " << i << " got " << competitor[i]->get_Hand_Showdown_Power_Twoplustwo() << std::endl;
     }
-  temp = 0;
   for (int i = 0; i < 6; i++)
     {
       competitor[i]->set_Standin(false);  
