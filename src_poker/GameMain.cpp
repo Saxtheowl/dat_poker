@@ -95,14 +95,10 @@ void		GameMain::launch_Game()
 	    dat_output->print_All(board, 1);
 	  dat_output->print_Player_Choice(); // something to fix
 	  while (!human->play_Human(board))
-	    {
-	      dat_output->print_Player_Choice();
-	    }
+	    dat_output->print_Player_Choice();
 	}
       else
-	{
-	  ai[board->get_Current_Player() - 1]->play_Bot(board);
-	}
+	ai[board->get_Current_Player() - 1]->play_Bot(board);
       elapsed++;
       board->dat_Refresh();
       dat_output->print_All(board, 1);

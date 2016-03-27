@@ -18,13 +18,11 @@ void		bot_Ai::play_Bot(Board *board)
       board->get_Competitors()[pos]->set_Stack(board->get_Competitors()[pos]->get_Stack() - (board->get_Biggest_Raise() - board->get_Competitors()[pos]->get_Pushed()));
       if(board->get_Biggest_Raise() > 0)
 	{
-	  std::cout << "OKK1" << std::endl;
 	  board->get_Competitors()[pos]->set_Pushed(board->get_Biggest_Raise());
 	}
       else
 	{
 	  std::cout << "CHECK" << std::endl;
-	  std::cout << "OKK2" << std::endl;
 	  //	  board->set_Biggest_Raise(10);
 	  //	  board->get_Competitors()[pos]->set_Stack(board->get_Competitors()[pos]->get_Stack() - (board->get_Biggest_Raise() - board->get_Competitors()[pos]->get_Pushed()));
 	}
@@ -32,7 +30,6 @@ void		bot_Ai::play_Bot(Board *board)
     }
   else
     {
-      std::cout << "OKK3" << std::endl;
       board->get_Competitors()[pos]->set_Standin(false);
       board->get_Competitors()[pos]->set_Played(true);
     }

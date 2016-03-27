@@ -234,7 +234,7 @@ int		Board::get_Next_Standin(int i)
     {
       if (competitor[i + 1]->get_Standin() == true)
 	{
-	  std::cout << " get next standin i = " << i << std::endl;
+	  //	  std::cout << " get next standin i = " << i << std::endl;
 	  return (i + 1);
 	}
       else
@@ -459,17 +459,19 @@ bool				Board::run_Round() // ugly
 
   f = 0;
   has_played = 0;
-  std::cout << " current_player run round = " << current_player << std::endl;
+  std::cout << "run round running " << std::endl;
+  //  std::cout << " current_player run round = " << current_player << std::endl;
   i = current_player;
   while (has_played < (this->standin_players))
     {
       if (competitor[i]->get_Pushed() == this->biggest_raise && competitor[i]->get_Played() == true)
 	has_played++;
-      else if (competitor[i]->get_Pushed() > this->biggest_raise)
+      else if (competitor[i]->get_Pushed() > this->biggest_raise || competitor[i]->get_Stack() <= 0)
 	{
 	  for (int g = 0; g < 6; g++)
 	    competitor[g]->set_Played(false);
-	  this->biggest_raise = competitor[i]->get_Pushed(); // useless ?
+	  if(competitor[i]->get_Pushed() > this->biggest_raise)
+	    this->biggest_raise = competitor[i]->get_Pushed(); // useless ?
 	  competitor[i]->set_Played(true);
 	  has_played = 0;
 	}
@@ -492,6 +494,7 @@ bool				Board::run_Round() // ugly
       Resolve();
       return (true);
     }
+  return(0);
 }
 
 int				Board::start_Round(int elapsed)//std::vector <bot_Ai*> bot_ai)
@@ -503,13 +506,13 @@ int				Board::start_Round(int elapsed)//std::vector <bot_Ai*> bot_ai)
       current_player = button_pos;
       current_player = get_Next_Alive(current_player);
       current_player = get_Next_Alive(current_player);
-      std::cout << " OK4 " << std::endl;
+      //      std::cout << " OK4 " << std::endl;
     }
   if (run_Round() == false)
     {
-      std::cout << " OK3 " << std::endl;
+      //      std::cout << " OK3 " << std::endl;
       current_player = get_Next_Standin(current_player);
-      std::cout << " current_player start round = " << current_player << std::endl;
+      //      std::cout << " current_player start round = " << current_player << std::endl;
       if (current_player == 0 && competitor[0]->get_Standin() == true)
 	return (0);
       else
@@ -550,7 +553,7 @@ void				Board::next_Step()
   old_pot = pot;
   set_Biggest_Raise(0);
   current_player = button_pos;
-  std::cout << " current_player next_step = " << current_player << std::endl;
+  //  std::cout << " current_player next_step = " << current_player << std::endl;
   /*  while(current_player != this->button_pos)
     {
       std::cout << " OK1 " << std::endl; 
@@ -604,11 +607,12 @@ void				Board::reset_Round()
 
 void				Board::init_Hand_Evaluator_Twoplustwo()
 {
-  std::cout << " OK start TWOPLUSTWO " << std::endl;
+  //  std::cout << " OK start TWOPLUSTWO " << std::endl;
   memset(HR, 0, sizeof(HR));
   FILE * fin = fopen("handrank.dat", "rb");
   // Load the HANDRANKS.DAT file data into the HR array
-  size_t bytesread = fread(HR, sizeof(HR), 1, fin);
+  //  size_t bytesread = 
+  fread(HR, sizeof(HR), 1, fin);
   fclose(fin);
   std::cout << " OK END TWOPLUSTWO " << std::endl;
 }
@@ -644,6 +648,7 @@ int				Board::get_fixed_Card_Twoplustwo(int card)
     return(51);
   if(card == 39)
     return(52);
+  return(0);
 }
 
 void				Board::Resolve()
@@ -652,13 +657,8 @@ void				Board::Resolve()
   int				i;
   int				temp;
 
-  std::cout << " resolve start " << std::endl;
+    std::cout << " resolve start " << std::endl;
   i = 0;
-  /*  std::cout << deck[board_card[0]]->get_Nb() << std::endl;
-  std::cout << deck[board_card[1]]->get_Nb() << std::endl;
-  std::cout << deck[board_card[2]]->get_Nb() << std::endl;
-  std::cout << deck[board_card[3]]->get_Nb() << std::endl;
-  std::cout << deck[board_card[4]]->get_Nb() << std::endl;*/
   Card[2] = get_fixed_Card_Twoplustwo(deck[board_card[0]]->get_Nb());
   Card[3] = get_fixed_Card_Twoplustwo(deck[board_card[1]]->get_Nb());
   Card[4] = get_fixed_Card_Twoplustwo(deck[board_card[2]]->get_Nb());
@@ -666,22 +666,21 @@ void				Board::Resolve()
   Card[6] = get_fixed_Card_Twoplustwo(deck[board_card[4]]->get_Nb());
   while(i < 6)
     {
-      if(1)//            if(competitor[i]->get_Standin() == true)
+      if(1)
 	{
-	  /*	  std::cout << deck[competitor[i]->get_Index_Card(0)]->get_Nb() << std::endl;
-		  std::cout << deck[competitor[i]->get_Index_Card(1)]->get_Nb() << std::endl;*/
-	  Card[0] = get_fixed_Card_Twoplustwo(deck[competitor[i]->get_Index_Card(0)]->get_Nb());
-	  Card[1] = get_fixed_Card_Twoplustwo(deck[competitor[i]->get_Index_Card(1)]->get_Nb());
-	  std::cout << "player is " << i << std::endl;
+	  std::cout << deck[competitor[i]->get_Index_Card(1)]->get_Nb() << std::endl;
+	    Card[0] = get_fixed_Card_Twoplustwo(deck[competitor[i]->get_Index_Card(0)]->get_Nb());
+	    Card[1] = get_fixed_Card_Twoplustwo(deck[competitor[i]->get_Index_Card(1)]->get_Nb());
+	    //	  std::cout << "player is " << i << std::endl;
 	  //	  for(int i = 2; i < 7; i++)
 	  //	    Card[i]++;
 	  int handInfo = get_Hand_Value(Card);
-	  int handCategory = handInfo >> 12;
-	  int rankWithinCategory = handInfo & 0x00000FFF;
+	  //	  int handCategory = handInfo >> 12;
+	  //	  int rankWithinCategory = handInfo & 0x00000FFF;
 	  competitor[i]->set_Hand_Showdown_Power_Twoplustwo(handInfo);
-	  std::cout << " HAND INFO IS " << handInfo << std::endl;
-	  std::cout << " HAND CATEGORY IS " << handCategory << std::endl;
-	  std::cout << " HAND RANK WITHIN CATEGORY IS " << rankWithinCategory << std::endl;
+	  //	  std::cout << " HAND INFO IS " << handInfo << std::endl;
+	  //	  std::cout << " HAND CATEGORY IS " << handCategory << std::endl;
+	  //	  std::cout << " HAND RANK WITHIN CATEGORY IS " << rankWithinCategory << std::endl;
 	  i++;
 	}
       else
