@@ -1,187 +1,49 @@
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-X                                                                                             X
-X                                                                                             X
-X                                                                                             X
-X                                            BANK                                             X
-X                                                                                             X
-X                                          70                                                 X
-X     P6 B                                                                             P1     X
-X    [05a] [06a]                                                               [   ] [   ]    X
-X    70                                                                            100        X
-X                                                                                             X
-X                                                                                             X
-X                                                                                             X
-X     P5                                                                               P2     X
-X    [09a] [13b]                 [12a] [04c] [12c] [01a] [02b]                 [   ] [   ]    X
-X    70                                                                            100        X
-X                                                                                             X
-X                                                                                             X
-X                                                                                             X
-X     P4                                                                               P3     X
-X    [   ] [   ]                                                               [   ] [   ]    X
-X    90                                                                            100        X
-X                                                                                             X
-X                                                                                             X
-X                                                                                             X
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-1
- current_player run round = 1
- get next standin i = 0
- resolve start 
-player is 0
- card 0 is 5
- card 1 is 6
- card 2 is 12
- card 3 is 30
- card 4 is 38
- card 5 is 1
- card 6 is 15
- HAND INFO IS 8486
- HAND CATEGORY IS 2
- HAND RANK WITHIN CATEGORY IS 294
-player is 1 WINNER
- card 0 is 9
- card 1 is 13
- card 2 is 12
- card 3 is 30
- card 4 is 38
- card 5 is 1
- card 6 is 15
- HAND INFO IS 12351
- HAND CATEGORY IS 3
- HAND RANK WITHIN CATEGORY IS 63
-
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-X                                                                                             X
-X                                                                                             X
-X                                                                                             X
-X                                            BANK                                             X
-X                                                                                             X
-X                                          75                                                 X
-X     P6                                                                               P1     X
-X    [02b] [12d]                                                               [   ] [   ]    X
-X    85                                                                            90         X
-X                                                                                             X
-X                                                                                             X
-X                                                                                             X
-X     P5 B                                                                             P2     X
-X    [   ] [   ]                 [02d] [10a] [01a] [04a] [06d]                 [08c] [10c]    X
-X    95                                                                            70         X
-X                                                                                             X
-X                                                                                             X
-X                                                                                             X
-X     P4                                                                               P3     X
-X    [   ] [   ]                                                               [   ] [   ]    X
-X    85                                                                            100        X
-X                                                                                             X
-X                                                                                             X
-X                                                                                             X
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-1
- current_player run round = 4
- get next standin i = 3
- resolve start 
-player is 0
- card 0 is 15
- card 1 is 51
- card 2 is 41
- card 3 is 10
- card 4 is 1
- card 5 is 4
- card 6 is 45
- HAND INFO IS 8412
- HAND CATEGORY IS 2
- HAND RANK WITHIN CATEGORY IS 220
-player is 4 WINNER
- card 0 is 36
- card 1 is 34
- card 2 is 41
- card 3 is 10
- card 4 is 1
- card 5 is 4
- card 6 is 45
- HAND INFO IS 12606
- HAND CATEGORY IS 3
- HAND RANK WITHIN CATEGORY IS 318
-
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-X                                                                                             X
-X                                                                                             X
-X                                                                                             X
-X                                            BANK                                             X
-X                                                                                             X
-X                                          95                                                 X
-X     P6 B                                                                             P1     X
-X    [04d] [11c]                                                               [11a] [12a]    X
-X    70                                                                            70         X
-X                                                                                             X
-X                                                                                             X
-X                                                                                             X
-X     P5                                                                               P2     X
-X    [   ] [   ]                 [07a] [06d] [11b] [10d] [10a]                 [   ] [   ]    X
-X    95                                                                            100        X
-X                                                                                             X
-X                                                                                             X
-X                                                                                             X
-X     P4                                                                               P3     X
-X    [   ] [   ]                                                               [   ] [   ]    X
-X    70                                                                            100        X
-X                                                                                             X
-X                                                                                             X
-X                                                                                             X
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-1
- current_player run round = 2
- get next standin i = 2
- resolve start 
-player is 0
- card 0 is 43
- card 1 is 37
- card 2 is 7
- card 3 is 45
- card 4 is 24
- card 5 is 49
- card 6 is 10
- HAND INFO IS 5371
- HAND CATEGORY IS 1
- HAND RANK WITHIN CATEGORY IS 1275
-player is 3 WINNER
- card 0 is 12
- card 1 is 11
- card 2 is 7
- card 3 is 45
- card 4 is 24
- card 5 is 49
- card 6 is 10
- HAND INFO IS 16582
- HAND CATEGORY IS 4
- HAND RANK WITHIN CATEGORY IS 198
-
-two plus two
-2c = 1 2d = 2 2h = 3 2s = 4
-3c = 5 3d = 6 3h = 7 3s = 8
-4c = 9 4d = 10 4h = 11 4s = 12
-5c = 13 5d = 14 5h = 15 5s = 16
-6c = 17 6d = 18 6h = 19 6s = 20
-7c = 21 7d = 22 7h = 23 7s = 24
-8c = 25 8d = 26 8h = 27 8s = 28
-9c = 29 9d = 30 9h = 31 9s = 32
-Tc = 33 Td = 34 Th = 35 Ts = 36
-Jc = 37 Jd = 38 Jh = 39 Js = 40
-Qc = 41 Qd = 42 Qh = 43 Qs = 44
-Kc = 45 Kd = 46 Kh = 47 Ks = 48
-Ac = 49 Ad = 50 Ah = 51 As = 52
-
-2c = 1 2d = 14 2h = 27 2s = 40
-3c = 2 3d = 15 3h = 28 3s = 41
-4c = 3 4d = 16 4h = 29 4s = 42
-5c = 4 5d = 17 5h = 30 5s = 43
-6c = 5 6d = 18 6h = 31 6s = 44
-7c = 6 7d = 19 7h = 32 7s = 45
-8c = 7 8d = 20 8h = 33 8s = 46
-9c = 8 9d = 21 9h = 34 9s = 47
-Tc = 9 Td = 23 Th = 35 Ts = 48
-Jc = 10 Jd = 24 Jh = 36 Js = 49
-Qc = 11 Qd = 25 Qh = 37 Qs = 50
-Kc = 12 Kd = 26 Kh = 38 Ks = 51
-Ac = 0 Ad = 13 Ah = 26 As = 39
+n[?1h=[?25l[H[2J[mtop - 15:55:08 up  4:34,  3 users,  load average: 0,23, 0,42, 0,34[m[39;49m[m[39;49m[K
+Tasks:[m[39;49m[1m 206 [m[39;49mtotal,[m[39;49m[1m   1 [m[39;49mrunning,[m[39;49m[1m 205 [m[39;49msleeping,[m[39;49m[1m   0 [m[39;49mstopped,[m[39;49m[1m   0 [m[39;49mzombie[m[39;49m[m[39;49m[K
+%Cpu(s):[m[39;49m[1m  8,4 [m[39;49mus,[m[39;49m[1m  3,1 [m[39;49msy,[m[39;49m[1m  0,1 [m[39;49mni,[m[39;49m[1m 86,6 [m[39;49mid,[m[39;49m[1m  1,8 [m[39;49mwa,[m[39;49m[1m  0,0 [m[39;49mhi,[m[39;49m[1m  0,0 [m[39;49msi,[m[39;49m[1m  0,0 [m[39;49mst[m[39;49m[m[39;49m[K
+KiB Mem: [m[39;49m[1m  3941008 [m[39;49mtotal,[m[39;49m[1m  3780612 [m[39;49mused,[m[39;49m[1m   160396 [m[39;49mfree,[m[39;49m[1m    50196 [m[39;49mbuffers[m[39;49m[m[39;49m[K
+KiB Swap:[m[39;49m[1m  4086780 [m[39;49mtotal,[m[39;49m[1m      284 [m[39;49mused,[m[39;49m[1m  4086496 [m[39;49mfree.[m[39;49m[1m  2093488 [m[39;49mcached Mem[m[39;49m[m[39;49m[K
+[K
+[7m  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND                                                                                    [m[39;49m[K
+[m 2332 roro      20   0  652680  27948  19992 S  12,7  0,7   0:05.66 gnome-terminal                                                                             [m[39;49m[K
+[m 1251 root      20   0  369860  31824  21752 S   6,4  0,8   4:22.67 Xorg                                                                                       [m[39;49m[K
+[m 1924 roro      20   0  436376   9436   5100 S   6,4  0,2   0:05.05 ibus-daemon                                                                                [m[39;49m[K
+[m 3918 roro      20   0  932184 203876  68916 S   6,4  5,2   1:59.36 chrome                                                                                     [m[39;49m[K
+[m[1m 4640 roro      20   0   29168   3112   2572 R   6,4  0,1   0:00.01 top                                                                                        [m[39;49m[K
+[m    1 root      20   0   33908   4276   2552 S   0,0  0,1   0:01.37 init                                                                                       [m[39;49m[K
+[m    2 root      20   0       0      0      0 S   0,0  0,0   0:00.00 kthreadd                                                                                   [m[39;49m[K
+[m    3 root      20   0       0      0      0 S   0,0  0,0   0:01.68 ksoftirqd/0                                                                                [m[39;49m[K
+[m    5 root       0 -20       0      0      0 S   0,0  0,0   0:00.00 kworker/0:0H                                                                               [m[39;49m[K
+[m    7 root      20   0       0      0      0 S   0,0  0,0   0:04.50 rcu_sched                                                                                  [m[39;49m[K
+[m    8 root      20   0       0      0      0 S   0,0  0,0   0:00.00 rcu_bh                                                                                     [m[39;49m[K
+[m    9 root      20   0       0      0      0 S   0,0  0,0   0:04.47 rcuos/0                                                                                    [m[39;49m[K
+[m   10 root      20   0       0      0      0 S   0,0  0,0   0:00.00 rcuob/0                                                                                    [m[39;49m[K
+[m   11 root      rt   0       0      0      0 S   0,0  0,0   0:00.00 migration/0                                                                                [m[39;49m[K
+[m   12 root      rt   0       0      0      0 S   0,0  0,0   0:00.06 watchdog/0                                                                                 [m[39;49m[K
+[m   13 root      rt   0       0      0      0 S   0,0  0,0   0:00.06 watchdog/1                                                                                 [m[39;49m[K
+[m   14 root      rt   0       0      0      0 S   0,0  0,0   0:00.00 migration/1                                                                                [m[39;49m[K
+[m   15 root      20   0       0      0      0 S   0,0  0,0   0:01.68 ksoftirqd/1                                                                                [m[39;49m[K
+[m   17 root       0 -20       0      0      0 S   0,0  0,0   0:00.00 kworker/1:0H                                                                               [m[39;49m[K
+[m   18 root      20   0       0      0      0 S   0,0  0,0   0:01.58 rcuos/1                                                                                    [m[39;49m[K
+[m   19 root      20   0       0      0      0 S   0,0  0,0   0:00.00 rcuob/1                                                                                    [m[39;49m[K
+[m   20 root       0 -20       0      0      0 S   0,0  0,0   0:00.00 khelper                                                                                    [m[39;49m[K
+[m   21 root      20   0       0      0      0 S   0,0  0,0   0:00.00 kdevtmpfs                                                                                  [m[39;49m[K
+[m   22 root       0 -20       0      0      0 S   0,0  0,0   0:00.00 netns                                                                                      [m[39;49m[K
+[m   23 root       0 -20       0      0      0 S   0,0  0,0   0:00.00 perf                                                                                       [m[39;49m[K
+[m   24 root      20   0       0      0      0 S   0,0  0,0   0:00.01 khungtaskd                                                                                 [m[39;49m[K
+[m   25 root       0 -20       0      0      0 S   0,0  0,0   0:00.00 writeback                                                                                  [m[39;49m[K
+[m   26 root      25   5       0      0      0 S   0,0  0,0   0:00.00 ksmd                                                                                       [m[39;49m[K
+[m   27 root      39  19       0      0      0 S   0,0  0,0   0:02.96 khugepaged                                                                                 [m[39;49m[K
+[m   28 root       0 -20       0      0      0 S   0,0  0,0   0:00.00 crypto                                                                                     [m[39;49m[K
+[m   29 root       0 -20       0      0      0 S   0,0  0,0   0:00.00 kintegrityd                                                                                [m[39;49m[K
+[m   30 root       0 -20       0      0      0 S   0,0  0,0   0:00.00 bioset                                                                                     [m[39;49m[K
+[m   31 root       0 -20       0      0      0 S   0,0  0,0   0:00.00 kblockd                                                                                    [m[39;49m[K
+[m   33 root       0 -20       0      0      0 S   0,0  0,0   0:00.00 ata_sff                                                                                    [m[39;49m[K
+[m   34 root       0 -20       0      0      0 S   0,0  0,0   0:00.00 md                                                                                         [m[39;49m[K
+[m   35 root       0 -20       0      0      0 S   0,0  0,0   0:00.00 devfreq_wq                                                                                 [m[39;49m[K
+[m   38 root      20   0       0      0      0 S   0,0  0,0   0:05.64 kswapd0                                                                                    [m[39;49m[K
+[m   39 root       0 -20       0      0      0 S   0,0  0,0   0:00.00 vmstat                                                                                     [m[39;49m[K
+[m   40 root      20   0       0      0      0 S   0,0  0,0   0:00.00 fsnotify_mark                                                                              [m[39;49m[K
+[m   41 root      20   0       0      0      0 S   0,0  0,0   0:00.00 ecryptfs-kthrea                                                                            [m[39;49m[K
+[m   52 root       0 -20       0      0      0 S   0,0  0,0   0:00.00 kthrotld                                                                                   [m[39;49m[K[?1l>[49;1H
+[?12l[?25h[K

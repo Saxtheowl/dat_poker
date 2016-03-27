@@ -60,7 +60,6 @@ private:
   bool	alive;
   bool	standin;
   bool	played;
-  bool	biggest_raise;
 };
 
 #endif
