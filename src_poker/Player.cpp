@@ -95,7 +95,10 @@ bool	Player::get_Alive()
 void	Player::set_Pushed(int nb)
 {
   if (this->stack < nb)
-    nb = this->stack;
+    {
+      nb = this->stack;
+      all_in = true;
+    }
   this->pushed = nb;
 }
 
@@ -144,3 +147,4 @@ bool	Player::get_All_In()
 {
   return(this->all_in);
 }
+

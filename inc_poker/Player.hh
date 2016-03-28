@@ -45,6 +45,7 @@ class		Player
 
   void		set_All_In(bool ok);
   bool		get_All_In();
+
 private:
   TYPE_PL type_pl;
   int	stack;

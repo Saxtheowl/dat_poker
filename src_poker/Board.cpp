@@ -296,11 +296,12 @@ void		Board::refresh_Standin()
       end_round = true;
       competitor[last]->set_Stack(competitor[last]->get_Stack() + this->pot);
       this->pot = 0;
-    }    
+    }
 }
 
 void		Board::reload_Round(int i)
 {
+  competitor[i]->set_All_In(false);
   competitor[i]->set_Pushed(0);
   gime_Card(competitor[i], 1);
   move_Button(i);
@@ -464,16 +465,14 @@ bool				Board::run_Round() // ugly
   i = current_player;
   while (has_played < (this->standin_players))
     {
-      if ((competitor[i]->get_Pushed() == this->biggest_raise && competitor[i]->get_Played() == true))// || competitor[i]->get_All_In() == true)
+      if ((competitor[i]->get_Pushed() == this->biggest_raise && competitor[i]->get_Played() == true ) || competitor[i]->get_All_In() == true )
 	has_played++;
-      else if (competitor[i]->get_Pushed() > this->biggest_raise || competitor[i]->get_Stack() <= 0)
+      else if (competitor[i]->get_Pushed() > this->biggest_raise)
 	{
 	  for (int g = 0; g < 6; g++)
 	    competitor[g]->set_Played(false);
 	  if(competitor[i]->get_Pushed() > this->biggest_raise)
-	    {
-	      this->biggest_raise = competitor[i]->get_Pushed(); // useless ?
-	    }
+	    this->biggest_raise = competitor[i]->get_Pushed(); // useless ?
 	  competitor[i]->set_Played(true);
 	  has_played = 0;
 	}

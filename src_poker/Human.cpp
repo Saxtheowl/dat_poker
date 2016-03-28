@@ -57,9 +57,9 @@ bool		Human::play_Human(Board *board)
 	  std::cout << " how much ? " << std::endl;
 	  amount = get_Input();
 	}
+      board->get_Competitors()[0]->set_Pushed(amount);
       board->get_Competitors()[0]->set_Stack(board->get_Competitors()[0]->get_Stack() - amount);
       board->set_Biggest_Raise(amount);
-      board->get_Competitors()[0]->set_Pushed(amount);
       board->get_Competitors()[0]->set_Played(true);
       //      board->get_Competitors()[0]->set_Standin(true);
       std::cout << " amount Human " << amount << std::endl;
