@@ -134,3 +134,13 @@ int	Player::get_Hand_Showdown_Power_Twoplustwo()
 {
   return(this->hand_showdown_power_twoplustwo);
 }
+
+void	Player::set_All_In(bool ok)
+{
+  this->all_in = ok;
+}
+
+bool	Player::get_All_In()
+{
+  return(this->all_in);
+}

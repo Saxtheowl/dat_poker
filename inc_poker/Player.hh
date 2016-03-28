@@ -43,6 +43,8 @@ class		Player
   void		set_Hand_Showdown_Power_Twoplustwo(int nb);
   int		get_Hand_Showdown_Power_Twoplustwo();
 
+  void		set_All_In(bool ok);
+  bool		get_All_In();
 private:
   TYPE_PL type_pl;
   int	stack;
@@ -60,6 +62,7 @@ private:
   bool	alive;
   bool	standin;
   bool	played;
+  bool	all_in;
 };
 
 #endif
