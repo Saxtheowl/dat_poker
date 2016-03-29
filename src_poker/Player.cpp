@@ -100,7 +100,9 @@ void		Player::set_Pushed(int nb)
 
   old_push = this->pushed;
   if(this->pushed > 0)
-    this->pushed = this->pushed = (nb - old_push);
+    {
+      this->pushed = (nb - old_push);
+    }
   //  else
   //    this->pushed = nb;
   else if (this->stack < nb)
