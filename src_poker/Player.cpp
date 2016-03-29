@@ -94,12 +94,14 @@ bool		Player::get_Alive()
 
 void		Player::set_Pushed(int nb)
 {
+  if(this->pushed > 0)
+    this->pushed = this->pushed + nb;
   if (this->stack < nb)
     {
       nb = this->stack;
       all_in = true;
     }
-  this->pushed = pushed + nb;
+  this->pushed = nb;
 }
 
 int		Player::get_Pushed()
