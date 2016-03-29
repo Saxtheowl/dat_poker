@@ -17,8 +17,8 @@ void		bot_Ai::play_Bot(Board *board)
     {
       if(board->get_Competitors()[pos]->get_Pushed() < board->get_Biggest_Raise())
 	{
+	  board->get_Competitors()[pos]->set_Stack(board->get_Competitors()[pos]->get_Stack() - (board->get_Biggest_Raise() - board->get_Competitors()[pos]->get_Pushed()));
 	  board->get_Competitors()[pos]->set_Pushed(board->get_Biggest_Raise());
-	  board->get_Competitors()[pos]->set_Stack(board->get_Competitors()[pos]->get_Stack() - board->get_Biggest_Raise());
 	}
       else
 	{

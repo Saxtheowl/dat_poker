@@ -91,17 +91,25 @@ bool		Player::get_Alive()
 {
   return (this->alive);
 }
+/*20
+  90 70*/
 
 void		Player::set_Pushed(int nb)
 {
+  int		old_push;
+
+  old_push = this->pushed;
   if(this->pushed > 0)
-    this->pushed = this->pushed + nb;
-  if (this->stack < nb)
+    this->pushed = this->pushed = (nb - old_push);
+  //  else
+  //    this->pushed = nb;
+  else if (this->stack < nb)
     {
-      nb = this->stack;
+      nb = this->pushed + this->stack;
       all_in = true;
     }
-  this->pushed = nb;
+  else
+    this->pushed = nb;
 }
 
 int		Player::get_Pushed()
