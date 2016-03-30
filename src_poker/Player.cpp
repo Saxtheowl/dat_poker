@@ -99,7 +99,7 @@ void		Player::set_Pushed(int nb)
   int		old_push;
 
   old_push = this->pushed;
-  if(this->pushed > 0)
+  if(nb > 0)
     {
       this->pushed = (nb - old_push);
     }

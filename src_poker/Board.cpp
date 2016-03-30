@@ -572,6 +572,10 @@ void				Board::next_Step()
     }
   std::cout << " get_biggest_raise " << this->biggest_raise << std::endl;
   i = 0;
+  for(int i = 0; i < 6; i++)
+    {
+      std::cout << " board get_pushed next step = " << competitor[i]->get_Pushed() << std::endl;
+    }
 }
 
 int				Board::get_Step()
