@@ -427,7 +427,7 @@ void		dat_Output::update_Cards(Board *board, Player *player)
     put_Chips(player->get_Pushed(), player->get_Pos_Map_X(), player->get_Pos_Map_Y(), player->get_Pos(), 1);
   put_Pot(board->get_Pot());
   clean_Pot();
-  std::cout << " get pushed dat output " << t << std::endl;
+  //  std::cout << " get pushed dat output " << t << std::endl;
 }
 
 void		dat_Output::first_Update(Board *board)

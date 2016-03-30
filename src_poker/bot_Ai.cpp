@@ -17,12 +17,15 @@ void		bot_Ai::play_Bot(Board *board)
     {
       if(board->get_Competitors()[pos]->get_Pushed() < board->get_Biggest_Raise())
 	{
+	  std::cout << "bot CALL get Pushed = " << board->get_Competitors()[pos]->get_Pushed() << " get biggest Raise = " << board->get_Biggest_Raise() << std::endl;
+	  std::cout << "bot CALL" << std::endl;
 	  board->get_Competitors()[pos]->set_Stack(board->get_Competitors()[pos]->get_Stack() - (board->get_Biggest_Raise() - board->get_Competitors()[pos]->get_Pushed()));
 	  board->get_Competitors()[pos]->set_Pushed(board->get_Biggest_Raise());
+	  std::cout << "bot CALL" << std::endl;
 	}
       else
 	{
-	  std::cout << "CHECK" << std::endl;
+	  std::cout << "bot CHECK" << std::endl;
 	  //	  board->set_Biggest_Raise(10);
 	  //	  board->get_Competitors()[pos]->set_Stack(board->get_Competitors()[pos]->get_Stack() - (board->get_Biggest_Raise() - board->get_Competitors()[pos]->get_Pushed()));
 	}
@@ -30,7 +33,7 @@ void		bot_Ai::play_Bot(Board *board)
     }
   else
     {
-      std::cout << "OKK3" << std::endl;
+      std::cout << "bot FOLD PREFLOP" << std::endl;
       board->get_Competitors()[pos]->set_Standin(false);
       board->get_Competitors()[pos]->set_Played(true);
     }

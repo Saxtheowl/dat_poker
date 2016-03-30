@@ -570,6 +570,7 @@ void				Board::next_Step()
       competitor[i]->set_Pushed(0);
       i++;
     }
+  std::cout << " get_biggest_raise " << this->biggest_raise << std::endl;
   i = 0;
 }
 

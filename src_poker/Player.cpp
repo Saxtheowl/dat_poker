@@ -112,6 +112,7 @@ void		Player::set_Pushed(int nb)
     }
   else
     this->pushed = nb;
+  old_push = 0;
 }
 
 int		Player::get_Pushed()
