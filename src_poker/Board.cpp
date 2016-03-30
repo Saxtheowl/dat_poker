@@ -472,7 +472,11 @@ bool				Board::run_Round() // ugly
 	  for (int g = 0; g < 6; g++)
 	    competitor[g]->set_Played(false);
 	  if(competitor[i]->get_Pushed() > this->biggest_raise)
-	    this->biggest_raise = competitor[i]->get_Pushed(); // useless ?
+	    {
+	      this->biggest_raise = competitor[i]->get_Pushed(); // useless ?
+	      std::cout << " biggest raise = " << this->biggest_raise << std::endl;
+	      std::cout << " competitor " << i << " get pushed = " << competitor[i]->get_Pushed() << std::endl;
+	    }
 	  competitor[i]->set_Played(true);
 	  has_played = 0;
 	}
