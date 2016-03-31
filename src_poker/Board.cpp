@@ -519,7 +519,12 @@ int				Board::start_Round(int elapsed)//std::vector <bot_Ai*> bot_ai)
       current_player = get_Next_Standin(current_player);
       //      std::cout << " current_player start round = " << current_player << std::endl;
       if (current_player == 0 && competitor[0]->get_Standin() == true)
-	return (0);
+	{
+	  std::cout << " start round : " << std::endl;
+	  std::cout << " biggest raise = " << this->biggest_raise << std::endl;
+	  std::cout << " competitor 00" << " get pushed = " << competitor[0]->get_Pushed() << std::endl;
+	  return (0);
+	}
       else
 	return (1);
     }

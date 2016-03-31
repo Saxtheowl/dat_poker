@@ -99,8 +99,11 @@ void		Player::set_Pushed(int nb)
   int		old_push;
 
   old_push = this->pushed;
+  std::cout << " set_pushed " << " nb = " << nb << " old_push = " << old_push << std::endl;
   if(nb > 0)
-    this->pushed = (nb - old_push);
+    {
+      this->pushed = nb;//(nb + old_push);
+    }
   //  else
   //    this->pushed = nb;
   else if (this->stack < nb)
@@ -158,4 +161,3 @@ bool		Player::get_All_In()
 {
   return(this->all_in);
 }
-
