@@ -1,0 +1,482 @@
+X    [   ] [   ]                 [02b] [06b] [03d] [07b] [   ]                 [10c] [11c]    X
+X    95                                                                            70         X
+X                                                                                             X
+X                                                                                             X
+X                                                                                             X
+X     P4                                                                               P3     X
+X    [   ] [   ]                                                               [   ] [   ]    X
+X    90                                                                            100        X
+X                                                                                             X
+X                                                                                             X
+X                                                                                             X
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+1
+run round running 
+bot4 is playing 
+bot CHECK
+ step =  2
+ ok 2 step = 1 
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+X                                                                                             X
+X                                                                                             X
+X                                                                                             X
+X                                            BANK                                             X
+X                                                                                             X
+X                                          105                                                X
+X     P6 B                                                                             P1     X
+X    [13d] [08c]                                                               [08d] [12c]    X
+X    70                                                                            70         X
+X                                                                                             X
+X                                                                                             X
+X                                                                                             X
+X     P5                                                                               P2     X
+X    [   ] [   ]                 [02b] [06b] [03d] [07b] [   ]                 [10c] [11c]    X
+X    95                                                                            70         X
+X                                                                                             X
+X                                                                                             X
+X                                                                                             X
+X     P4                                                                               P3     X
+X    [   ] [   ]                                                               [   ] [   ]    X
+X    90                                                                            100        X
+X                                                                                             X
+X                                                                                             X
+X                                                                                             X
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+1
+run round running 
+ start round : 
+ biggest raise = 0
+ competitor 00 get pushed = 0
+ step =  2
+ ok 2 step = 1 
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+X                                                                                             X
+X                                                                                             X
+X                                                                                             X
+X                                            BANK                                             X
+X                                                                                             X
+X                                          105                                                X
+X     P6 B                                                                             P1     X
+X    [13d] [08c]                                                               [08d] [12c]    X
+X    70                                                                            70         X
+X                                                                                             X
+X                                                                                             X
+X                                                                                             X
+X     P5                                                                               P2     X
+X    [   ] [   ]                 [02b] [06b] [03d] [07b] [   ]                 [10c] [11c]    X
+X    95                                                                            70         X
+X                                                                                             X
+X                                                                                             X
+X                                                                                             X
+X     P4                                                                               P3     X
+X    [   ] [   ]                                                               [   ] [   ]    X
+X    90                                                                            100        X
+X                                                                                             X
+X                                                                                             X
+X                                                                                             X
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+ 1 - CALL
+
+ 2 - RAISE
+
+ 3 - FOLD
+
+1
+ set_pushed  nb = 10 old_push = 0
+ new stack human = 60
+ step =  2
+ ok 2 step = 1 
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+X                                                                                             X
+X                                                                                             X
+X                                                                                             X
+X                                            BANK                                             X
+X                                                                                             X
+X                                          115                                                X
+X     P6 B                                                                             P1     X
+X    [13d] [08c] 10                                                            [08d] [12c]    X
+X    60                                                                            70         X
+X                                                                                             X
+X                                                                                             X
+X                                                                                             X
+X     P5                                                                               P2     X
+X    [   ] [   ]                 [02b] [06b] [03d] [07b] [   ]                 [10c] [11c]    X
+X    95                                                                            70         X
+X                                                                                             X
+X                                                                                             X
+X                                                                                             X
+X     P4                                                                               P3     X
+X    [   ] [   ]                                                               [   ] [   ]    X
+X    90                                                                            100        X
+X                                                                                             X
+X                                                                                             X
+X                                                                                             X
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+1
+run round running 
+ biggest raise = 10
+ competitor 0 get pushed = 10
+bot3 is playing 
+bot CALL get Pushed = 0 get biggest Raise = 10
+bot CALL
+ set_pushed  nb = 10 old_push = 0
+bot CALL
+ step =  2
+ ok 2 step = 1 
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+X                                                                                             X
+X                                                                                             X
+X                                                                                             X
+X                                            BANK                                             X
+X                                                                                             X
+X                                          125                                                X
+X     P6 B                                                                             P1     X
+X    [13d] [08c] 10                                                   10       [08d] [12c]    X
+X    60                                                                            60         X
+X                                                                                             X
+X                                                                                             X
+X                                                                                             X
+X     P5                                                                               P2     X
+X    [   ] [   ]                 [02b] [06b] [03d] [07b] [   ]                 [10c] [11c]    X
+X    95                                                                            70         X
+X                                                                                             X
+X                                                                                             X
+X                                                                                             X
+X     P4                                                                               P3     X
+X    [   ] [   ]                                                               [   ] [   ]    X
+X    90                                                                            100        X
+X                                                                                             X
+X                                                                                             X
+X                                                                                             X
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+1
+run round running 
+bot4 is playing 
+bot CALL get Pushed = 0 get biggest Raise = 10
+bot CALL
+ set_pushed  nb = 10 old_push = 0
+bot CALL
+ step =  2
+ ok 2 step = 1 
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+X                                                                                             X
+X                                                                                             X
+X                                                                                             X
+X                                            BANK                                             X
+X                                                                                             X
+X                                          135                                                X
+X     P6 B                                                                             P1     X
+X    [13d] [08c] 10                                                   10       [08d] [12c]    X
+X    60                                                                            60         X
+X                                                                                             X
+X                                                                                             X
+X                                                                                             X
+X     P5                                                                               P2     X
+X    [   ] [   ]                 [02b] [06b] [03d] [07b] [   ]        10       [10c] [11c]    X
+X    95                                                                            60         X
+X                                                                                             X
+X                                                                                             X
+X                                                                                             X
+X     P4                                                                               P3     X
+X    [   ] [   ]                                                               [   ] [   ]    X
+X    90                                                                            100        X
+X                                                                                             X
+X                                                                                             X
+X                                                                                             X
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+1
+run round running 
+ next step OK 
+ set_pushed  nb = 0 old_push = 10
+ set_pushed  nb = 0 old_push = 0
+ set_pushed  nb = 0 old_push = 0
+ set_pushed  nb = 0 old_push = 10
+ set_pushed  nb = 0 old_push = 10
+ set_pushed  nb = 0 old_push = 0
+ get_biggest_raise 0
+ board get_pushed next step = 0
+ board get_pushed next step = 0
+ board get_pushed next step = 0
+ board get_pushed next step = 0
+ board get_pushed next step = 0
+ board get_pushed next step = 0
+bot3 is playing 
+bot CHECK
+ step =  3
+ ok 2 step = 1 
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+X                                                                                             X
+X                                                                                             X
+X                                                                                             X
+X                                            BANK                                             X
+X                                                                                             X
+X                                          135                                                X
+X     P6 B                                                                             P1     X
+X    [13d] [08c]                                                               [08d] [12c]    X
+X    60                                                                            60         X
+X                                                                                             X
+X                                                                                             X
+X                                                                                             X
+X     P5                                                                               P2     X
+X    [   ] [   ]                 [02b] [06b] [03d] [07b] [04b]                 [10c] [11c]    X
+X    95                                                                            60         X
+X                                                                                             X
+X                                                                                             X
+X                                                                                             X
+X     P4                                                                               P3     X
+X    [   ] [   ]                                                               [   ] [   ]    X
+X    90                                                                            100        X
+X                                                                                             X
+X                                                                                             X
+X                                                                                             X
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+1
+run round running 
+bot4 is playing 
+bot CHECK
+ step =  3
+ ok 2 step = 1 
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+X                                                                                             X
+X                                                                                             X
+X                                                                                             X
+X                                            BANK                                             X
+X                                                                                             X
+X                                          135                                                X
+X     P6 B                                                                             P1     X
+X    [13d] [08c]                                                               [08d] [12c]    X
+X    60                                                                            60         X
+X                                                                                             X
+X                                                                                             X
+X                                                                                             X
+X     P5                                                                               P2     X
+X    [   ] [   ]                 [02b] [06b] [03d] [07b] [04b]                 [10c] [11c]    X
+X    95                                                                            60         X
+X                                                                                             X
+X                                                                                             X
+X                                                                                             X
+X     P4                                                                               P3     X
+X    [   ] [   ]                                                               [   ] [   ]    X
+X    90                                                                            100        X
+X                                                                                             X
+X                                                                                             X
+X                                                                                             X
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+1
+run round running 
+ start round : 
+ biggest raise = 0
+ competitor 00 get pushed = 0
+ step =  3
+ ok 2 step = 1 
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+X                                                                                             X
+X                                                                                             X
+X                                                                                             X
+X                                            BANK                                             X
+X                                                                                             X
+X                                          135                                                X
+X     P6 B                                                                             P1     X
+X    [13d] [08c]                                                               [08d] [12c]    X
+X    60                                                                            60         X
+X                                                                                             X
+X                                                                                             X
+X                                                                                             X
+X     P5                                                                               P2     X
+X    [   ] [   ]                 [02b] [06b] [03d] [07b] [04b]                 [10c] [11c]    X
+X    95                                                                            60         X
+X                                                                                             X
+X                                                                                             X
+X                                                                                             X
+X     P4                                                                               P3     X
+X    [   ] [   ]                                                               [   ] [   ]    X
+X    90                                                                            100        X
+X                                                                                             X
+X                                                                                             X
+X                                                                                             X
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+ 1 - CALL
+
+ 2 - RAISE
+
+ 3 - FOLD
+
+3
+ human fold OK 
+ step =  3
+ ok 2 step = 1 
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+X                                                                                             X
+X                                                                                             X
+X                                                                                             X
+X                                            BANK                                             X
+X                                                                                             X
+X                                          135                                                X
+X     P6 B                                                                             P1     X
+X    [   ] [   ]                                                               [08d] [12c]    X
+X    60                                                                            60         X
+X                                                                                             X
+X                                                                                             X
+X                                                                                             X
+X     P5                                                                               P2     X
+X    [   ] [   ]                 [02b] [06b] [03d] [07b] [04b]                 [10c] [11c]    X
+X    95                                                                            60         X
+X                                                                                             X
+X                                                                                             X
+X                                                                                             X
+X     P4                                                                               P3     X
+X    [   ] [   ]                                                               [   ] [   ]    X
+X    90                                                                            100        X
+X                                                                                             X
+X                                                                                             X
+X                                                                                             X
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+1
+run round running 
+ resolve start 
+33
+15
+40
+46
+35
+39
+ player 0 got 4585
+ player 1 got 24578
+ player 2 got 8286
+ player 3 got 4376
+ player 4 got 4306
+ player 5 got 5024
+ winner is 3
+ resolve end 
+1[3]-  Done                    deluge 2> /dev/null  (wd: ~)
+(wd now: ~/work/cp_work_epi_temp/git/dat_poker)
+Segmentation fault (core dumped)
+roro@roro-ThinkPad-T400:~/work/cp_work_epi_temp/git/dat_poker$ 1ne src_poker/Board.cpp 
+No command '1ne' found, did you mean:
+ Command 'one' from package 'opennebula' (universe)
+ Command 'mne' from package 'python-mne' (universe)
+ Command 'ne' from package 'ne' (universe)
+1ne: command not found
+roro@roro-ThinkPad-T400:~/work/cp_work_epi_temp/git/dat_poker$ ne
+roro@roro-ThinkPad-T400:~/work/cp_work_epi_temp/git/dat_poker$ 1ne src_poker/Board.cpp ^C
+roro@roro-ThinkPad-T400:~/work/cp_work_epi_temp/git/dat_poker$ ne src_poker/Board.cpp 
+roro@roro-ThinkPad-T400:~/work/cp_work_epi_temp/git/dat_poker$ ne src_poker/Board.cpp 
+roro@roro-ThinkPad-T400:~/work/cp_work_epi_temp/git/dat_poker$ Vector smash protection is enabled.
+
+roro@roro-ThinkPad-T400:~/work/cp_work_epi_temp/git/dat_poker$ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+roro@roro-ThinkPad-T400:~/work/cp_work_epi_temp/git/dat_poker$ ls
+handrank.dat  inc_poker  index.html  Makefile  other  poker  src_poker  test_no_del
+roro@roro-ThinkPad-T400:~/work/cp_work_epi_temp/git/dat_poker$ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+roro@roro-ThinkPad-T400:~/work/cp_work_epi_temp/git/dat_poker$ ls
+handrank.dat  inc_poker  index.html  Makefile  other  poker  src_poker  test_no_del
+roro@roro-ThinkPad-T400:~/work/cp_work_epi_temp/git/dat_poker$ ne src_poker/Board.cpp 
+roro@roro-ThinkPad-T400:~/work/cp_work_epi_temp/git/dat_poker$ make && ./poker 
+make: `poker' is up to date.
+ OK END TWOPLUSTWO 
+ set_pushed  nb = 0 old_push = 0
+ set_pushed  nb = 0 old_push = 0
+ set_pushed  nb = 0 old_push = 0
+ set_pushed  nb = 0 old_push = 0
+ set_pushed  nb = 0 old_push = 0
+ set_pushed  nb = 0 old_push = 0
+ set_pushed  nb = 0 old_push = 0
+ set_pushed  nb = 0 old_push = 0
+ set_pushed  nb = 0 old_push = 0
+ set_pushed  nb = 0 old_push = 0
+ set_pushed  nb = 0 old_push = 0
+ set_pushed  nb = 0 old_push = 0
+ set_pushed  nb = 5 old_push = 0
+ set_pushed  nb = 10 old_push = 0
+first update start
