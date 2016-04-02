@@ -69,6 +69,7 @@ public:
   void		dat_Refresh();
   void		reset_Round();
   void		Resolve();
+  void		distribute_Pot();
 
   void		init_Hand_Evaluator_Twoplustwo();
   int		get_Hand_Value(int *pCards);

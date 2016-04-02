@@ -89,7 +89,7 @@ void		GameMain::launch_Game()
   while (board->get_Standin_Players() > 1)
     {
       who_play = board->start_Round(elapsed);
-      if (who_play == 0 && board->get_Competitors()[0]->get_Standin() == true)
+      if (who_play == 0 && board->get_Competitors()[0]->get_Standin() == true && board->get_Competitors()[0]->get_Stack() > 0)// && board->get_Competitors()[0]->get_All_In() == false)
 	{
 	  if(board->get_Step() > 0)
 	    dat_output->print_All(board, 1);
@@ -97,7 +97,7 @@ void		GameMain::launch_Game()
 	  while (!human->play_Human(board))
 	    dat_output->print_Player_Choice();
 	}
-      else
+      else if(who_play > 0)
 	ai[board->get_Current_Player() - 1]->play_Bot(board);
       elapsed++;
       board->dat_Refresh();

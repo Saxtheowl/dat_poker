@@ -465,7 +465,7 @@ bool				Board::run_Round() // ugly
   i = current_player;
   while (has_played < (this->standin_players))
     {
-      if ((competitor[i]->get_Pushed() == this->biggest_raise && competitor[i]->get_Played() == true ) || competitor[i]->get_All_In() == true )
+      if ((competitor[i]->get_Pushed() == this->biggest_raise && competitor[i]->get_Played() == true ) || competitor[i]->get_Stack() == 0)// || competitor[i]->get_All_In() == true )
 	has_played++;
       else if (competitor[i]->get_Pushed() > this->biggest_raise)
 	{
@@ -721,4 +721,9 @@ void				Board::Resolve()
   std::cout << " winner is " << winner_twoplustwo << std::endl;
   std::cout << " resolve end " << std::endl;
   //  this->standin_players = 0;
+}
+
+void		distribute_Pot()
+{
+  
 }
