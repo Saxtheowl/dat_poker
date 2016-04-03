@@ -727,27 +727,24 @@ void				Board::Resolve()
 
 void		Board::distribute_Pot()
 {
+  int		temp = 0;
   int		winner = 0;
-  int		winner_nb;
+  int		winner_nb = 1;
 
   for(int i = 0; i < 6; i++)
     {
-      //      if(temp > competitor[i]->get_Hand_Showdown_Power_Twoplustwo() && competitor[i]->get_Standin() == true)
-      //	winner++;
-      if(competitor[i]->get_Standin() == true)
+      if(competitor[i]->get_Standin() == true && competitor[i]->get_Hand_Showdown_Power_Twoplustwo() > temp)
 	{
+	  temp = competitor[i]->get_Hand_Showdown_Power_Twoplustwo();
 	  winner = i;
 	}
-      if(competitor[i]->get_Hand_Showdown_Power_Twoplustwo() > competitor[winner]->get_Hand_Showdown_Power_Twoplustwo() && competitor[i]->get_Standin() == true)
-	{
-	  winner = i;
-	  winner_nb = 0;
-	}
-      else if(competitor[i]->get_Hand_Showdown_Power_Twoplustwo() == competitor[winner]->get_Hand_Showdown_Power_Twoplustwo())
+      else if(competitor[i]->get_Standin() == true && competitor[i]->get_Hand_Showdown_Power_Twoplustwo() == temp)
 	winner_nb++;
+      std::cout << " player " << i << " got " << competitor[i]->get_Hand_Showdown_Power_Twoplustwo() << std::endl;
     }
-  std::cout << " winners = " << winner << std::endl;
-  if(winner > 1)
+
+  std::cout << " winners = " << temp << std::endl;
+  if(winner_nb > 1)
     exit(0);
   //  sleep(10);
   std::cout << " OK99" << std::endl;
