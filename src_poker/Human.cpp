@@ -4,7 +4,6 @@
 
 Human::Human()
 {
-
 }
 
 Human::~Human()
