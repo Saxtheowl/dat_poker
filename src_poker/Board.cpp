@@ -717,7 +717,7 @@ void				Board::Resolve()
       competitor[i]->set_Standin(false);  
       competitor[i]->set_Hand_Showdown_Power_Twoplustwo(0);
     }
-  //  competitor[winner_twoplustwo]->set_Stack(competitor[winner_twoplustwo]->get_Stack() + this->pot);
+  competitor[winner_twoplustwo]->set_Stack(competitor[winner_twoplustwo]->get_Stack() + this->pot);
   pot = 0;
   std::cout << " winner is " << winner_twoplustwo << std::endl;
   std::cout << " resolve end " << std::endl;
