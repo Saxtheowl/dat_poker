@@ -5,6 +5,7 @@
 #include <iostream>
 #include <string.h>
 #include <stdio.h>
+#include <unistd.h>
 
 Board::Board()
 {
@@ -716,14 +717,26 @@ void				Board::Resolve()
       competitor[i]->set_Standin(false);  
       competitor[i]->set_Hand_Showdown_Power_Twoplustwo(0);
     }
-  competitor[winner_twoplustwo]->set_Stack(competitor[winner_twoplustwo]->get_Stack() + this->pot);
+  //  competitor[winner_twoplustwo]->set_Stack(competitor[winner_twoplustwo]->get_Stack() + this->pot);
   pot = 0;
   std::cout << " winner is " << winner_twoplustwo << std::endl;
   std::cout << " resolve end " << std::endl;
   //  this->standin_players = 0;
+  distribute_Pot();
 }
 
-void		distribute_Pot()
+void		Board::distribute_Pot()
 {
-  
+  int		winner = 0;
+
+  for(int i = 0; i < 6; i++)
+    {
+      int temp = competitor[i]->get_Hand_Showdown_Power_Twoplustwo();
+      if(temp > competitor[i]->get_Hand_Showdown_Power_Twoplustwo() && competitor[i]->get_Standin() == true)
+	winner++;
+    }
+  std::cout << " winners = " << winner << std::endl;
+  if(winner > 1)
+  sleep(10);
+  std::cout << " OK99" << std::endl;
 }
