@@ -728,15 +728,27 @@ void				Board::Resolve()
 void		Board::distribute_Pot()
 {
   int		winner = 0;
+  int		winner_nb;
 
   for(int i = 0; i < 6; i++)
     {
-      int temp = competitor[i]->get_Hand_Showdown_Power_Twoplustwo();
-      if(temp > competitor[i]->get_Hand_Showdown_Power_Twoplustwo() && competitor[i]->get_Standin() == true)
-	winner++;
+      //      if(temp > competitor[i]->get_Hand_Showdown_Power_Twoplustwo() && competitor[i]->get_Standin() == true)
+      //	winner++;
+      if(competitor[i]->get_Standin() == true)
+	{
+	  winner = i;
+	}
+      if(competitor[i]->get_Hand_Showdown_Power_Twoplustwo() > competitor[winner]->get_Hand_Showdown_Power_Twoplustwo() && competitor[i]->get_Standin() == true)
+	{
+	  winner = i;
+	  winner_nb = 0;
+	}
+      else if(competitor[i]->get_Hand_Showdown_Power_Twoplustwo() == competitor[winner]->get_Hand_Showdown_Power_Twoplustwo())
+	winner_nb++;
     }
   std::cout << " winners = " << winner << std::endl;
   if(winner > 1)
-  sleep(10);
+    exit(0);
+  //  sleep(10);
   std::cout << " OK99" << std::endl;
 }
