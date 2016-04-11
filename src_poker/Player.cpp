@@ -96,17 +96,10 @@ bool		Player::get_Alive()
 
 void		Player::set_Pushed(int nb)
 {
-  //  int		old_push;
-
-  //  old_push = this->pushed;
-  
-  std::cout << " set_pushed " << " nb = " << nb << std::endl;// " old_push = " << old_push << std::endl;
   if(nb > 0)
     {
-      this->pushed = nb;//(nb + old_push);
+      this->pushed = nb;
     }
-  //  else
-  //    this->pushed = nb;
   else if (this->stack < nb)
     {
       nb = this->pushed + this->stack;
@@ -115,12 +108,10 @@ void		Player::set_Pushed(int nb)
     }
   else
     this->pushed = nb;
-  //  old_push = 0;
 }
 
 int		Player::get_Pushed()
 {
-  //  std::cout << " pushed get pushed = " << this->pushed << std::endl;
   return (this->pushed);
 }
 

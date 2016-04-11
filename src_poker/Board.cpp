@@ -137,12 +137,10 @@ void		Board::shuffle_Deck()
 	while (temp > 12)
 	  temp = temp - 13;
 	this->deck[i]->set_All(rd);
-	//	std::cout << "rd = " << rd << " i =  " << i << std::endl;
 	i++;
       }
       test++;
     }
-  //  this->deck[52]->set_All('X'); // HAX
 }
 
 std::vector<Player*>		Board::get_Competitors()
@@ -235,7 +233,6 @@ int		Board::get_Next_Standin(int i)
     {
       if (competitor[i + 1]->get_Standin() == true)
 	{
-	  //	  std::cout << " get next standin i = " << i << std::endl;
 	  return (i + 1);
 	}
       else
@@ -462,11 +459,10 @@ bool				Board::run_Round() // ugly
   f = 0;
   has_played = 0;
   std::cout << "run round running " << std::endl;
-  //  std::cout << " current_player run round = " << current_player << std::endl;
   i = current_player;
   while (has_played < (this->standin_players))
     {
-      if ((competitor[i]->get_Pushed() == this->biggest_raise && competitor[i]->get_Played() == true ) || competitor[i]->get_Stack() == 0)// || competitor[i]->get_All_In() == true )
+      if ((competitor[i]->get_Pushed() == this->biggest_raise && competitor[i]->get_Played() == true ) || competitor[i]->get_Stack() == 0)
 	has_played++;
       else if (competitor[i]->get_Pushed() > this->biggest_raise)
 	{
@@ -485,11 +481,6 @@ bool				Board::run_Round() // ugly
       f++;
       if (f == this->standin_players && has_played < this->standin_players)
 	{
-	  /*	  if(step == 3)
-	    {
-	      Resolve();
-	      return(true);
-	      }*/
 	  return (false);
 	}
     }
@@ -503,7 +494,7 @@ bool				Board::run_Round() // ugly
   return(0);
 }
 
-int				Board::start_Round(int elapsed)//std::vector <bot_Ai*> bot_ai)
+int				Board::start_Round(int elapsed)
 {
   if (elapsed == 0)
     {
@@ -512,13 +503,10 @@ int				Board::start_Round(int elapsed)//std::vector <bot_Ai*> bot_ai)
       current_player = button_pos;
       current_player = get_Next_Alive(current_player);
       current_player = get_Next_Alive(current_player);
-      //      std::cout << " OK4 " << std::endl;
     }
   if (run_Round() == false)
     {
-      //      std::cout << " OK3 " << std::endl;
       current_player = get_Next_Standin(current_player);
-      //      std::cout << " current_player start round = " << current_player << std::endl;
       if (current_player == 0 && competitor[0]->get_Standin() == true)
 	{
 	  std::cout << " start round : " << std::endl;
@@ -529,13 +517,6 @@ int				Board::start_Round(int elapsed)//std::vector <bot_Ai*> bot_ai)
       else
 	return (1);
     }
-  /*  else if (step < 3)
-  {
-    this->old_pot = pot;
-    next_Step();
-    }*/
-  //  else
-  //    Resolve();
   return(0);
 }
 
@@ -564,16 +545,6 @@ void				Board::next_Step()
   old_pot = pot;
   set_Biggest_Raise(0);
   current_player = button_pos;
-  //  std::cout << " current_player next_step = " << current_player << std::endl;
-  /*  while(current_player != this->button_pos)
-    {
-      std::cout << " OK1 " << std::endl; 
-      current_player = get_Next_Alive(button_pos);
-      }*/
-  /*  std::cout << " button is " << button_pos << std::endl;
-  std::cout << " current player is " << current_player << std::endl;
-  current_player = get_Next_Standin(button_pos);
-  std::cout << " after fix current player is " << current_player << std::endl;*/
   while (i < 6)// && competitor[i]->get_Standin() == true)
     {
       competitor[i]->set_Played(false);
@@ -623,11 +594,8 @@ void				Board::reset_Round()
 
 void				Board::init_Hand_Evaluator_Twoplustwo()
 {
-  //  std::cout << " OK start TWOPLUSTWO " << std::endl;
   memset(HR, 0, sizeof(HR));
   FILE * fin = fopen("handrank.dat", "rb");
-  // Load the HANDRANKS.DAT file data into the HR array
-  //  size_t bytesread = 
   fread(HR, sizeof(HR), 1, fin);
   fclose(fin);
   std::cout << " OK END TWOPLUSTWO " << std::endl;
@@ -687,16 +655,8 @@ void				Board::Resolve()
 	  std::cout << deck[competitor[i]->get_Index_Card(1)]->get_Nb() << std::endl;
 	    Card[0] = get_fixed_Card_Twoplustwo(deck[competitor[i]->get_Index_Card(0)]->get_Nb());
 	    Card[1] = get_fixed_Card_Twoplustwo(deck[competitor[i]->get_Index_Card(1)]->get_Nb());
-	    //	  std::cout << "player is " << i << std::endl;
-	  //	  for(int i = 2; i < 7; i++)
-	  //	    Card[i]++;
 	  int handInfo = get_Hand_Value(Card);
-	  //	  int handCategory = handInfo >> 12;
-	  //	  int rankWithinCategory = handInfo & 0x00000FFF;
 	  competitor[i]->set_Hand_Showdown_Power_Twoplustwo(handInfo);
-	  //	  std::cout << " HAND INFO IS " << handInfo << std::endl;
-	  //	  std::cout << " HAND CATEGORY IS " << handCategory << std::endl;
-	  //	  std::cout << " HAND RANK WITHIN CATEGORY IS " << rankWithinCategory << std::endl;
 	  i++;
 	}
       else
@@ -712,23 +672,14 @@ void				Board::Resolve()
 	}
       std::cout << " player " << i << " got " << competitor[i]->get_Hand_Showdown_Power_Twoplustwo() << std::endl;
     }
-  for (int i = 0; i < 6; i++)
-    {
-      competitor[i]->set_Standin(false);  
-      competitor[i]->set_Hand_Showdown_Power_Twoplustwo(0);
-    }
-  competitor[winner_twoplustwo]->set_Stack(competitor[winner_twoplustwo]->get_Stack() + this->pot);
-  pot = 0;
   std::cout << " winner is " << winner_twoplustwo << std::endl;
   std::cout << " resolve end " << std::endl;
-  //  this->standin_players = 0;
   distribute_Pot();
 }
 
 void		Board::distribute_Pot()
 {
   int		temp = 0;
-  int		winner = 0;
   int		winner_nb = 1;
 
   for(int i = 0; i < 6; i++)
@@ -736,16 +687,20 @@ void		Board::distribute_Pot()
       if(competitor[i]->get_Standin() == true && competitor[i]->get_Hand_Showdown_Power_Twoplustwo() > temp)
 	{
 	  temp = competitor[i]->get_Hand_Showdown_Power_Twoplustwo();
-	  winner = i;
+	  winner_nb = 1;
 	}
       else if(competitor[i]->get_Standin() == true && competitor[i]->get_Hand_Showdown_Power_Twoplustwo() == temp)
 	winner_nb++;
-      std::cout << " player " << i << " got " << competitor[i]->get_Hand_Showdown_Power_Twoplustwo() << std::endl;
     }
-
-  std::cout << " winners = " << temp << std::endl;
+  std::cout << " nb winners = " << winner_nb << std::endl;
+  std::cout << " OK99" << std::endl;
   if(winner_nb > 1)
     exit(0);
-  //  sleep(10);
-  std::cout << " OK99" << std::endl;
+  for (int i = 0; i < 6; i++)
+    {
+      if(competitor[i]->get_Standin() == true && competitor[i]->get_Hand_Showdown_Power_Twoplustwo() == temp)
+	competitor[i]->set_Stack(competitor[i]->get_Stack() + (this->pot / winner_nb));
+      competitor[i]->set_Standin(false);  
+    }
+  pot = 0;
 }

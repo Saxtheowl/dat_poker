@@ -22,7 +22,6 @@ void		dat_Output::print_All(Board *board, int flag)
       second_Update(board);
       update_Card_Board(board);
     }
-  //  std::cout << " print_all get pushed = " << board->get_Competitors()[0]->get_Pushed() << std::endl;
   while (x < this->x_board)
     {
       while (y < this->y_board)
@@ -422,7 +421,7 @@ void		dat_Output::update_Cards(Board *board, Player *player)
     put_Chips(player->get_Stack(), player->get_Pos_Map_X(), player->get_Pos_Map_Y(), player->get_Pos(), 0);
   
   clean_Chips(player->get_Pos_Map_X(), player->get_Pos_Map_Y(), player->get_Pos(), 1);
-  int t = player->get_Pushed();
+  //  int t = player->get_Pushed();
   if (player->get_Pushed() > 0)
     put_Chips(player->get_Pushed(), player->get_Pos_Map_X(), player->get_Pos_Map_Y(), player->get_Pos(), 1);
   put_Pot(board->get_Pot());
@@ -437,10 +436,7 @@ void		dat_Output::first_Update(Board *board)
   i = 0;
   while (i < 6)
     {
-      //      if(board->get_Competitors()[i]->get_Button() == true)
-      //	std::cout << " player " << i << " has button " << std::endl;
       update_Cards(board, board->get_Competitors()[i]); // to rename
-      //      std::cout << " get_pushed = " << board->get_Competitors()[i]->get_Pushed() << std::endl;
       i++;
     }
 }
