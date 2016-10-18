@@ -48,10 +48,7 @@ bool		Human::play_Human(Board *board)
   else if (action == 2)
     {
       int		amount = 0;
-      /*
-      board->get_Competitors()[0]->set_Pushed(20);
-      board->get_Competitors()[0]->set_Stack(board->get_Competitors()[0]->get_Stack() - 20);
-      board->set_Biggest_Raise(20);*/
+      
       while(amount > board->get_Competitors()[0]->get_Stack() || amount <= board->get_Blind())
 	{
 	  std::cout << " how much ? " << std::endl;

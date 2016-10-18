@@ -54,7 +54,6 @@ private:
   int	pos;
   int	pos_map[1];
   int	cards[1];
-  //  int	idx_p[1];
   std::vector <int> pos_mapv;
   std::vector <int> idx_p;
 
