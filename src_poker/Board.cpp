@@ -13,6 +13,7 @@ Board::Board()
   flag_first_round = true;
   end_round = false;
   init_Hand_Evaluator_Twoplustwo();
+  button_pos = 0;
 }
 
 Board::~Board()
@@ -595,7 +596,7 @@ void				Board::reset_Round()
 void				Board::init_Hand_Evaluator_Twoplustwo()
 {
   memset(HR, 0, sizeof(HR));
-  FILE * fin = fopen("handrank.dat", "rb");
+  FILE * fin = fopen("HandRanks.dat", "rb");
   fread(HR, sizeof(HR), 1, fin);
   fclose(fin);
   std::cout << " OK END TWOPLUSTWO " << std::endl;
@@ -637,7 +638,7 @@ int				Board::get_fixed_Card_Twoplustwo(int card)
 
 void				Board::Resolve()
 {
-  int				Card[6];
+  int				Card[7];
   int				i;
   int				temp;
 
