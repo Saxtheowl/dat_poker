@@ -456,7 +456,7 @@ void				Board::put_Headsup_Blind()
 }
 
 
-/*
+
 bool				Board::run_Round() // ugly
 {
   int				i;
