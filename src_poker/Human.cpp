@@ -40,7 +40,6 @@ bool		Human::play_Human(Board *board)
   if (action == 1)
     {
       board->get_Competitors()[0]->set_Pushed(board->get_Blind());
-      board->get_Competitors()[0]->set_Stack(board->get_Competitors()[0]->get_Stack() - board->get_Blind());
       std::cout << " new stack human = " << board->get_Competitors()[0]->get_Stack() << std::endl;
       board->get_Competitors()[0]->set_Played(true);
       return (true);
@@ -55,7 +54,6 @@ bool		Human::play_Human(Board *board)
 	  amount = get_Input();
 	}
       board->get_Competitors()[0]->set_Pushed(amount);
-      board->get_Competitors()[0]->set_Stack(board->get_Competitors()[0]->get_Stack() - amount);
       board->set_Biggest_Raise(amount);
       board->get_Competitors()[0]->set_Played(true);
       //      board->get_Competitors()[0]->set_Standin(true);

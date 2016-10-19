@@ -93,18 +93,19 @@ bool		Player::get_Alive()
 }
 
 void		Player::set_Pushed(int nb)
-{/*
-  if (this->stack < nb)
+{
+  if(this->stack < ( nb - this->pushed))
     {
-      nb = this->pushed + this->stack;
-      all_in = true;
-      std::cout << " ALL IN MOD ENGAGED for " << this->pos << std::endl;
+      this->pushed = stack;
+      this->stack = 0;
     }
   else if(nb > 0)
     {
+      set_Stack(this->stack - (nb - this->pushed));
       this->pushed = nb;
-      }*/
-  this->pushed = nb;
+    }
+  else
+    this->pushed = nb;
 }
 
 int		Player::get_Pushed()

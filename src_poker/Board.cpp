@@ -428,7 +428,6 @@ bool				Board::put_Small_Blind(int i)
 {
   i = get_Next_Alive(i);
   competitor[i]->set_Pushed(competitor[i]->get_Pushed() + blind / 2);
-  competitor[i]->set_Stack(competitor[i]->get_Stack() - blind / 2);
   return (true);
 }
   
@@ -437,7 +436,6 @@ bool				Board::put_Big_Blind(int i)
   i = get_Next_Alive(i);
   i = get_Next_Alive(i);
   competitor[i]->set_Pushed(competitor[i]->get_Pushed() + blind);
-  competitor[i]->set_Stack(competitor[i]->get_Stack() - blind);
   return (true);
 }
 
@@ -449,10 +447,8 @@ void				Board::put_Headsup_Blind()
   while (competitor[i]->get_Button() == false)
     i++;
   competitor[i]->set_Pushed(competitor[i]->get_Pushed() + blind);
-  competitor[i]->set_Stack(competitor[i]->get_Stack() - blind);
   i = get_Next_Alive(i);
   competitor[i]->set_Pushed(competitor[i]->get_Pushed() + blind / 2);
-  competitor[i]->set_Stack(competitor[i]->get_Stack() - blind / 2);
 }
 
 bool				Board::run_Round() // ugly
@@ -473,21 +469,14 @@ bool				Board::run_Round() // ugly
 	{
 	  for (int g = 0; g < 6; g++)
 	    competitor[g]->set_Played(false);
-	  if(competitor[i]->get_Pushed() > this->biggest_raise)
-	    {
-	      this->biggest_raise = competitor[i]->get_Pushed(); // useless ?
-	      std::cout << " biggest raise = " << this->biggest_raise << std::endl;
-	      std::cout << " competitor " << i << " get pushed = " << competitor[i]->get_Pushed() << std::endl;
-	    }
+	  this->biggest_raise = competitor[i]->get_Pushed();
 	  competitor[i]->set_Played(true);
 	  has_played = 0;
 	}
       i = get_Next_Standin(i);
       f++;
       if (f == this->standin_players && has_played < this->standin_players)
-	{
-	  return (false);
-	}
+	return (false);
     }
   if(step < 3)
     next_Step();
@@ -498,6 +487,8 @@ bool				Board::run_Round() // ugly
     }
   return(0);
 }
+
+
 
 int				Board::start_Round(int elapsed)
 {
