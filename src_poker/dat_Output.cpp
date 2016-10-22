@@ -441,9 +441,12 @@ void		dat_Output::first_Update(Board *board)
     }
 }
 
-void		dat_Output::print_Player_Choice()
+void		dat_Output::print_Player_Choice(Board *board)
 {
-  std::cout << " 1 - CALL\n" << std::endl;
+  if(board->get_Biggest_Raise() > 0)
+    std::cout << " 1 - CALL\n" << std::endl;
+  else
+    std::cout << " 1 - CHECK\n" << std::endl;
   std::cout << " 2 - RAISE\n" << std::endl;
   std::cout << " 3 - FOLD\n" << std::endl;
 }

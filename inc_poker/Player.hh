@@ -36,7 +36,9 @@ class		Player
   
   void		set_Pushed(int nb);
   int		get_Pushed();
-
+  void		set_Pushed_Total(int value);
+  int		get_Pushed_Total();
+  
   void		set_Played(bool ok);
   bool		get_Played();
 
@@ -50,6 +52,7 @@ private:
   TYPE_PL type_pl;
   int	stack;
   int	pushed;
+  int	pushed_total;
 
   int	pos;
   int	pos_map[1];

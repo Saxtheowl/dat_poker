@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <sstream>
+
 #include "GameMain.hh"
 #include "bot_Ai.hh"
 #include "dat_Output.hh"
@@ -11,6 +12,7 @@ GameMain::GameMain()
 
 GameMain::~GameMain()
 {
+  
 }
 
 void		GameMain::Start()
@@ -39,6 +41,14 @@ void		GameMain::init_Ai()
     }
 }
 
+void		GameMain::init_All()
+{
+  board->init_nb_Player();
+  dat_output->init_Map();
+  board->init_Mod();
+  init_Ai();
+}
+
 void		GameMain::Menu()
 {
   /*  std::cout << "What mod u want ?\n" << "0 - NO LIMIT HOLDEM\n" << std::endl;
@@ -50,10 +60,7 @@ void		GameMain::Menu()
   board->set_Mod(6);
   board->set_start_nb_Players(6);
   board->set_start_Stack(100);
-  board->init_nb_Player();
-  dat_output->init_Map();
-  board->init_Mod();
-  init_Ai();
+  init_All();
 }
 
 void		GameMain::start_Game()
@@ -93,9 +100,9 @@ void		GameMain::launch_Game()
 	{
 	  if(board->get_Step() > 0)
 	    dat_output->print_All(board, 1);
-	  dat_output->print_Player_Choice(); // something to fix
+	  dat_output->print_Player_Choice(board); // something to fix
 	  while (!human->play_Human(board))
-	    dat_output->print_Player_Choice();
+	    dat_output->print_Player_Choice(board);
 	}
       else if(who_play > 0)
 	ai[board->get_Current_Player() - 1]->play_Bot(board);

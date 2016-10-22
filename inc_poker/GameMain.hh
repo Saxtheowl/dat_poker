@@ -23,6 +23,7 @@ public:
   void		start_Game();
   void		launch_Game();
   void		play_Human();
+  void		init_All();
 private:
   Board		*board;
   dat_Output	*dat_output;

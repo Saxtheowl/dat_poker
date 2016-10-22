@@ -8,6 +8,8 @@ Player::Player(TYPE_PL type_pl, int start_stack)
   this->standin = true;
   this->type_pl = type_pl;
   this->stack = start_stack;
+  this->pushed = 0;
+  this->pushed_total = 0;
 }
 
 Player::~Player()
@@ -94,6 +96,10 @@ bool		Player::get_Alive()
 
 void		Player::set_Pushed(int nb)
 {
+  if(nb > this->stack)
+    this->pushed_total = this->pushed_total + (this->stack - (nb));
+  else
+    this->pushed_total = this->pushed_total + nb;
   if(this->stack < ( nb - this->pushed))
     {
       this->pushed = stack;
@@ -111,6 +117,16 @@ void		Player::set_Pushed(int nb)
 int		Player::get_Pushed()
 {
   return (this->pushed);
+}
+
+void		Player::set_Pushed_Total(int value)
+{
+  this->pushed_total = value;
+}
+
+int		Player::get_Pushed_Total()
+{
+  return(this->pushed_total);
 }
 
 void		Player::set_Standin(bool ok)

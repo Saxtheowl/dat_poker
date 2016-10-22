@@ -39,7 +39,7 @@ public:
   void	put_Pot(int pot);
   void	clean_Pot();
   void	second_Update(Board *board);
-  void	print_Player_Choice();
+  void	print_Player_Choice(Board *board);
   void	update_Card_Board(Board *board);
   void	print_Card_Board(int card_pos_y, int card_value);
   void	print_Rank_Card_Board(int card_pos_y, char rank);

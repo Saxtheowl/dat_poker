@@ -14,11 +14,14 @@ Board::Board()
   end_round = false;
   init_Hand_Evaluator_Twoplustwo();
   button_pos = 0;
+  winner_nb = 1;
+  best_Hand_Power = 0;
+  old_Best_Hand_Power = 0;
 }
 
 Board::~Board()
 {
-  
+
 }
 
 void		Board::set_Mod(int mod)
@@ -302,6 +305,9 @@ void		Board::reload_Round(int i)
 {
   competitor[i]->set_All_In(false);
   competitor[i]->set_Pushed(0);
+  winner_nb = 1;
+  best_Hand_Power = 0;
+  old_Best_Hand_Power = 0;
   gime_Card(competitor[i], 1);
   move_Button(i);
 }
@@ -631,33 +637,32 @@ int				Board::get_fixed_Card_Twoplustwo(int card)
   return(0);
 }
 
+void				Board::setup_Hand_Showdown_Twoplustwo()
+{
+  int				card[7];
+
+  card[2] = get_fixed_Card_Twoplustwo(deck[board_card[0]]->get_Nb());
+  card[3] = get_fixed_Card_Twoplustwo(deck[board_card[1]]->get_Nb());
+  card[4] = get_fixed_Card_Twoplustwo(deck[board_card[2]]->get_Nb());
+  card[5] = get_fixed_Card_Twoplustwo(deck[board_card[3]]->get_Nb());
+  card[6] = get_fixed_Card_Twoplustwo(deck[board_card[4]]->get_Nb());
+  for(int i = 0; i < 6; i++)
+    {
+      std::cout << deck[competitor[i]->get_Index_Card(1)]->get_Nb() << std::endl;
+      card[0] = get_fixed_Card_Twoplustwo(deck[competitor[i]->get_Index_Card(0)]->get_Nb());
+      card[1] = get_fixed_Card_Twoplustwo(deck[competitor[i]->get_Index_Card(1)]->get_Nb());
+      int handInfo = get_Hand_Value(card);
+      competitor[i]->set_Hand_Showdown_Power_Twoplustwo(handInfo);
+      i++;
+    }
+}
+
 void				Board::Resolve()
 {
-  int				Card[7];
-  int				i;
   int				temp;
 
-    std::cout << " resolve start " << std::endl;
-  i = 0;
-  Card[2] = get_fixed_Card_Twoplustwo(deck[board_card[0]]->get_Nb());
-  Card[3] = get_fixed_Card_Twoplustwo(deck[board_card[1]]->get_Nb());
-  Card[4] = get_fixed_Card_Twoplustwo(deck[board_card[2]]->get_Nb());
-  Card[5] = get_fixed_Card_Twoplustwo(deck[board_card[3]]->get_Nb());
-  Card[6] = get_fixed_Card_Twoplustwo(deck[board_card[4]]->get_Nb());
-  while(i < 6)
-    {
-      if(1)
-	{
-	  std::cout << deck[competitor[i]->get_Index_Card(1)]->get_Nb() << std::endl;
-	    Card[0] = get_fixed_Card_Twoplustwo(deck[competitor[i]->get_Index_Card(0)]->get_Nb());
-	    Card[1] = get_fixed_Card_Twoplustwo(deck[competitor[i]->get_Index_Card(1)]->get_Nb());
-	  int handInfo = get_Hand_Value(Card);
-	  competitor[i]->set_Hand_Showdown_Power_Twoplustwo(handInfo);
-	  i++;
-	}
-      else
-	i++;
-    }
+  setup_Hand_Showdown_Twoplustwo();
+  std::cout << " resolve start " << std::endl;
   temp = 0;
   for(int i = 0; i < 6; i++)
     {
@@ -671,12 +676,93 @@ void				Board::Resolve()
   std::cout << " winner is " << winner_twoplustwo << std::endl;
   std::cout << " resolve end " << std::endl;
   distribute_Pot();
+  end_Round();
 }
 
-void		Board::distribute_Pot()
+void				Board::find_Winner()
+{
+  for(int i = 0; i < 6; i++)
+    {
+      if(competitor[i]->get_Standin() == true && competitor[i]->get_Hand_Showdown_Power_Twoplustwo() >= this->best_Hand_Power && competitor[i]->get_Hand_Showdown_Power_Twoplustwo() > 0)
+	{
+	  this->best_Hand_Power = competitor[i]->get_Hand_Showdown_Power_Twoplustwo();
+	  this->winner_nb++;
+	}
+    }
+}
+
+void				Board::receive_Pot(int pos)
+{
+
+  int				max_to_have = competitor[pos]->get_Pushed_Total() * this->standin_players;
+  int				temp_to_have = max_to_have;
+  int				to_give = 0;
+  int				i = 0;
+
+  char key;
+
+  std::cout << " max to have = " << max_to_have << std::endl;
+  std::cout << " pot = " << pot << std::endl;
+
+  while(i < 6)
+    {
+      std::cout << " max to have = " << max_to_have << std::endl;
+      std::cout << " to give = " << to_give << std::endl;
+      std::cout << " pot = " << pot << std::endl;
+      std::cin >> key;
+      if(competitor[i]->get_Pushed_Total() > 0 && competitor[i]->get_Hand_Showdown_Power_Twoplustwo() < competitor[pos]->get_Hand_Showdown_Power_Twoplustwo())
+	{
+	  if(competitor[i]->get_Pushed_Total() < temp_to_have)
+	    {
+	      to_give = competitor[i]->get_Pushed_Total();
+	      competitor[i]->set_Pushed_Total(0);
+	    }
+	  else
+	    {
+	      to_give = competitor[i]->get_Pushed_Total() - temp_to_have;
+	      competitor[i]->set_Pushed_Total(competitor[i]->get_Pushed_Total() - to_give);
+	    }
+	  competitor[pos]->set_Stack(competitor[pos]->get_Stack() + to_give);
+	  temp_to_have = temp_to_have - to_give;
+	  this->pot = this->pot - to_give;
+	}
+      i++;
+    }
+}
+
+void				Board::distribute_Pot()
+{ 
+  while(this->pot > 0)
+    {
+      find_Winner();
+      while(this->winner_nb > 0)
+	{
+	  for(int i = 0; i < 6; i++)
+	    {
+	      if(competitor[i]->get_Hand_Showdown_Power_Twoplustwo() == this->best_Hand_Power)
+		{
+		  receive_Pot(i);
+		  this->winner_nb--;
+		}
+	  
+	    }
+	}
+      std::cout << " OK100001 " << std::endl;
+    }
+}
+
+void				Board::end_Round()
+{
+  for(int i = 0; i < 6; i++)
+    competitor[i]->set_Standin(false);
+  pot = 0;
+}
+
+/*
+void				Board::distribute_Pot()
 {
   int		temp = 0;
-  int		winner_nb = 1;
+  int		old_best_power = 0;
 
   for(int i = 0; i < 6; i++)
     {
@@ -688,8 +774,6 @@ void		Board::distribute_Pot()
       else if(competitor[i]->get_Standin() == true && competitor[i]->get_Hand_Showdown_Power_Twoplustwo() == temp)
 	winner_nb++;
     }
-  std::cout << " nb winners = " << winner_nb << std::endl;
-  std::cout << " OK99" << std::endl;
   if(winner_nb > 1)
     exit(0);
   for (int i = 0; i < 6; i++)
@@ -699,4 +783,34 @@ void		Board::distribute_Pot()
       competitor[i]->set_Standin(false);  
     }
   pot = 0;
+  int		current_best = 0;
+  int		nb_winnorz = 0;
+  int		i = 0;
+  int		f = 0;
+  
+  while(pot > 0)
+    {
+      while(i < 6)
+	if(competitor[i]->get_Standin() == true && competitor[i]->get_Hand_Showdown_Power_Twoplustwo() > current_best)
+	  {
+	    current_best = competitor[i]->get_Hand_Showdown_Power_Twoplustwo();
+	    nb_winnorz++;
+	  }
+      i++;
+      if(i == 5)
+	{
+	  while(nb_winnorz > 0)
+	    {
+	      if(competitor[i]->get_Hand_Showdown_Power_Twoplustwo() == current_best)
+		{
+		  if(competitor[i]->get_Pushed_Total() == 0)
+		    i++;
+		}
+	      i++;
+	    }
+	}
+    }
+  
 }
+
+*/
