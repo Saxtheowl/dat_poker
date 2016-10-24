@@ -1,3 +1,4 @@
+//a
 #include "Board.hh"
 #include "Card.hh"
 #include "enum.hh"
@@ -679,6 +680,7 @@ void				Board::Resolve()
   end_Round();
 }
 
+<<<<<<< HEAD
 void				Board::calc_Dead_Chips()
 {
 
@@ -774,10 +776,11 @@ void				Board::end_Round()
 }
 
 /*
+=======
+>>>>>>> 92189a40a4859a180592167aa62750cb265b9cf0
 void				Board::distribute_Pot()
 {
   int		temp = 0;
-  int		old_best_power = 0;
 
   for(int i = 0; i < 6; i++)
     {
@@ -795,37 +798,11 @@ void				Board::distribute_Pot()
     {
       if(competitor[i]->get_Standin() == true && competitor[i]->get_Hand_Showdown_Power_Twoplustwo() == temp)
 	competitor[i]->set_Stack(competitor[i]->get_Stack() + (this->pot / winner_nb));
-      competitor[i]->set_Standin(false);  
     }
-  pot = 0;
-  int		current_best = 0;
-  int		nb_winnorz = 0;
-  int		i = 0;
-  int		f = 0;
-  
-  while(pot > 0)
-    {
-      while(i < 6)
-	if(competitor[i]->get_Standin() == true && competitor[i]->get_Hand_Showdown_Power_Twoplustwo() > current_best)
-	  {
-	    current_best = competitor[i]->get_Hand_Showdown_Power_Twoplustwo();
-	    nb_winnorz++;
-	  }
-      i++;
-      if(i == 5)
-	{
-	  while(nb_winnorz > 0)
-	    {
-	      if(competitor[i]->get_Hand_Showdown_Power_Twoplustwo() == current_best)
-		{
-		  if(competitor[i]->get_Pushed_Total() == 0)
-		    i++;
-		}
-	      i++;
-	    }
-	}
-    }
-  
 }
 
-*/
+void				Board::end_Round()
+{
+  for(int i = 0; i < 6; i++)
+    competitor[i]->set_Standin(false);
+}
