@@ -679,6 +679,17 @@ void				Board::Resolve()
   end_Round();
 }
 
+void				Board::calc_Dead_Chips()
+{
+
+  dead_chips = 0;
+  for(int i = 0; i < 6; i++)
+    {
+      if(competitor[i]->get_Standin() == false)
+	dead_chips = dead_chips + competitor[i]->get_Pushed_Total();
+    }
+}
+
 void				Board::find_Winner()
 {
   for(int i = 0; i < 6; i++)
@@ -694,26 +705,27 @@ void				Board::find_Winner()
 void				Board::receive_Pot(int pos)
 {
 
-  int				max_to_have = competitor[pos]->get_Pushed_Total() * this->standin_players;
+  int				max_to_have = this->pot; //competitor[pos]->get_Pushed_Total() * this->standin_players + this->dead_chips;
   int				temp_to_have = max_to_have;
   int				to_give = 0;
   int				i = 0;
 
   char key;
 
+  std::cout << " dead chips " << dead_chips << std::endl;
   std::cout << " max to have = " << max_to_have << std::endl;
   std::cout << " pot = " << pot << std::endl;
 
   while(i < 6)
     {
       std::cout << " max to have = " << max_to_have << std::endl;
-      std::cout << " to give = " << to_give << std::endl;
       std::cout << " pot = " << pot << std::endl;
       std::cin >> key;
       if(competitor[i]->get_Pushed_Total() > 0 && competitor[i]->get_Hand_Showdown_Power_Twoplustwo() < competitor[pos]->get_Hand_Showdown_Power_Twoplustwo())
 	{
 	  if(competitor[i]->get_Pushed_Total() < temp_to_have)
 	    {
+	      
 	      to_give = competitor[i]->get_Pushed_Total();
 	      competitor[i]->set_Pushed_Total(0);
 	    }
@@ -722,6 +734,9 @@ void				Board::receive_Pot(int pos)
 	      to_give = competitor[i]->get_Pushed_Total() - temp_to_have;
 	      competitor[i]->set_Pushed_Total(competitor[i]->get_Pushed_Total() - to_give);
 	    }
+	  std::cout << " player " << pos << std::endl;
+	  std::cout << " to give = " << to_give << std::endl;
+	  to_give = 0;
 	  competitor[pos]->set_Stack(competitor[pos]->get_Stack() + to_give);
 	  temp_to_have = temp_to_have - to_give;
 	  this->pot = this->pot - to_give;

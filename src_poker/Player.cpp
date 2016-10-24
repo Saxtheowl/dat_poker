@@ -132,6 +132,7 @@ int		Player::get_Pushed_Total()
 void		Player::set_Standin(bool ok)
 {
   this->standin = ok;
+
 }
 
 bool		Player::get_Standin()

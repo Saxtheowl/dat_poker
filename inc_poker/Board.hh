@@ -79,6 +79,7 @@ public:
   void		setup_Hand_Showdown_Twoplustwo();
   void		receive_Pot(int pos);
   void		end_Round();
+  void		calc_Dead_Chips();
 private:
   std::vector <Player*> competitor;
   std::vector <Card*> deck;
@@ -111,6 +112,7 @@ private:
   int		winner_nb;
   int		best_Hand_Power;
   int		old_Best_Hand_Power;
+  int		dead_chips;
 };
 
 #endif
