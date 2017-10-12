@@ -1,0 +1,36 @@
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+X                                                                                                X
+X                                                                                                X
+X                                                                                                X
+X                                         BANK                                                   X
+X                                       TOTAL POT                                                X
+X                                                                                                X
+X     P6                                                                                  P1     X
+X    [   ] [   ] B                                                              X [   ] [   ]    X
+X    stack                                                                                       X
+X                                                                                                X
+X                                                                                                X
+X                                                                                                X
+X     P5                                                                                  P2     X
+X    [1 S] [13S] 100000                                                    100000 [13S] [1 S]    X
+X    stack                       [13S] [11 S] [5 H] [8 S] [10S]                         100000   X
+X                                                                                                X
+X                                                                                                X
+X                                                                                                X
+X     P4                                                                                  P3     X
+X    [   ] [   ] 600000                                                                          X
+X    stack                                                                                       X
+X                                                                                                X
+X                                                                                                X
+X                                                                                                X
+X                                                                                                X
+X                                                                                                X
+X                                                                                                X
+X                                                                                                X
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+1 - CALL
+
+2 - RAISE
+
+3 - FOLD

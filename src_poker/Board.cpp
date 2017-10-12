@@ -1,4 +1,3 @@
-///a
 #include "Board.hh"
 #include "Card.hh"
 #include "enum.hh"
@@ -680,7 +679,6 @@ void				Board::Resolve()
   end_Round();
 }
 
-<<<<<<< HEAD
 void				Board::calc_Dead_Chips()
 {
 
@@ -775,34 +773,3 @@ void				Board::end_Round()
   pot = 0;
 }
 
-/*
-=======
->>>>>>> 92189a40a4859a180592167aa62750cb265b9cf0
-void				Board::distribute_Pot()
-{
-  int		temp = 0;
-
-  for(int i = 0; i < 6; i++)
-    {
-      if(competitor[i]->get_Standin() == true && competitor[i]->get_Hand_Showdown_Power_Twoplustwo() > temp)
-	{
-	  temp = competitor[i]->get_Hand_Showdown_Power_Twoplustwo();
-	  winner_nb = 1;
-	}
-      else if(competitor[i]->get_Standin() == true && competitor[i]->get_Hand_Showdown_Power_Twoplustwo() == temp)
-	winner_nb++;
-    }
-  if(winner_nb > 1)
-    exit(0);
-  for (int i = 0; i < 6; i++)
-    {
-      if(competitor[i]->get_Standin() == true && competitor[i]->get_Hand_Showdown_Power_Twoplustwo() == temp)
-	competitor[i]->set_Stack(competitor[i]->get_Stack() + (this->pot / winner_nb));
-    }
-}
-
-void				Board::end_Round()
-{
-  for(int i = 0; i < 6; i++)
-    competitor[i]->set_Standin(false);
-}
