@@ -598,7 +598,12 @@ void				Board::init_Hand_Evaluator_Twoplustwo()
 {
   memset(HR, 0, sizeof(HR));
   FILE * fin = fopen("HandRanks.dat", "rb");
-  fread(HR, sizeof(HR), 1, fin);
+  if(fin == 0)
+    {
+      std::cout << " HandRanks.dat not found, run ""sh setup.sh"" then launch the game again "<< std::endl;
+      exit(0);
+    }
+  fread(HR, sizeof(HR), 1, fin);      
   fclose(fin);
   std::cout << " OK END TWOPLUSTWO " << std::endl;
 }
