@@ -597,7 +597,7 @@ void				Board::reset_Round()
 void				Board::init_Hand_Evaluator_Twoplustwo()
 {
   memset(HR, 0, sizeof(HR));
-  FILE * fin = fopen("HandRanks.dat", "rb");
+  FILE * fin = fopen("other/XPokerEval/linux/HandRanks.dat", "rb");
   if(fin == 0)
     {
       std::cout << " HandRanks.dat not found, run ""sh setup.sh"" then launch the game again "<< std::endl;
