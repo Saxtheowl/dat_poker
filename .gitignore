@@ -1,7 +1,7 @@
-*.o
 *~
-HandRanks.dat
+*.o
+test/
 temp
-a.cpp
-
-
+poker.exe
+poker
+other/XPokerEval/linux/HandRanks.dat
