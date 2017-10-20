@@ -14,7 +14,7 @@ Board::Board()
   end_round = false;
   init_Hand_Evaluator_Twoplustwo();
   button_pos = 0;
-  winner_nb = 1;
+  winner_nb = 0;
   best_Hand_Power = 0;
   old_Best_Hand_Power = 0;
 }
