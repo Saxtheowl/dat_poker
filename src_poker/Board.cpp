@@ -767,7 +767,7 @@ void				Board::distribute_Pot()
 	  
 	    }
 	}
-      std::cout << " OK100001 " << std::endl;
+      std::cout << " OK1000001 " << std::endl;
     }
 }
 
