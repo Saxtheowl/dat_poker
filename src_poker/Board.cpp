@@ -305,7 +305,7 @@ void		Board::reload_Round(int i)
 {
   competitor[i]->set_All_In(false);
   competitor[i]->set_Pushed(0);
-  winner_nb = 1;
+  winner_nb = 0;
   best_Hand_Power = 0;
   old_Best_Hand_Power = 0;
   gime_Card(competitor[i], 1);
@@ -680,6 +680,7 @@ void				Board::Resolve()
     }
   std::cout << " winner is " << winner_twoplustwo << std::endl;
   std::cout << " resolve end " << std::endl;
+  find_Winner();
   distribute_Pot();
   end_Round();
 }
@@ -697,7 +698,13 @@ void				Board::calc_Dead_Chips()
 
 void				Board::distribute_Pot()
 { 
-  
+  for(int i = 0; i < 6; i++)
+    {
+      if(competitor[i]->get_Hand_Showdown_Power_Twoplustwo() == best_Hand_Power)
+	{
+	  competitor[i]->set_Stack(competitor[i]->get_Stack() + pot / winner_nb);
+	}
+    }
 }
 
 void				Board::end_Round()
@@ -707,3 +714,14 @@ void				Board::end_Round()
   pot = 0;
 }
 
+void				Board::find_Winner()
+{
+  for(int i = 0; i < 6; i++)
+    {
+      if(competitor[i]->get_Standin() == true && competitor[i]->get_Hand_Showdown_Power_Twoplustwo() >= this->best_Hand_Power && competitor[i]->get_Hand_Showdown_Power_Twoplustwo() > 0)
+	{
+	  this->best_Hand_Power = competitor[i]->get_Hand_Showdown_Power_Twoplustwo();
+	  this->winner_nb++;
+	}
+    }
+}

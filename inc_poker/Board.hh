@@ -78,6 +78,7 @@ public:
   void		setup_Hand_Showdown_Twoplustwo();
   void		end_Round();
   void		calc_Dead_Chips();
+  void		find_Winner();
 private:
   std::vector <Player*> competitor;
   std::vector <Card*> deck;
