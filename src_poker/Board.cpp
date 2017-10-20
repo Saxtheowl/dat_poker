@@ -695,80 +695,9 @@ void				Board::calc_Dead_Chips()
     }
 }
 
-void				Board::find_Winner()
-{
-  for(int i = 0; i < 6; i++)
-    {
-      if(competitor[i]->get_Standin() == true && competitor[i]->get_Hand_Showdown_Power_Twoplustwo() >= this->best_Hand_Power && competitor[i]->get_Hand_Showdown_Power_Twoplustwo() > 0)
-	{
-	  this->best_Hand_Power = competitor[i]->get_Hand_Showdown_Power_Twoplustwo();
-	  this->winner_nb++;
-	}
-    }
-}
-
-void				Board::receive_Pot(int pos)
-{
-
-  int				max_to_have = this->pot; //competitor[pos]->get_Pushed_Total() * this->standin_players + this->dead_chips;
-  int				temp_to_have = max_to_have;
-  int				to_give = 0;
-  int				i = 0;
-
-  char key;
-
-  std::cout << " dead chips " << dead_chips << std::endl;
-  std::cout << " max to have = " << max_to_have << std::endl;
-  std::cout << " pot = " << pot << std::endl;
-
-  while(i < 6)
-    {
-      std::cout << " max to have = " << max_to_have << std::endl;
-      std::cout << " pot = " << pot << std::endl;
-      std::cin >> key;
-      if(competitor[i]->get_Pushed_Total() > 0 && competitor[i]->get_Hand_Showdown_Power_Twoplustwo() < competitor[pos]->get_Hand_Showdown_Power_Twoplustwo())
-	{
-	  if(competitor[i]->get_Pushed_Total() < temp_to_have)
-	    {
-	      
-	      to_give = competitor[i]->get_Pushed_Total();
-	      competitor[i]->set_Pushed_Total(0);
-	    }
-	  else
-	    {
-	      to_give = competitor[i]->get_Pushed_Total() - temp_to_have;
-	      competitor[i]->set_Pushed_Total(competitor[i]->get_Pushed_Total() - to_give);
-	    }
-	  std::cout << " player " << pos << std::endl;
-	  std::cout << " to give = " << to_give << std::endl;
-	  to_give = 0;
-	  competitor[pos]->set_Stack(competitor[pos]->get_Stack() + to_give);
-	  temp_to_have = temp_to_have - to_give;
-	  this->pot = this->pot - to_give;
-	}
-      i++;
-    }
-}
-
 void				Board::distribute_Pot()
 { 
-  while(this->pot > 0)
-    {
-      find_Winner();
-      while(this->winner_nb > 0)
-	{
-	  for(int i = 0; i < 6; i++)
-	    {
-	      if(competitor[i]->get_Hand_Showdown_Power_Twoplustwo() == this->best_Hand_Power)
-		{
-		  receive_Pot(i);
-		  this->winner_nb--;
-		}
-	  
-	    }
-	}
-      std::cout << " OK100001 " << std::endl;
-    }
+  
 }
 
 void				Board::end_Round()

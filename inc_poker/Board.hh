@@ -75,9 +75,7 @@ public:
   int		get_Hand_Value(int *pCards);
   int		get_fixed_Card_Twoplustwo(int card);
   void		setup_Round();
-  void		find_Winner();
   void		setup_Hand_Showdown_Twoplustwo();
-  void		receive_Pot(int pos);
   void		end_Round();
   void		calc_Dead_Chips();
 private:
