@@ -8,6 +8,6 @@ then
 ./generate_table.exe
     exit
 else
-./generate_table.o
+./generate_table
     exit
 fi
