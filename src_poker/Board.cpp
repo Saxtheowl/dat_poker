@@ -660,6 +660,11 @@ void				Board::setup_Hand_Showdown_Twoplustwo()
       competitor[i]->set_Hand_Showdown_Power_Twoplustwo(handInfo);
       i++;
     }
+  for(int i = 0; i < 6; i++)
+    {
+      std::cout << "before display:" << std::endl;
+      std::cout << " player " << i << " got " << competitor[i]->get_Hand_Showdown_Power_Twoplustwo() << std::endl;
+    }
 }
 
 void				Board::Resolve()
