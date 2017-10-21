@@ -74,11 +74,8 @@ public:
   void		init_Hand_Evaluator_Twoplustwo();
   int		get_Hand_Value(int *pCards);
   int		get_fixed_Card_Twoplustwo(int card);
+  void		setup_Hand_Power();
   void		setup_Round();
-  void		setup_Hand_Showdown_Twoplustwo();
-  void		end_Round();
-  void		calc_Dead_Chips();
-  void		find_Winner();
 private:
   std::vector <Player*> competitor;
   std::vector <Card*> deck;
@@ -108,10 +105,6 @@ private:
   int		biggest_raise;
   int		HR[32487834];
   int		winner_twoplustwo;
-  int		winner_nb;
-  int		best_Hand_Power;
-  int		old_Best_Hand_Power;
-  int		dead_chips;
 };
 
 #endif
