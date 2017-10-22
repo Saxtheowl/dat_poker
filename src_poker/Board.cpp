@@ -304,6 +304,7 @@ void		Board::reload_Round(int i)
   competitor[i]->set_Pushed(0);
   gime_Card(competitor[i], 1);
   move_Button(i);
+  this->pot = 0;
 }
 
 void		Board::refresh_Pot()
@@ -697,7 +698,33 @@ void		Board::distribute_Pot()
   if(winner_nb > 1)
     {
       std::cout << " more than 1 winner ABANDON program " << std::endl;
-      exit(0);
+      std::cout << " more than 1 winner ABANDON program " << std::endl;
+      std::cout << " more than 1 winner ABANDON program " << std::endl;
+      std::cout << " more than 1 winner ABANDON program " << std::endl;
+      std::cout << " more than 1 winner ABANDON program " << std::endl;
+      std::cout << " more than 1 winner ABANDON program " << std::endl;
+      std::cout << " more than 1 winner ABANDON program " << std::endl;
+            std::cout << " more than 1 winner ABANDON program " << std::endl;
+      std::cout << " more than 1 winner ABANDON program " << std::endl;
+      std::cout << " more than 1 winner ABANDON program " << std::endl;
+      std::cout << " more than 1 winner ABANDON program " << std::endl;
+      std::cout << " more than 1 winner ABANDON program " << std::endl;
+      std::cout << " more than 1 winner ABANDON program " << std::endl;
+      std::cout << " more than 1 winner ABANDON program " << std::endl;
+            std::cout << " more than 1 winner ABANDON program " << std::endl;
+      std::cout << " more than 1 winner ABANDON program " << std::endl;
+      std::cout << " more than 1 winner ABANDON program " << std::endl;
+      std::cout << " more than 1 winner ABANDON program " << std::endl;
+      std::cout << " more than 1 winner ABANDON program " << std::endl;
+      std::cout << " more than 1 winner ABANDON program " << std::endl;
+      std::cout << " more than 1 winner ABANDON program " << std::endl;
+            std::cout << " more than 1 winner ABANDON program " << std::endl;
+      std::cout << " more than 1 winner ABANDON program " << std::endl;
+      std::cout << " more than 1 winner ABANDON program " << std::endl;
+      std::cout << " more than 1 winner ABANDON program " << std::endl;
+      std::cout << " more than 1 winner ABANDON program " << std::endl;
+      std::cout << " more than 1 winner ABANDON program " << std::endl;
+      std::cout << " more than 1 winner ABANDON program " << std::endl;
     }
   for (int i = 0; i < 6; i++)
     {
@@ -705,5 +732,4 @@ void		Board::distribute_Pot()
 	competitor[i]->set_Stack(competitor[i]->get_Stack() + (this->pot / winner_nb));
       competitor[i]->set_Standin(false);  
     }
-  pot = 0;
 }
