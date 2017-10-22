@@ -21,9 +21,9 @@ Board::~Board()
 
 }
 
-void		Board::set_Mod(int mod)
+void		Board::set_Mod(int m)
 {
-  this->mod = mod;
+  mod = m;
 }
 
 int		Board::get_Mod()
@@ -41,9 +41,9 @@ int		Board::get_Start_Nb_Players()
   return (start_nb_players);
 }
 
-void		Board::set_start_Stack(int start_stack)
+void		Board::set_start_Stack(int s_stack)
 {
-  this->start_stack = start_stack;
+  start_stack = s_stack;
 }
 
 int		Board::get_start_Stack()
@@ -142,7 +142,7 @@ void		Board::shuffle_Deck()
 
 std::vector<Player*>		Board::get_Competitors()
 {
-  return (this->competitor);
+  return (competitor);
 }
 
 bool		Board::check_Alive()
@@ -288,7 +288,7 @@ void		Board::refresh_Standin()
     {
       end_round = true;
       competitor[last]->set_Stack(competitor[last]->get_Stack() + pot);
-      this->pot = 0;
+      pot = 0;
     }
 }
 
@@ -409,9 +409,9 @@ std::vector<Card*>		Board::get_Deck()
   return (deck);
 }
 
-void				Board::set_Blind(int nb)
+void				Board::set_Blind(int n)
 {
-  this->blind = nb;
+  blind = n;
 }
 
 int				Board::get_Blind()

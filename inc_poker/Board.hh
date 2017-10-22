@@ -13,13 +13,13 @@ public:
   Board();
   ~Board();
 
-  void		set_Mod(int mod);
+  void		set_Mod(int m);
   int		get_Mod();
   void		set_start_nb_Players(int players);
   int		get_Start_Nb_Players();
-  void		set_start_Stack(int start_stack);
+  void		set_start_Stack(int s_stack);
   int		get_start_Stack();
-  void		set_Blind(int nb);
+  void		set_Blind(int n);
   int		get_Blind();
 
   void		init_nb_Player();
