@@ -5,3 +5,5 @@ temp
 poker.exe
 poker
 other/XPokerEval/linux/HandRanks.dat
+other/XPokerEval/linux/generate_table
+other/XPokerEval/linux/test

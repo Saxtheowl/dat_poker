@@ -28,17 +28,17 @@ void		Board::set_Mod(int mod)
 
 int		Board::get_Mod()
 {
-  return (this->mod);
+  return (mod);
 }
 
 void		Board::set_start_nb_Players(int players)
 {
-  this->start_nb_players = players;
+  start_nb_players = players;
 }
 
 int		Board::get_Start_Nb_Players()
 {
-  return (this->start_nb_players);
+  return (start_nb_players);
 }
 
 void		Board::set_start_Stack(int start_stack)
@@ -48,7 +48,7 @@ void		Board::set_start_Stack(int start_stack)
 
 int		Board::get_start_Stack()
 {
-  return (this->start_stack);
+  return (start_stack);
 }
 
 void		Board::init_Board() // cant deal 9 player by now
@@ -63,7 +63,7 @@ void		Board::init_Mod()
   i = 0;
   while (i < 53)
     {
-      this->deck.push_back(new Card());
+      deck.push_back(new Card());
       i++;
     }
   init_Board();
@@ -74,11 +74,11 @@ void		Board::init_nb_Player()
   int		i;
 
   i = 0;
-  while (i < this->start_nb_players)
+  while (i < start_nb_players)
     {
       if (i == 0)
-	this->competitor.push_back(new Player(HUMAN, start_stack));
-      this->competitor.push_back(new Player(BOT, start_stack));
+	competitor.push_back(new Player(HUMAN, start_stack));
+      competitor.push_back(new Player(BOT, start_stack));
       competitor[i]->set_Pos(i);
       competitor[i]->set_Button(false); // useless ?
       competitor[i]->set_Played(false);
@@ -95,13 +95,9 @@ void		Board::init_Player_Pos_X_Y()
   while (i < 6)
     {
       if (i < 3)
-	{	  
-	  competitor[i]->set_Pos_Map((7 + i * 6), 6);
-	}
+	competitor[i]->set_Pos_Map((7 + i * 6), 6);
       else
-	{
-	  competitor[i]->set_Pos_Map((7 + (i - 3) * 6), 86);
-	}
+	competitor[i]->set_Pos_Map((7 + (i - 3) * 6), 86);
       i++;
     }
 }
@@ -137,7 +133,7 @@ void		Board::shuffle_Deck()
 	temp = rd;
 	while (temp > 12)
 	  temp = temp - 13;
-	this->deck[i]->set_All(rd);
+	deck[i]->set_All(rd);
 	i++;
       }
       test++;
@@ -161,7 +157,7 @@ void		Board::fulfill_Board()
   i = 0;
   while (i < 6)
     {
-      this->board_card.push_back(i);
+      board_card.push_back(i);
       board_card[i] = idx_card;
       idx_card++;
       i++;
@@ -197,7 +193,7 @@ void		Board::move_Button(int i)
 	i++;
       competitor[i]->set_Button(true);
       flag_moved_button = true;
-      this->button_pos = i;
+      button_pos = i;
     }
   else if(competitor[i]->get_Button() == true && flag_moved_button == false)
     {
@@ -210,7 +206,7 @@ void		Board::move_Button(int i)
 	}
       flag_moved_button = true;
       competitor[i + 1]->set_Button(true);
-      this->button_pos = i + 1;
+      button_pos = i + 1;
     }
 }
 
@@ -233,9 +229,7 @@ int		Board::get_Next_Standin(int i)
   while (i < 5)
     {
       if (competitor[i + 1]->get_Standin() == true)
-	{
-	  return (i + 1);
-	}
+	return (i + 1);
       else
 	i++;
     }
@@ -260,12 +254,12 @@ void		Board::refresh_Alive()
   int		i;
 
   i = 0;
-  this->alive_players = 0;
+  alive_players = 0;
   while (i < 6)
     {
       if (competitor[i]->get_Stack() > 0 || competitor[i]->get_Pushed() > 0)
 	{
-	  this->alive_players++;
+	  alive_players++;
 	  competitor[i]->set_Alive(true);
 	}
       else
@@ -280,20 +274,20 @@ void		Board::refresh_Standin()
   int		last;
 
   i = 0;
-  this->standin_players = 0;
+  standin_players = 0;
   while (i < 6)
     {
       if (competitor[i]->get_Standin() == true )
 	{
-	  this->standin_players++;
+	  standin_players++;
 	  last = i;
 	}
       i++;
     }
-  if (this->standin_players == 1 && this->end_round == false)
+  if (standin_players == 1 && end_round == false)
     {
       end_round = true;
-      competitor[last]->set_Stack(competitor[last]->get_Stack() + this->pot);
+      competitor[last]->set_Stack(competitor[last]->get_Stack() + pot);
       this->pot = 0;
     }
 }
@@ -304,7 +298,7 @@ void		Board::reload_Round(int i)
   competitor[i]->set_Pushed(0);
   gime_Card(competitor[i], 1);
   move_Button(i);
-  this->pot = 0;
+  pot = 0;
 }
 
 void		Board::refresh_Pot()
@@ -312,10 +306,10 @@ void		Board::refresh_Pot()
   int		i;
 
   i = 0;
-  this->pot = 0;
+  pot = 0;
   while (i < 6)
     {
-      this->pot = this->pot + competitor[i]->get_Pushed();
+      pot = pot + competitor[i]->get_Pushed();
       i++;
     }
   pot = pot + old_pot;
@@ -323,7 +317,7 @@ void		Board::refresh_Pot()
 
 int		Board::get_Pot()
 {
-  return (this->pot);
+  return (pot);
 }
 
 void		Board::second_Update()
@@ -340,8 +334,8 @@ void		Board::second_Update()
 	  i++;
 	}
       i = 0;
-      put_Small_Blind(this->button_pos);
-      put_Big_Blind(this->button_pos);
+      put_Small_Blind(button_pos);
+      put_Big_Blind(button_pos);
     }
   else
     put_Headsup_Blind();
@@ -350,15 +344,15 @@ void		Board::second_Update()
 
 void		Board::burn_Card()
 {
-  this->idx_card++;
+  idx_card++;
 }
 
 void		Board::setup_Round()
 {
-  this->alive_players = 0;
+  alive_players = 0;
   idx_card = 0;
   set_Blind(10);
-  this->biggest_raise = get_Blind();
+  biggest_raise = get_Blind();
   reset_Round();
   if(flag_first_round == true)
     {
@@ -412,7 +406,7 @@ bool		Board::new_Round()
 
 std::vector<Card*>		Board::get_Deck()
 {
-  return (this->deck);
+  return (deck);
 }
 
 void				Board::set_Blind(int nb)
@@ -422,7 +416,7 @@ void				Board::set_Blind(int nb)
 
 int				Board::get_Blind()
 {
-  return (this->blind);
+  return (blind);
 }
 
 bool				Board::put_Small_Blind(int i)
@@ -462,21 +456,21 @@ bool				Board::run_Round() // ugly
   has_played = 0;
   std::cout << "run round running " << std::endl;
   i = current_player;
-  while (has_played < (this->standin_players))
+  while (has_played < (standin_players))
     {
-      if ((competitor[i]->get_Pushed() == this->biggest_raise && competitor[i]->get_Played() == true ) || competitor[i]->get_Stack() == 0)
+      if ((competitor[i]->get_Pushed() == biggest_raise && competitor[i]->get_Played() == true ) || competitor[i]->get_Stack() == 0)
 	has_played++;
-      else if (competitor[i]->get_Pushed() > this->biggest_raise)
+      else if (competitor[i]->get_Pushed() > biggest_raise)
 	{
 	  for (int g = 0; g < 6; g++)
 	    competitor[g]->set_Played(false);
-	  this->biggest_raise = competitor[i]->get_Pushed();
+	  biggest_raise = competitor[i]->get_Pushed();
 	  competitor[i]->set_Played(true);
 	  has_played = 0;
 	}
       i = get_Next_Standin(i);
       f++;
-      if (f == this->standin_players && has_played < this->standin_players)
+      if (f == standin_players && has_played < standin_players)
 	return (false);
     }
   if(step < 3)
@@ -507,7 +501,7 @@ int				Board::start_Round(int elapsed)
       if (current_player == 0 && competitor[0]->get_Standin() == true)
 	{
 	  std::cout << " start round : " << std::endl;
-	  std::cout << " biggest raise = " << this->biggest_raise << std::endl;
+	  std::cout << " biggest raise = " << biggest_raise << std::endl;
 	  std::cout << " competitor 00" << " get pushed = " << competitor[0]->get_Pushed() << std::endl;
 	  return (0);
 	}
@@ -519,17 +513,17 @@ int				Board::start_Round(int elapsed)
 
 int				Board::get_Standin_Players()
 {
-  return (this->standin_players);
+  return (standin_players);
 }
 
 int				Board::get_Current_Player()
 {
-  return (this->current_player);
+  return (current_player);
 }
 
 int				Board::get_Button_Pos()
 {
-  return (this->button_pos);
+  return (button_pos);
 }
 
 void				Board::next_Step()
@@ -548,7 +542,7 @@ void				Board::next_Step()
       competitor[i]->set_Pushed(0);
       i++;
     }
-  std::cout << " get_biggest_raise " << this->biggest_raise << std::endl;
+  std::cout << " get_biggest_raise " << biggest_raise << std::endl;
   i = 0;
   for(int i = 0; i < 6; i++)
     {
@@ -563,12 +557,12 @@ int				Board::get_Step()
 
 void				Board::set_Biggest_Raise(int raise)
 {
-  this->biggest_raise = raise;
+  biggest_raise = raise;
 }
 
 int				Board::get_Biggest_Raise()
 {
-  return (this->biggest_raise);
+  return (biggest_raise);
 }
 
 void				Board::dat_Refresh()
@@ -585,7 +579,7 @@ void				Board::reset_Round()
       if (competitor[i]->get_Stack() > 0)
 	competitor[i]->set_Standin(true);
     }
-  this->old_pot = 0;
+  old_pot = 0;
   end_round = false;
 }
 
@@ -695,41 +689,14 @@ void		Board::distribute_Pot()
     }
   std::cout << " nb winners = " << winner_nb << std::endl;
   std::cout << " OK99" << std::endl;
-  if(winner_nb > 1)
+  /*  if(winner_nb > 1)
     {
-      std::cout << " more than 1 winner ABANDON program " << std::endl;
-      std::cout << " more than 1 winner ABANDON program " << std::endl;
-      std::cout << " more than 1 winner ABANDON program " << std::endl;
-      std::cout << " more than 1 winner ABANDON program " << std::endl;
-      std::cout << " more than 1 winner ABANDON program " << std::endl;
-      std::cout << " more than 1 winner ABANDON program " << std::endl;
-      std::cout << " more than 1 winner ABANDON program " << std::endl;
-            std::cout << " more than 1 winner ABANDON program " << std::endl;
-      std::cout << " more than 1 winner ABANDON program " << std::endl;
-      std::cout << " more than 1 winner ABANDON program " << std::endl;
-      std::cout << " more than 1 winner ABANDON program " << std::endl;
-      std::cout << " more than 1 winner ABANDON program " << std::endl;
-      std::cout << " more than 1 winner ABANDON program " << std::endl;
-      std::cout << " more than 1 winner ABANDON program " << std::endl;
-            std::cout << " more than 1 winner ABANDON program " << std::endl;
-      std::cout << " more than 1 winner ABANDON program " << std::endl;
-      std::cout << " more than 1 winner ABANDON program " << std::endl;
-      std::cout << " more than 1 winner ABANDON program " << std::endl;
-      std::cout << " more than 1 winner ABANDON program " << std::endl;
-      std::cout << " more than 1 winner ABANDON program " << std::endl;
-      std::cout << " more than 1 winner ABANDON program " << std::endl;
-            std::cout << " more than 1 winner ABANDON program " << std::endl;
-      std::cout << " more than 1 winner ABANDON program " << std::endl;
-      std::cout << " more than 1 winner ABANDON program " << std::endl;
-      std::cout << " more than 1 winner ABANDON program " << std::endl;
-      std::cout << " more than 1 winner ABANDON program " << std::endl;
-      std::cout << " more than 1 winner ABANDON program " << std::endl;
-      std::cout << " more than 1 winner ABANDON program " << std::endl;
-    }
+    // SEEM TO WORK
+    }*/
   for (int i = 0; i < 6; i++)
     {
       if(competitor[i]->get_Standin() == true && competitor[i]->get_Hand_Showdown_Power_Twoplustwo() == temp)
-	competitor[i]->set_Stack(competitor[i]->get_Stack() + (this->pot / winner_nb));
+	competitor[i]->set_Stack(competitor[i]->get_Stack() + (pot / winner_nb));
       competitor[i]->set_Standin(false);  
     }
 }
