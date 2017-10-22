@@ -1,0 +1,33 @@
+22.10.17
+
+display
+
+- display color per suit
+- display what kind of hand each player had at showdown for better understanding
+
+code readibility
+
+- clean useless" this-> " 
+- redefine each function for better OOC
+- group and organize hh files
+- put const when necessary
+- remove useless library
+
+from http://compsci.ca/v3/viewtopic.php?t=19389 (( google search : proper c++ code ))
+
+- Do not separately declare and initialize variables unless absolutely necessary.  
+- Do not put space between function names and the parentheses surrounding the argument list. 
+- Do not declare variables before necessary. 
+- Precede and follow control structures (if/else, loops, switch) with a blank line to distinguish them from following code. 
+- Variables (and member variables) as well as functions and member functions should be either like_this or likeThis. 
+
+
+- decide how to display twoplustwo library, keep their own code style or rewrite them with mine, ask stackoverflow ?
+
+gameplay
+
+- make the game more fluid, maybe change display 
+
+to code
+
+- Implement debug state instead
