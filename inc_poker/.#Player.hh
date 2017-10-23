@@ -1,1 +1,0 @@
-roro@roro-ThinkPad-T400.26398:1508611714

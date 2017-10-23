@@ -28,10 +28,10 @@ class		Player
   void		set_Button(bool is_button);
   bool		get_Button();
 
-  void		set_Alive(bool a);
+  void		set_Alive(bool is_alive);
   bool		get_Alive();
 
-  void		set_Standin(bool ok);
+  void		set_Standin(bool is_standin);
   bool		get_Standin();
   
   void		set_Pushed(int n);
