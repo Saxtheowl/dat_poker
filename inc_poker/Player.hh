@@ -8,14 +8,14 @@
 class		Player
 {
  public:
-  Player(TYPE_PL type_pl, int start_stack);
+  Player(TYPE_PL type_p, int start_s);
   ~Player();
-  void		set_Type_Pl(TYPE_PL type_pl);
+  void		set_Type_Pl(TYPE_PL type_p);
   TYPE_PL	get_Type_Pl();
-  void		set_Stack(int stack);
+  void		set_Stack(int s);
   int		get_Stack();
 
-  void		set_Pos(int nb);
+  void		set_Pos(int n);
   int		get_Pos();
 
   void		set_Pos_Map(int x, int y);
@@ -28,24 +28,24 @@ class		Player
   void		set_Button(bool ok);
   bool		get_Button();
 
-  void		set_Alive(bool ok);
+  void		set_Alive(bool a);
   bool		get_Alive();
 
   void		set_Standin(bool ok);
   bool		get_Standin();
   
-  void		set_Pushed(int nb);
+  void		set_Pushed(int n);
   int		get_Pushed();
-  void		set_Pushed_Total(int value);
+  void		set_Pushed_Total(int p);
   int		get_Pushed_Total();
   
   void		set_Played(bool ok);
   bool		get_Played();
 
-  void		set_Hand_Showdown_Power_Twoplustwo(int nb);
+  void		set_Hand_Showdown_Power_Twoplustwo(int n);
   int		get_Hand_Showdown_Power_Twoplustwo();
 
-  void		set_All_In(bool ok);
+  void		set_All_In(bool a);
   bool		get_All_In();
 
 private:

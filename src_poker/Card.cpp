@@ -3,19 +3,19 @@
 
 Card::Card()
 {
-  this->is_given = false;
+  is_given = false;
 }
 
 Card::~Card()
 {
 }
 
-void	Card::set_All(int nb)
+void	Card::set_All(int n)
 {
   int	temp;
 
   temp = nb;
-  this->nb = nb;
+  nb = n;
   if (temp < 12)
     suit = SPADE;
   else if (temp < 25)
@@ -41,13 +41,13 @@ SUIT	Card::get_Suit()
 
 char	Card::get_Rank()
 {
-  if (this->nb < 13)
+  if (nb < 13)
     return ('a');
-  else if (this->nb < 26)
+  else if (nb < 26)
     return ('b');
-  else if (this->nb < 39)
+  else if (nb < 39)
     return ('c');
-  else if (this->nb < 52)
+  else if (nb < 52)
     return ('d');
   return(0);
 }
@@ -66,7 +66,7 @@ int	Card::get_True_Nb()
 {
   int	temp;
   
-  temp = this->nb;
+  temp = nb;
   while (temp > 12)
     temp = temp - 13;
   return (temp);

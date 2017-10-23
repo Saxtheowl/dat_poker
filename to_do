@@ -7,11 +7,12 @@ display
 
 code readibility
 
-- clean useless" this-> " 
+X - clean useless" this-> " 
 - redefine each function for better OOC
 - group and organize hh files
 - put const when necessary
 - remove useless library
+- camel case
 
 from http://compsci.ca/v3/viewtopic.php?t=19389 (( google search : proper c++ code ))
 

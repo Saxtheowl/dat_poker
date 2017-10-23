@@ -1,46 +1,46 @@
 #include "Player.hh"
 #include "enum.hh"
 
-Player::Player(TYPE_PL type_pl, int start_stack)
+Player::Player(TYPE_PL type_p, int start_s)
 {
-  this->pos_mapv.resize(2);
-  this->idx_p.resize(2);
-  this->standin = true;
-  this->type_pl = type_pl;
-  this->stack = start_stack;
-  this->pushed = 0;
-  this->pushed_total = 0;
+  pos_mapv.resize(2);
+  idx_p.resize(2);
+  standin = true;
+  type_pl = type_p;
+  stack = start_s;
+  pushed = 0;
+  pushed_total = 0;
 }
 
 Player::~Player()
 {
 }
 
-void		Player::set_Type_Pl(TYPE_PL type_pl)
+void		Player::set_Type_Pl(TYPE_PL type_p)
 {
-  this->type_pl = type_pl;
+  type_pl = type_p;
 }
 
 TYPE_PL		Player::get_Type_Pl()
 {
-  return (this->type_pl);
+  return (type_pl);
 }
 
-void		Player::set_Stack(int stack)
+void		Player::set_Stack(int s)
 {
-  this->stack = stack;
-  if (stack < 0)
-    this->stack = 0;
+  stack = s;
+  if (s < 0)
+    stack = 0;
 }
 
 int		Player::get_Stack()
 {
-  return (this->stack);
+  return (stack);
 }
 
-void		Player::set_Pos(int nb)
+void		Player::set_Pos(int n)
 {
-  this->pos = nb;
+  this->pos = n;
 }
 
 int		Player::get_Pos()
@@ -50,8 +50,8 @@ int		Player::get_Pos()
 
 void		Player::set_Pos_Map(int x, int y)
 {
-  this->pos_mapv[0] = x;
-  this->pos_mapv[1] = y;
+  pos_mapv[0] = x;
+  pos_mapv[1] = y;
 }
 
 int		Player::get_Pos_Map_X()
@@ -66,106 +66,106 @@ int		Player::get_Pos_Map_Y()
 
 void		Player::set_Index_Card(int index, int nb)
 {
-  this->idx_p[nb] = index;
+  idx_p[nb] = index;
 }
 
 int		Player::get_Index_Card(int nb)
 {
-  return (this->idx_p[nb]);
+  return (idx_p[nb]);
 }
 
-void		Player::set_Button(bool ok)
+void		Player::set_Button(bool b)
 {
-  this->button = ok;
+  button = b;
 }
 
 bool		Player::get_Button()
 {
-  return (this->button);
+  return (button);
 }
 
-void		Player::set_Alive(bool ok)
+void		Player::set_Alive(bool a)
 {
-  this->alive = ok;
+  alive = a;
 }
 
 bool		Player::get_Alive()
 {
-  return (this->alive);
+  return (alive);
 }
 
-void		Player::set_Pushed(int nb)
+void		Player::set_Pushed(int n)
 {
-  if(nb > this->stack)
-    this->pushed_total = this->pushed_total + (this->stack - (nb));
+  if(n > stack)
+    pushed_total = pushed_total + (stack - (n));
   else
-    this->pushed_total = this->pushed_total + nb;
-  if(this->stack < ( nb - this->pushed))
+    pushed_total = pushed_total + n;
+  if(stack < ( n - pushed))
     {
-      this->pushed = stack;
-      this->stack = 0;
+      pushed = stack;
+      stack = 0;
     }
-  else if(nb > 0)
+  else if(n > 0)
     {
-      set_Stack(this->stack - (nb - this->pushed));
-      this->pushed = nb;
+      set_Stack(stack - (n - pushed));
+      pushed = n;
     }
   else
-    this->pushed = nb;
+    pushed = n;
 }
 
 int		Player::get_Pushed()
 {
-  return (this->pushed);
+  return (pushed);
 }
 
-void		Player::set_Pushed_Total(int value)
+void		Player::set_Pushed_Total(int p)
 {
-  this->pushed_total = value;
+  pushed_total = p;
 }
 
 int		Player::get_Pushed_Total()
 {
-  return(this->pushed_total);
+  return(pushed_total);
 }
 
-void		Player::set_Standin(bool ok)
+void		Player::set_Standin(bool s)
 {
-  this->standin = ok;
+  standin = s;
 
 }
 
 bool		Player::get_Standin()
 {
-  return (this->standin);
+  return (standin);
 }
 
 void		Player::set_Played(bool ok)
 {
-  this->played = ok;
+  played = ok;
 }
 
 bool		Player::get_Played()
 {
-  return (this->played);
+  return (played);
 }
 
-void		Player::set_Hand_Showdown_Power_Twoplustwo(int nb)
+void		Player::set_Hand_Showdown_Power_Twoplustwo(int n)
 {
-  this->hand_showdown_power_twoplustwo = nb;
+  hand_showdown_power_twoplustwo = n;
 }
 
 int		Player::get_Hand_Showdown_Power_Twoplustwo()
 {
-  return(this->hand_showdown_power_twoplustwo);
+  return(hand_showdown_power_twoplustwo);
 }
 
-void		Player::set_All_In(bool ok)
+void		Player::set_All_In(bool a)
 {
-  this->all_in = ok;
+  all_in = a;
 }
 
 bool		Player::get_All_In()
 {
-  return(this->all_in);
+  return(all_in);
 }

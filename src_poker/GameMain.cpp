@@ -36,7 +36,7 @@ void		GameMain::init_Ai()
   i = 0;
   while (i < board->get_Start_Nb_Players() - 1)
     {
-      this->ai.push_back(new bot_Ai(i + 1));
+      ai.push_back(new bot_Ai(i + 1));
       i++;
     }
 }

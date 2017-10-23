@@ -6,7 +6,7 @@
 class		bot_Ai
 {
 public:
-  bot_Ai(int pos);
+  bot_Ai(int p);
   ~bot_Ai();
 
   void	play_Bot(Board *board);

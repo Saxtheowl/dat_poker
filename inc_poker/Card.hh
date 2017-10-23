@@ -9,7 +9,7 @@ public:
   Card();
   ~Card();
 
-  void	set_All(int nb);
+  void	set_All(int n);
   int	get_Nb();
   SUIT  get_Suit();
   char  get_Rank();

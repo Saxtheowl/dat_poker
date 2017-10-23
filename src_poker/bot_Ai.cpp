@@ -1,8 +1,8 @@
 #include "bot_Ai.hh"
 
-bot_Ai::bot_Ai(int pos)
+bot_Ai::bot_Ai(int p)
 {
-  this->pos = pos;
+  pos = p;
 }
 
 bot_Ai::~bot_Ai()
