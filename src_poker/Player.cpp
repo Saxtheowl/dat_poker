@@ -74,9 +74,9 @@ int		Player::get_Index_Card(int nb)
   return (idx_p[nb]);
 }
 
-void		Player::set_Button(bool b)
+void		Player::set_Button(bool is_button)
 {
-  button = b;
+  button = is_button;
 }
 
 bool		Player::get_Button()
@@ -84,9 +84,9 @@ bool		Player::get_Button()
   return (button);
 }
 
-void		Player::set_Alive(bool a)
+void		Player::set_Alive(bool is_alive)
 {
-  alive = a;
+  alive = is_alive;
 }
 
 bool		Player::get_Alive()
@@ -129,9 +129,9 @@ int		Player::get_Pushed_Total()
   return(pushed_total);
 }
 
-void		Player::set_Standin(bool s)
+void		Player::set_Standin(bool is_standin)
 {
-  standin = s;
+  standin = is_standin;
 
 }
 
@@ -140,9 +140,9 @@ bool		Player::get_Standin()
   return (standin);
 }
 
-void		Player::set_Played(bool ok)
+void		Player::set_Played(bool has_played)
 {
-  played = ok;
+  played = has_played;
 }
 
 bool		Player::get_Played()
@@ -160,9 +160,9 @@ int		Player::get_Hand_Showdown_Power_Twoplustwo()
   return(hand_showdown_power_twoplustwo);
 }
 
-void		Player::set_All_In(bool a)
+void		Player::set_All_In(bool is_all_in)
 {
-  all_in = a;
+  all_in = is_all_in;
 }
 
 bool		Player::get_All_In()

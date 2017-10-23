@@ -29,7 +29,7 @@ public:
   char	get_Rank_Symbol(int card_value);
   void	put_Card_Rank(int card_pos_x, int card_pos_y, char first_card_rank, char second_card_rank, int pos);
 
-  void	put_Button(bool ok, int pos_p_x, int pos_p_y, int pos);
+  void	put_Button(bool is_button, int pos_p_x, int pos_p_y, int pos);
 
   void	put_Chips(int chips, int pos_p_x, int pos_p_y, int pos, int flag);
   void	clean_Chips(int pos_p_x, int pos_p_y, int pos, int flag);

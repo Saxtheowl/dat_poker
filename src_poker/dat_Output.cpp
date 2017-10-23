@@ -226,17 +226,17 @@ void		dat_Output::put_Cards(int card_pos_x, int card_pos_y, int first_card_value
     }
 }
 
-void		dat_Output::put_Button(bool ok, int pos_p_x, int pos_p_y, int pos)
+void		dat_Output::put_Button(bool is_button, int pos_p_x, int pos_p_y, int pos)
 {
   if (pos < 3)
     {
-      if (ok == true)
+      if (is_button == true)
 	map[pos_p_x][pos_p_y + 3] = 'B';
       else
 	map[pos_p_x][pos_p_y + 3] = ' ';
     }
   else
-    if (ok == true)
+    if (is_button == true)
       map[pos_p_x][pos_p_y - 1] = 'B';
     else
       map[pos_p_x][pos_p_y - 1] = ' ';
