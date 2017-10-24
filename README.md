@@ -2,7 +2,7 @@
 ### simple modular c++ poker client
 ### Terminal Poker Game
 
-#### To Play Space Pirates:
+#### To Play dat_poker
 * clone repo
 * cd into the cloned repo 
 * copy and paste the following code into your terminal
