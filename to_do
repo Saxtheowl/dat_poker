@@ -16,6 +16,7 @@ X - clean useless" this-> "
 - CamelCase, >> lowerCamelCase << 
 - find better name parameter than "ok"
 - space behind if, while, for
+- use https://github.com/ZackSmith32/SpacePirate for example
 
 from http://compsci.ca/v3/viewtopic.php?t=19389 (( google search : proper c++ code ))
 
