@@ -7,7 +7,6 @@ display
 
 code readibility
 
-
 X - clean useless" this-> " 
 - redefine each function for better OOC
 - group and organize hh files
@@ -17,6 +16,7 @@ X - clean useless" this-> "
 - find better name parameter than "ok"
 - space behind if, while, for
 - use https://github.com/ZackSmith32/SpacePirate for example
+- rename files to .hpp and .cpp
 
 from http://compsci.ca/v3/viewtopic.php?t=19389 (( google search : proper c++ code ))
 
