@@ -2,7 +2,7 @@
 #include <string>
 #include <sstream>
 #include <stdlib.h>
-#include "GameMain.hh"
+#include "GameMain.hpp"
 
 int		main()
 {

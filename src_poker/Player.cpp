@@ -1,5 +1,5 @@
-#include "Player.hh"
-#include "enum.hh"
+#include "Player.hpp"
+#include "enum.hpp"
 
 Player::Player(TYPE_PL type_p, int start_s)
 {

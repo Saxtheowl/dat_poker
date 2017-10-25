@@ -1,7 +1,7 @@
 #ifndef _BOT_AI_HH_
  #define _BOT_AI_HH_
 
-#include "Board.hh"
+#include "Board.hpp"
 
 class		bot_Ai
 {

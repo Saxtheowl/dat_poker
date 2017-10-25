@@ -1,7 +1,7 @@
 #ifndef _HUMAN_HH_
  #define _HUMAN_HH_
 
-#include "Board.hh"
+#include "Board.hpp"
 #include <string>
 #include <sstream>
 

@@ -1,7 +1,7 @@
 #ifndef _PLAYER_HH_
  #define _PLAYER_HH_
 
-#include "enum.hh"
+#include "enum.hpp"
 #include <iostream>
 #include <vector>
 

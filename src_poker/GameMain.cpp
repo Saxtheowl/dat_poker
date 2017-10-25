@@ -2,9 +2,9 @@
 #include <string>
 #include <sstream>
 
-#include "GameMain.hh"
-#include "bot_Ai.hh"
-#include "dat_Output.hh"
+#include "GameMain.hpp"
+#include "bot_Ai.hpp"
+#include "dat_Output.hpp"
 
 GameMain::GameMain()
 {

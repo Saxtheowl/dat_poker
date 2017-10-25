@@ -1,7 +1,7 @@
 #ifndef _CARD_HH_
  #define _CARD_HH_
 
-#include "enum.hh"
+#include "enum.hpp"
 
 class		Card
 {

@@ -1,4 +1,4 @@
-#include "bot_Ai.hh"
+#include "bot_Ai.hpp"
 
 bot_Ai::bot_Ai(int p)
 {

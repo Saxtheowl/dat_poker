@@ -5,10 +5,10 @@
 #include <string>
 #include <sstream>
 #include <vector>
-#include "Board.hh"
-#include "dat_Output.hh"
-#include "bot_Ai.hh"
-#include "Human.hh"
+#include "Board.hpp"
+#include "dat_Output.hpp"
+#include "bot_Ai.hpp"
+#include "Human.hpp"
 
 class		GameMain
 {

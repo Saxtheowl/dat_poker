@@ -1,4 +1,4 @@
-#include "dat_Output.hh"
+#include "dat_Output.hpp"
 
 dat_Output::dat_Output()
 {

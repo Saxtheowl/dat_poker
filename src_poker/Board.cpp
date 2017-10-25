@@ -1,11 +1,10 @@
-#include "Board.hh"
-#include "Card.hh"
-#include "enum.hh"
+#include "Board.hpp"
+#include "Card.hpp"
+#include "enum.hpp"
 #include <stdlib.h>
-#include <iostream>
-#include <string.h>
 #include <stdio.h>
-#include <unistd.h>
+#include <string.h>
+#include <iostream>
 
 Board::Board()
 {

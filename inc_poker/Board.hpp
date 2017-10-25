@@ -4,8 +4,8 @@
 #include <iostream>
 #include <vector>
 
-#include "Card.hh"
-#include "Player.hh"
+#include "Card.hpp"
+#include "Player.hpp"
 
 class		Board
 {

@@ -1,7 +1,7 @@
 #ifndef _DAT_OUTPUT_HH_
  #define _DAT_OUTPUT_HH_
 
-#include "Board.hh"
+#include "Board.hpp"
 
 class		dat_Output
 {

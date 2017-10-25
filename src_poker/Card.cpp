@@ -1,5 +1,5 @@
-#include "Card.hh"
-#include "enum.hh"
+#include "Card.hpp"
+#include "enum.hpp"
 
 Card::Card()
 {
