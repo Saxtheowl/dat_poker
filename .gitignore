@@ -1,8 +1,8 @@
 *~
 *.o
+*.exe
 test/
 temp
-poker.exe
 poker
 other/XPokerEval/linux/HandRanks.dat
 other/XPokerEval/linux/generate_table
