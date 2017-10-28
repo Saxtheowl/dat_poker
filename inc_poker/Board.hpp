@@ -10,7 +10,7 @@
 class		Board
 {
 public:
-  Board();
+  Board(int m, int s_n_p, int s_s);
   ~Board();
 
   void		set_Mod(int m);
@@ -24,8 +24,7 @@ public:
 
   void		init_nb_Player();
   void		init_position_map();
-  void		init_Mod();
-  void		init_Board();
+  void		init_Deck();
 
   bool		not_on_the_deck(int i, int nb);
   void		shuffle_Deck();
@@ -85,14 +84,14 @@ private:
   int		start_nb_players;
   int		start_stack;
 
-  int		idx_card;
+  int		idx_card = 0;
 
   int		x_board;
   int		y_board;
 
   bool		flag_moved_button;
-  bool		flag_first_round;
-  bool		end_round;
+  bool		flag_first_round = true;
+  bool		end_round = false;
 
   int		blind;
   int		alive_players;
@@ -100,7 +99,7 @@ private:
   int		pot;
   int		old_pot;
   int		current_player;
-  int		button_pos;
+  int		button_pos = 0;
   int		step;
   int		biggest_raise;
   int		HR[32487834];

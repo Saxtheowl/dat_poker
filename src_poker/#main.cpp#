@@ -4,10 +4,13 @@
 #include <stdlib.h>
 #include "GameMain.hpp"
 
+
+
 int		main()
 {
   GameMain	gameMain;
 
   srand(time(NULL));
+  init_Hand_Evaluator_Twoplustwo();
   gameMain.Start();
 }

@@ -17,7 +17,7 @@ SRCS		=	$(DIR)main.cpp \
 
 OBJS		=	$(SRCS:.cpp=.o)
 
-CXXFLAGS	+=	-Wextra -Wall -Wextra -ansi -g3 -I inc_poker/ #-Werror
+CXXFLAGS	+=	-std=gnu++11 -Wextra -Wall -Wextra -ansi -g3 -I inc_poker/ #-Werror
 
 $(NAME)		:	$(OBJS)
 			$(CC) -o $(NAME) $(OBJS) 

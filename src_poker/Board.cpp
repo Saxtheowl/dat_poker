@@ -6,13 +6,14 @@
 #include <string.h>
 #include <iostream>
 
-Board::Board()
+Board::Board(int m, int s_n_p, int s_s)
 {
-  idx_card = 0;
-  flag_first_round = true;
-  end_round = false;
+  mod = m;
+  start_nb_players = s_n_p;
+  start_stack = s_s;
   init_Hand_Evaluator_Twoplustwo();
-  button_pos = 0;
+  init_nb_Player();
+  init_Deck();
 }
 
 Board::~Board()
@@ -50,12 +51,7 @@ int		Board::get_start_Stack()
   return (start_stack);
 }
 
-void		Board::init_Board() // cant deal 9 player by now
-{
-
-}
-
-void		Board::init_Mod()
+void		Board::init_Deck()
 {
   int		i;
   
@@ -65,7 +61,6 @@ void		Board::init_Mod()
       deck.push_back(new Card());
       i++;
     }
-  init_Board();
 }
 
 void		Board::init_nb_Player()
@@ -481,8 +476,6 @@ bool				Board::run_Round() // ugly
     }
   return(0);
 }
-
-
 
 int				Board::start_Round(int elapsed)
 {

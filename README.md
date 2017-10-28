@@ -12,6 +12,7 @@ make ; sh setup.sh ; ./poker
 
 #### Tech Used to Make This:
  * C++
+ * C
  * Hand evaluator library from https://github.com/christophschmalhofer/poker
 
 #### Gameplay Gif

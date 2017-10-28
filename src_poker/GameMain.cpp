@@ -8,6 +8,7 @@
 
 GameMain::GameMain()
 {
+  
 }
 
 GameMain::~GameMain()
@@ -17,50 +18,35 @@ GameMain::~GameMain()
 
 void		GameMain::Start()
 {
-  Initialize();
   Menu();
+  Initialize();
   start_Game();
 }
 
 void		GameMain::Initialize()
 {
-  board = new Board();
   dat_output = new dat_Output();
   human = new Human();
-}
-
-void		GameMain::init_Ai()
-{
-  int		i;
-
-  i = 0;
-  while (i < board->get_Start_Nb_Players() - 1)
-    {
-      ai.push_back(new bot_Ai(i + 1));
-      i++;
-    }
-}
-
-void		GameMain::init_All()
-{
-  board->init_nb_Player();
-  dat_output->init_Map();
-  board->init_Mod();
-  init_Ai();
+  for (int i = 0 ; i < board->get_Start_Nb_Players() - 1 ; i++)
+    ai.push_back(new bot_Ai(i + 1));
 }
 
 void		GameMain::Menu()
 {
+
+  int		mod = 6;
+  int		start_nb_players = 6;
+  int		start_stack = 100;
   /*  std::cout << "What mod u want ?\n" << "0 - NO LIMIT HOLDEM\n" << std::endl;
   board->set_Mod(dat_input.get_Input());
   std::cout << "How many players u want ?\n" << "6 or 9\n" << std::endl;
   board->set_start_nb_Players(dat_input.get_Input());
   std::cout << "How many stack u want ?\n" << std::endl;
   board->set_start_Stack(dat_input.get_Input());*/
-  board->set_Mod(6);
-  board->set_start_nb_Players(6);
-  board->set_start_Stack(100);
-  init_All();
+  board = new Board(mod, start_nb_players , start_stack);
+  //  board->set_Mod(6);
+  //  board->set_start_nb_Players(6);
+  //  board->set_start_Stack(100);
 }
 
 void		GameMain::start_Game()

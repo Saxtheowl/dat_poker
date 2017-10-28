@@ -17,6 +17,7 @@ X - clean useless" this-> "
 - space behind if, while, for
 - use https://github.com/ZackSmith32/SpacePirate for example
 - rename files to .hpp and .cpp
+- commentary for major code block ?
 
 from http://compsci.ca/v3/viewtopic.php?t=19389 (( google search : proper c++ code ))
 
@@ -35,7 +36,7 @@ gameplay
 
 to code
 
-- Implement debug state instead
+- Implement debug state instead of tricky std::cout <<
 
 other
 
