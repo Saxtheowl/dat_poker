@@ -84,14 +84,14 @@ private:
   int		start_nb_players;
   int		start_stack;
 
-  int		idx_card = 0;
+  int		idx_card;
 
   int		x_board;
   int		y_board;
 
   bool		flag_moved_button;
-  bool		flag_first_round = true;
-  bool		end_round = false;
+  bool		flag_first_round;
+  bool		end_round;
 
   int		blind;
   int		alive_players;
@@ -99,7 +99,7 @@ private:
   int		pot;
   int		old_pot;
   int		current_player;
-  int		button_pos = 0;
+  int		button_pos;
   int		step;
   int		biggest_raise;
   int		HR[32487834];
