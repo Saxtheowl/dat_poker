@@ -86,9 +86,6 @@ private:
 
   int		idx_card = 0;
 
-  int		x_board;
-  int		y_board;
-
   bool		flag_moved_button = false;
   bool		flag_first_round = true;
   bool		end_round = false;
