@@ -14,6 +14,7 @@ Board::Board(int m, int s_n_p, int s_s)
   init_Hand_Evaluator_Twoplustwo();
   init_nb_Player();
   init_Deck();
+  std::cout << "ok2" << std::endl;
 }
 
 Board::~Board()
@@ -311,15 +312,19 @@ void		Board::setup_Round()
   set_Blind(10);
   biggest_raise = get_Blind();
   reset_Round();
+  std::cout << "ok15" << std::endl;
   if(flag_first_round == true)
     {
       competitor[0]->set_Button(true);
+      std::cout << "ok20" << std::endl;
       flag_first_round = false;
       flag_moved_button = true;
     }
   else
     flag_moved_button = false;
+  std::cout << "ok21" << std::endl;
   shuffle_Deck();
+  std::cout << "ok18" << std::endl;
 
 }
 
@@ -330,12 +335,15 @@ bool		Board::new_Round()
   
   i = 0;
   alive_bot = 0;
+  std::cout << "ok10" << std::endl;
   setup_Round();
+  std::cout << "ok12" << std::endl;
   if (competitor[0]->get_Stack() < 2)
     {
       std::cout << "Bot win" << std::endl;
       return(false);
     }
+  std::cout << "ok11" << std::endl;
   while (i < start_nb_players)
     {
       if (competitor[i]->get_Stack() > 0)	
@@ -442,6 +450,7 @@ bool				Board::run_Round() // ugly
 
 int				Board::start_Round(int elapsed)
 {
+  std::cout << "ok1" << std::endl;
   if (elapsed == 0)
     {
       fulfill_Board();
