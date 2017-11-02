@@ -53,7 +53,6 @@ void		GameMain::start_Game()
 {
   char		key;
 
-  std::cout << "ok7" << std::endl;
   while (board->new_Round() == true)
     {
       std::cout << "first update start" << std::endl;
@@ -66,7 +65,6 @@ void		GameMain::start_Game()
       dat_output->clean_Card_Board();
       std::cout << " New round begin " << std::endl;
     }
-  std::cout << "ok9" << std::endl;
 }
 
 void		GameMain::launch_Game()
@@ -76,7 +74,6 @@ void		GameMain::launch_Game()
   char		key;
 
   elapsed = 0;
-  std::cout << "ok3" << std::endl;
   while (board->get_Standin_Players() > 1)
     {
       who_play = board->start_Round(elapsed);
