@@ -22,7 +22,6 @@ public:
   void		Menu();
   void		start_Game();
   void		launch_Game();
-  void		play_Human();
   
 private:
   Board		*board;

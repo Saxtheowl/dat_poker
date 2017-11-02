@@ -21,29 +21,15 @@ Board::~Board()
 
 }
 
-void		Board::set_Mod(int m)
-{
-  mod = m;
-}
 
 int		Board::get_Mod()
 {
   return (mod);
 }
 
-void		Board::set_start_nb_Players(int players)
-{
-  start_nb_players = players;
-}
-
 int		Board::get_Start_Nb_Players()
 {
   return (start_nb_players);
-}
-
-void		Board::set_start_Stack(int s_stack)
-{
-  start_stack = s_stack;
 }
 
 int		Board::get_start_Stack()
@@ -53,10 +39,7 @@ int		Board::get_start_Stack()
 
 void		Board::init_Deck()
 {
-  int		i;
-  
-  i = 0;
-  while (i < 53)
+  for (int i = 0; i < 53; i++)
     {
       deck.push_back(new Card());
       i++;
@@ -98,10 +81,7 @@ void		Board::init_Player_Pos_X_Y()
 
 bool		Board::not_on_the_deck(int i, int nb)
 {
-  int		f;
-
-  f = 0;
-  while (f < i)
+  for (int f = 0; f < i; f++)
     {
       if (deck[f]->get_Nb() == nb)
 	return (false);
@@ -146,15 +126,11 @@ bool		Board::check_Alive()
 
 void		Board::fulfill_Board()
 {
-  int		i;
-
-  i = 0;
-  while (i < 6)
+  for (int i = 0; i < 6; i++)
     {
       board_card.push_back(i);
       board_card[i] = idx_card;
       idx_card++;
-      i++;
     }
 }
 
@@ -189,13 +165,13 @@ void		Board::move_Button(int i)
       flag_moved_button = true;
       button_pos = i;
     }
-  else if(competitor[i]->get_Button() == true && flag_moved_button == false)
+  else if (competitor[i]->get_Button() == true && flag_moved_button == false)
     {
       competitor[i]->set_Button(false);
-      while(competitor[i + 1]->get_Stack() <= 0)
+      while (competitor[i + 1]->get_Stack() <= 0)
 	{
 	  i++;
-	  if(i == 5)
+	  if (i == 5)
 	    i = -1;
 	}
       flag_moved_button = true;
@@ -240,16 +216,13 @@ int		Board::get_Next_Standin(int i)
 	    i++;
 	} 
     }
-  return(0);
+  return (0);
 }
 
 void		Board::refresh_Alive()
-{
-  int		i;
-
-  i = 0;
+{ 
   alive_players = 0;
-  while (i < 6)
+  for(int i = 0; i < 6; i++)
     {
       if (competitor[i]->get_Stack() > 0 || competitor[i]->get_Pushed() > 0)
 	{
@@ -258,25 +231,21 @@ void		Board::refresh_Alive()
 	}
       else
 	competitor[i]->set_Alive(false);
-      i++;
     }
 }
 
 void		Board::refresh_Standin()
 {
-  int		i;
   int		last;
 
-  i = 0;
   standin_players = 0;
-  while (i < 6)
+  for (int i = 0; i < 6; i++)
     {
       if (competitor[i]->get_Standin() == true )
 	{
 	  standin_players++;
 	  last = i;
 	}
-      i++;
     }
   if (standin_players == 1 && end_round == false)
     {
@@ -297,15 +266,9 @@ void		Board::reload_Round(int i)
 
 void		Board::refresh_Pot()
 {
-  int		i;
-
-  i = 0;
   pot = 0;
-  while (i < 6)
-    {
-      pot = pot + competitor[i]->get_Pushed();
-      i++;
-    }
+  for (int i = 0; i < 6; i++)
+    pot = pot + competitor[i]->get_Pushed();
   pot = pot + old_pot;
 }
 
@@ -314,10 +277,10 @@ int		Board::get_Pot()
   return (pot);
 }
 
-void		Board::second_Update()
+void Board::second_Update()
 {
-  int		i;
-  
+  int i;
+
   i = 0;
   refresh_Alive();
   if (alive_players > 1)

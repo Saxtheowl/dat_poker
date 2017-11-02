@@ -23,17 +23,8 @@ void		GameMain::Start()
   start_Game();
 }
 
-void		GameMain::Initialize()
-{
-  dat_output = new dat_Output();
-  human = new Human();
-  for (int i = 0 ; i < board->get_Start_Nb_Players() - 1 ; i++)
-    ai.push_back(new bot_Ai(i + 1));
-}
-
 void		GameMain::Menu()
 {
-
   int		mod = 6;
   int		start_nb_players = 6;
   int		start_stack = 100;
@@ -47,6 +38,14 @@ void		GameMain::Menu()
   //  board->set_Mod(6);
   //  board->set_start_nb_Players(6);
   //  board->set_start_Stack(100);
+}
+
+void		GameMain::Initialize()
+{
+  dat_output = new dat_Output();
+  human = new Human();
+  for (int i = 0 ; i < board->get_Start_Nb_Players() - 1 ; i++)
+    ai.push_back(new bot_Ai(i + 1));
 }
 
 void		GameMain::start_Game()
@@ -65,11 +64,6 @@ void		GameMain::start_Game()
       dat_output->clean_Card_Board();
       std::cout << " New round begin " << std::endl;
     }
-}
-
-void		GameMain::play_Human()
-{
-  
 }
 
 void		GameMain::launch_Game()
