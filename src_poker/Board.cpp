@@ -63,29 +63,21 @@ void		Board::init_nb_Player()
 
 void		Board::init_Player_Pos_X_Y()
 {
-  int		i;
-
-  i = 0;
-  while (i < 6)
+  for (int i = 0; i < 6; i++)
     {
       if (i < 3)
 	competitor[i]->set_Pos_Map((7 + i * 6), 6);
       else
 	competitor[i]->set_Pos_Map((7 + (i - 3) * 6), 86);
-      i++;
     }
 }
 
 bool		Board::not_on_the_deck(int i, int nb)
 {
-  int		f;
-
-  f = 0;
-  while (f < i)
+  for (int f; f < i; f++)
     {
       if (deck[f]->get_Nb() == nb)
 	return (false);
-      f++;
     }
   return (true);
 }
@@ -222,7 +214,7 @@ int		Board::get_Next_Standin(int i)
 void		Board::refresh_Alive()
 { 
   alive_players = 0;
-  for(int i = 0; i < 6; i++)
+  for (int i = 0; i < 6; i++)
     {
       if (competitor[i]->get_Stack() > 0 || competitor[i]->get_Pushed() > 0)
 	{
@@ -277,7 +269,7 @@ int		Board::get_Pot()
   return (pot);
 }
 
-void Board::second_Update()
+void		Board::second_Update()
 {
   int i;
 
@@ -311,7 +303,7 @@ void		Board::setup_Round()
   set_Blind(10);
   biggest_raise = get_Blind();
   reset_Round();
-  if(flag_first_round == true)
+  if (flag_first_round == true)
     {
       competitor[0]->set_Button(true);
       flag_first_round = false;
@@ -430,14 +422,14 @@ bool				Board::run_Round() // ugly
       if (f == standin_players && has_played < standin_players)
 	return (false);
     }
-  if(step < 3)
+  if (step < 3)
     next_Step();
-  else if(step == 3)
+  else if (step == 3)
     {
       Resolve();
       return (true);
     }
-  return(0);
+  return (0);
 }
 
 int				Board::start_Round(int elapsed)
@@ -463,7 +455,7 @@ int				Board::start_Round(int elapsed)
       else
 	return (1);
     }
-  return(0);
+  return (0);
 }
 
 int				Board::get_Standin_Players()
@@ -499,7 +491,7 @@ void				Board::next_Step()
     }
   std::cout << " get_biggest_raise " << biggest_raise << std::endl;
   i = 0;
-  for(int i = 0; i < 6; i++)
+  for (int i = 0; i < 6; i++)
     {
       std::cout << " board get_pushed next step = " << competitor[i]->get_Pushed() << std::endl;
     }
@@ -542,7 +534,7 @@ void				Board::init_Hand_Evaluator_Twoplustwo()
 {
   memset(HR, 0, sizeof(HR));
   FILE * fin = fopen("other/XPokerEval/linux/HandRanks.dat", "rb");
-  if(fin == 0)
+  if (fin == 0)
     {
       std::cout << " HandRanks.dat not found, run ""sh setup.sh"" then launch the game again "<< std::endl;
       exit(0);
@@ -561,29 +553,29 @@ int				Board::get_Hand_Value(int *pCards)
   p = HR[p + *pCards++];
   p = HR[p + *pCards++];
   p = HR[p + *pCards++];
-  return HR[p + *pCards++];
+  return (HR[p + *pCards++]);
 }
 
 int				Board::get_fixed_Card_Twoplustwo(int card)
 {
 
-  if(card > 0 && card < 13)
-    return((card * 4) - 3);
-  if(card > 13 && card < 26)
-    return(((card - 13) * 4) - 2);
-  if(card > 26 && card < 39)
-    return(((card - 26) * 4) - 1);
+  if (card > 0 && card < 13)
+    return ((card * 4) - 3);
+  if (card > 13 && card < 26)
+    return (((card - 13) * 4) - 2);
+  if (card > 26 && card < 39)
+    return (((card - 26) * 4) - 1);
   if(card > 39 && card < 52)
-    return(((card - 39) * 4));
+    return (((card - 39) * 4));
   if(card == 0) // fuck this
-    return(49);
+    return (49);
   if(card == 13)
-    return(50);
+    return (50);
   if(card == 26)
-    return(51);
+    return (51);
   if(card == 39)
-    return(52);
-  return(0);
+    return (52);
+  return (0);
 }
 
 void				Board::setup_Hand_Power()
@@ -596,7 +588,7 @@ void				Board::setup_Hand_Power()
   Card[4] = get_fixed_Card_Twoplustwo(deck[board_card[2]]->get_Nb());
   Card[5] = get_fixed_Card_Twoplustwo(deck[board_card[3]]->get_Nb());
   Card[6] = get_fixed_Card_Twoplustwo(deck[board_card[4]]->get_Nb());
-  for(int i = 0; i < 6; i++)
+  for (int i = 0; i < 6; i++)
     {
       std::cout << deck[competitor[i]->get_Index_Card(1)]->get_Nb() << std::endl;
       Card[0] = get_fixed_Card_Twoplustwo(deck[competitor[i]->get_Index_Card(0)]->get_Nb());
@@ -613,9 +605,9 @@ void				Board::Resolve()
   setup_Hand_Power();
   std::cout << " resolve start " << std::endl;
   temp = 0;
-  for(int i = 0; i < 6; i++)
+  for (int i = 0; i < 6; i++)
     {
-      if(competitor[i]->get_Standin() == true && competitor[i]->get_Hand_Showdown_Power_Twoplustwo() > temp)
+      if (competitor[i]->get_Standin() == true && competitor[i]->get_Hand_Showdown_Power_Twoplustwo() > temp)
 	{
 	  temp = competitor[i]->get_Hand_Showdown_Power_Twoplustwo();
 	  winner_twoplustwo = i;
@@ -632,14 +624,14 @@ void		Board::distribute_Pot()
   int		temp = 0;
   int		winner_nb = 1;
 
-  for(int i = 0; i < 6; i++)
+  for (int i = 0; i < 6; i++)
     {
-      if(competitor[i]->get_Standin() == true && competitor[i]->get_Hand_Showdown_Power_Twoplustwo() > temp)
+      if (competitor[i]->get_Standin() == true && competitor[i]->get_Hand_Showdown_Power_Twoplustwo() > temp)
 	{
 	  temp = competitor[i]->get_Hand_Showdown_Power_Twoplustwo();
 	  winner_nb = 1;
 	}
-      else if(competitor[i]->get_Standin() == true && competitor[i]->get_Hand_Showdown_Power_Twoplustwo() == temp)
+      else if (competitor[i]->get_Standin() == true && competitor[i]->get_Hand_Showdown_Power_Twoplustwo() == temp)
 	winner_nb++;
     }
   std::cout << " nb winners = " << winner_nb << std::endl;
@@ -650,7 +642,7 @@ void		Board::distribute_Pot()
     }*/
   for (int i = 0; i < 6; i++)
     {
-      if(competitor[i]->get_Standin() == true && competitor[i]->get_Hand_Showdown_Power_Twoplustwo() == temp)
+      if (competitor[i]->get_Standin() == true && competitor[i]->get_Hand_Showdown_Power_Twoplustwo() == temp)
 	competitor[i]->set_Stack(competitor[i]->get_Stack() + (pot / winner_nb));
       competitor[i]->set_Standin(false);  
     }

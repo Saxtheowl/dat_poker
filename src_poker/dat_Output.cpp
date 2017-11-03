@@ -22,11 +22,11 @@ void		dat_Output::print_All(Board *board, int flag)
       second_Update(board);
       update_Card_Board(board);
     }
-  while (x < this->x_board)
+  while (x < x_board)
     {
-      while (y < this->y_board)
+      while (y < y_board)
 	{
-	  std::cout << this->map[x][y];
+	  std::cout << map[x][y];
 	  y++;
 	}
       y = 0;
@@ -102,30 +102,23 @@ void		dat_Output::put_Static_Element()
 
 void		dat_Output::fill_Corner()
 {
-  int		i;
-
-  i = 0;
-  while (i < this->y_board)
+  for (int i = 0; i < y_board; i++)
     {
       map[0][i] = 'X';
       map[25][i] = 'X';
-      i++;
     }
-  i = 0;
-  while (i < this->x_board)
+  for (int i = 0; i < x_board; i++)
     {
       map[i][0] = 'X';
       map[i][94] = 'X';
-      i++;
     }
-  i = 0;
 }
 
 void		dat_Output::init_Map()
 {
   x_board = 26;
   y_board = 95;
-  this->map.resize(this->x_board , std::vector<char>(this->y_board ,' '));
+  map.resize(x_board , std::vector<char>(y_board ,' '));
   fill_Corner();
   put_Static_Element();
 }
@@ -137,11 +130,11 @@ char		dat_Output::get_Rank_Symbol(int card_value)
   c = 0;
   if (card_value < 12)
     c = 'a';
-  else  if (card_value < 25)
+  else if (card_value < 25)
     c = 'b';
-  else  if (card_value < 38)
+  else if (card_value < 38)
     c = 'c';
-  else  if (card_value < 52)
+  else if (card_value < 52)
     c = 'd';
   return (c);
 }
