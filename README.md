@@ -15,5 +15,5 @@ make ; sh setup.sh ; ./poker
  * C
  * Hand evaluator library from https://github.com/christophschmalhofer/poker
 
-#### Gameplay Gif
+#### Gameplay
 ![screenshot](/screenshoot.jpg)

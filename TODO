@@ -1,11 +1,11 @@
 22.10.17
 
-display
+display:
 
 - display color per suit
 - display what kind of hand each player had at showdown for better understanding
 
-code readibility
+code readibility:
 
 X - clean useless" this-> " 
 - redefine each function for better OOC
@@ -30,15 +30,15 @@ from http://compsci.ca/v3/viewtopic.php?t=19389 (( google search : proper c++ co
 
 - decide how to display twoplustwo library, keep their own code style or rewrite them with mine, ask stackoverflow ?
 
-gameplay
+gameplay:
 
 - make the game more fluid, maybe change display 
 
-to code
+to code:
 
 - Implement debug state instead of tricky std::cout <<
 
-other
+other:
 
 - proper README file on github
 
